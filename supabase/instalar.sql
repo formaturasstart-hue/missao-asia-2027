@@ -169,6 +169,7 @@ AS $function$ select viagem._uid(p_token) $function$;
 revoke all on all functions in schema viagem from public, anon, authenticated;
 revoke all on function public.viagem_login, public.viagem_eu, public.viagem_sair, public.viagem_trocar_senha, public.viagem_push, public.viagem_pull, public.viagem_usuarios, public.viagem_salvar_usuario, public.viagem_live, public.viagem_token_usuario from public;
 grant execute on function public.viagem_login, public.viagem_eu, public.viagem_sair, public.viagem_trocar_senha, public.viagem_push, public.viagem_pull, public.viagem_usuarios, public.viagem_salvar_usuario, public.viagem_live to anon, authenticated;
+revoke execute on function public.viagem_token_usuario from anon, authenticated;
 grant execute on function public.viagem_token_usuario to service_role;
 
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
