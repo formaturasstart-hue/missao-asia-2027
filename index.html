@@ -59,7 +59,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* MAP */
 .mapBox{position:relative;margin-top:26px;border-radius:26px;border:1px solid var(--line);background:#0E0C17;overflow:hidden}
+.mapScroll{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mapScroll::-webkit-scrollbar{display:none}
 .mapStage{position:relative;height:clamp(330px,50vw,600px)}
+@media(max-width:700px){.mapStage{width:880px;height:410px}.mapFoot{bottom:34px}.mapHint{bottom:10px}}
 .mapStage svg{display:block;width:100%;height:100%}
 .mapFoot{position:absolute;left:14px;right:14px;bottom:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-end;pointer-events:none}
 .mapFoot .mono{font-size:12.5px;color:var(--amber2);background:rgba(11,10,18,.72);padding:6px 10px;border-radius:10px;border:1px solid var(--line2);font-variant-numeric:tabular-nums}
@@ -71,7 +74,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 #map.compact .asiaN text{display:none}
 #map.compact .asiaN .stampG{display:none}
 #map.compact .nsub{display:none}
-@media(max-width:600px){#map .node text{font-size:13.5px}}
+
 @keyframes fadeIn{from{opacity:0}}
 .mapHead{position:absolute;left:18px;top:14px;right:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;pointer-events:none;z-index:2}
 .mapHead > *{pointer-events:auto}
@@ -521,7 +524,8 @@ label.fl{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--m
         <span class="pill" id="mapStatus"><span class="dot"></span><span id="mapStatusTx">Rota da missão</span></span>
         <button class="pill" id="replay" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver a viagem</button>
       </div>
-      <div class="mapStage" id="mapScroll"><svg id="map" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mapa-múndi com a rota: São Paulo, Dubai, Hong Kong, Guangzhou, Xangai, Tóquio, Dubai e volta a São Paulo"></svg></div>
+      <div class="mapScroll" id="mapScroll"><div class="mapStage"><svg id="map" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Mapa-múndi com a rota: São Paulo, Dubai, Hong Kong, Guangzhou, Xangai, Tóquio, Dubai e volta a São Paulo"></svg></div></div>
+      <div class="mapHint">arraste para o lado →</div>
       <div class="mapFoot"><span class="mono" id="mapCoord">23°26′S  46°28′W</span><span class="mapSrc">Natural Earth · projeção equirretangular (latitude e longitude)</span></div>
     </div>
   </div>
@@ -952,6 +956,7 @@ function placePlane(){
   $('#plane').setAttribute('transform',`translate(${p.x.toFixed(2)} ${p.y.toFixed(2)}) scale(${(s*.95).toFixed(4)})`);
   $('#planeR').setAttribute('transform',`rotate(${planeAng.toFixed(1)})`);
   const c=$('#mapCoord'); if(c){ const lon=p.x/KK-180, lat=90-p.y/KK; c.textContent=`${fmtCoord(lat,'N','S')}  ${fmtCoord(lon,'E','W')}`; }
+  if(flying||camAnim) mapScrollTo(p.x,false);
 }
 function setPlane(len){
   len=Math.max(0,Math.min(TOTAL,len));
@@ -991,6 +996,7 @@ function renderMapStamps(){
     g.innerHTML = stamps[t] ? `<g transform="translate(30 -34) scale(.75)">${stampSvg(c.nome.toUpperCase().slice(0,9),c.cor,-12)}</g>` : '';
   });
 }
+function mapScrollTo(x,smooth){ const sc=$('#mapScroll'); if(!sc||sc.scrollWidth<=sc.clientWidth+2) return; const svg=$('#map'); const px=(x-cam.x)/cam.w*svg.clientWidth; const left=Math.max(0,Math.min(sc.scrollWidth-sc.clientWidth,px-sc.clientWidth/2)); if(smooth&&!RM) sc.scrollTo({left,behavior:'smooth'}); else sc.scrollLeft=left; }
 function centerMapOn(){ }
 
 /* ============ CENAS (ilustrações) ============ */
