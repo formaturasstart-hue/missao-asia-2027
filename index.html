@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missão Ásia & Emirados 2027 · Grupo Vision</title>
+<meta name="theme-color" content="#0B0A12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --ink:#0B0A12; --s1:#14121D; --s2:#1C1928; --line:#2A2639; --line2:#3A3550;
+  --tx:#F4EFE6; --mu:#BDB5CB; --dim:#968EA8;
+  --amber:#FFB547; --amber2:#FFD08A;
+  --paper:#F3EADB; --paper2:#E9DDC8; --pink-ink:#1A1622;
+  --top:#FFB547; --fut:#B6A6FF; --neg:#5FF0B4;
+  --c:#FFB547;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --mono:'Space Mono',ui-monospace,monospace;
+  --hand:'Caveat',cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--ink);color:var(--tx);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+::selection{background:var(--amber);color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.mono{font-family:var(--mono)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:42px 0 26px;isolation:isolate}
+.hero .sky{position:absolute;inset:0;z-index:-1;width:100%;height:100%}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+.h1{margin:10px 0 0;font-weight:800;font-size:clamp(48px,10vw,124px);line-height:.88;letter-spacing:-.045em}
+.h1 .amp{font-family:var(--hand);font-weight:700;color:var(--amber);letter-spacing:0;font-size:.8em;margin:0 .04em}
+.h1 .yr{display:block;-webkit-text-stroke:1.5px var(--tx);color:transparent;letter-spacing:-.03em}
+.lede{max-width:560px;margin:18px 0 0;color:var(--mu);font-size:18px;text-wrap:pretty}
+.lede b{color:var(--tx);font-weight:600}
+.hand{font-family:var(--hand);font-weight:700}
+.heroGrid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:end}
+@media(max-width:860px){.heroGrid{grid-template-columns:1fr}}
+.count{background:rgba(20,18,29,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:22px;padding:18px 18px 16px}
+.count .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.digits{display:flex;gap:10px;margin:10px 0 8px}
+.dg{flex:1;text-align:center;background:var(--s2);border:1px solid var(--line);border-radius:14px;padding:10px 4px 8px}
+.dg b{display:block;font-family:var(--mono);font-size:clamp(28px,6vw,40px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.dg span{font-size:12px;color:var(--mu)}
+.dg.big b{color:var(--amber)}
+.clocks{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.clk{font-size:12px;color:var(--mu);border-top:1px dashed var(--line2);padding-top:8px}
+.clk b{display:block;font-family:var(--mono);font-size:16px;color:var(--tx);font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.stat{display:flex;align-items:baseline;gap:7px;padding:9px 14px;border-radius:999px;background:var(--s1);border:1px solid var(--line)}
+.stat b{font-family:var(--mono);font-size:17px;color:var(--amber)}
+.stat span{font-size:14px;color:var(--mu)}
+
+/* MAP */
+.mapBox{position:relative;margin-top:26px;border-radius:26px;border:1px solid var(--line);background:#0E0C17;overflow:hidden}
+.mapScroll{overflow-x:auto;scrollbar-width:none}
+.mapScroll::-webkit-scrollbar{display:none}
+.mapScroll svg{display:block;width:100%;min-width:760px;height:auto}
+.mapHead{position:absolute;left:18px;top:14px;right:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;pointer-events:none;z-index:2}
+.mapHead > *{pointer-events:auto}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:rgba(11,10,18,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:13px;font-weight:600;color:var(--tx)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+button.pill{transition:transform .16s var(--ease),border-color .2s}
+button.pill:active{transform:scale(.97)}
+@media(hover:hover){button.pill:hover{border-color:var(--amber)}}
+.node{cursor:pointer}
+.node .ring{transition:r .3s var(--ease)}
+@media(hover:hover){.node:hover .ring{r:15}}
+.node:focus{outline:none}.node:focus-visible .ring{stroke:#fff;stroke-width:2}
+.route-base{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.6s cubic-bezier(.65,0,.35,1) .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.mapHint{position:absolute;right:14px;bottom:10px;font-size:12px;color:var(--dim);font-family:var(--mono)}
+@media(min-width:780px){.mapHint{display:none}}
+
+/* TABS */
+.tabsBar{position:sticky;top:0;z-index:20;background:rgba(11,10,18,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin-top:26px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;max-width:1180px;margin:0 auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid transparent;background:transparent;color:var(--mu);font-weight:600;font-size:15px;transition:background-color .2s,color .2s,border-color .2s}
+.tab .sw{width:9px;height:9px;border-radius:50%;background:var(--tc,#777)}
+.tab[aria-selected=true]{background:var(--tx);color:var(--ink)}
+@media(hover:hover){.tab:not([aria-selected=true]):hover{color:var(--tx);border-color:var(--line2)}}
+.tab .stampMini{font-size:10px;font-family:var(--mono);padding:2px 6px;border-radius:6px;border:1px solid currentColor;transform:rotate(-6deg);opacity:.8}
+
+/* PANELS */
+main{padding-bottom:90px}
+.panel{display:none}
+.panel.on{display:block;animation:enter .45s var(--ease) both}
+@keyframes enter{from{opacity:0;transform:translateY(10px)}}
+.sec{margin-top:44px}
+.secT{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.h2{margin:0;font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.025em;line-height:1.1}
+.h2 .hand{color:var(--c);font-size:1.15em;margin-left:4px}
+.sub{color:var(--mu);margin:6px 0 0;max-width:640px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:22px;padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(var(--m,260px),1fr))}
+
+/* SCENE */
+.scene{position:relative;margin-top:24px;border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.scene svg{display:block;width:100%;height:auto;min-height:300px;object-fit:cover}
+.scene .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 22px 20px;background:linear-gradient(to top,rgba(8,7,13,.92),rgba(8,7,13,.55) 60%,transparent)}
+.scene .local{font-size:clamp(14px,2vw,18px);color:var(--c);font-weight:600;letter-spacing:.06em}
+.scene h2{margin:2px 0 0;font-size:clamp(44px,9vw,96px);line-height:.9;letter-spacing:-.045em;font-weight:800}
+.scene .when{font-family:var(--mono);font-size:13px;color:var(--mu);margin-top:8px}
+.scene .stampBtn{position:absolute;right:18px;top:18px}
+@media(max-width:700px){.scene svg{min-height:0}.scene .cap{padding:40px 16px 16px}.scene h2{font-size:48px}}
+.rise{animation:rise .9s var(--ease) both}
+@keyframes rise{from{transform:translateY(40px);opacity:0}}
+.tw{animation:tw 2.4s ease-in-out 2 both}
+@keyframes tw{50%{opacity:.25}}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:12px;background:var(--s1);border:1px solid var(--line);font-size:14px}
+.chip i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.intro{font-size:clamp(18px,2.4vw,22px);line-height:1.45;max-width:820px;margin:22px 0 0;text-wrap:pretty}
+
+/* tags */
+.tag{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:7px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid}
+.tag.TOP{color:var(--top);border-color:rgba(255,181,71,.45);background:rgba(255,181,71,.08)}
+.tag.FUTURO{color:var(--fut);border-color:rgba(182,166,255,.45);background:rgba(182,166,255,.08)}
+.tag.NEGÓCIOS{color:var(--neg);border-color:rgba(95,240,180,.45);background:rgba(95,240,180,.08)}
+
+/* must-see rail */
+.rail{display:flex;gap:12px;overflow-x:auto;padding:4px 18px 12px;margin:0 -18px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.must{flex:none;width:230px;scroll-snap-align:start;background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:16px;position:relative;overflow:hidden;transition:transform .2s var(--ease),border-color .2s}
+@media(hover:hover){.must:hover{transform:translateY(-3px);border-color:var(--c)}}
+.must .n{font-family:var(--mono);font-size:44px;font-weight:700;line-height:1;color:var(--c);opacity:.9}
+.must h4{margin:12px 0 4px;font-size:18px;letter-spacing:-.01em;line-height:1.2}
+.must p{margin:0;font-size:14px;color:var(--mu)}
+
+/* timeline */
+.days{position:relative;display:flex;flex-direction:column;gap:14px}
+.day{display:grid;grid-template-columns:76px 1fr;gap:0;background:var(--s1);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.day.today{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 0 40px -12px var(--c)}
+.dstub{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 4px;background:var(--s2);border-right:2px dashed var(--line2)}
+.dstub .w{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--mu)}
+.dstub .d{font-family:var(--mono);font-size:34px;font-weight:700;line-height:1;color:var(--c)}
+.dstub .m{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.dbody{padding:16px 18px}
+.dbody h4{margin:0;font-size:19px;letter-spacing:-.01em;line-height:1.2}
+.dbody .ds{margin:3px 0 0;font-size:14px;color:var(--mu)}
+.its{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.its li{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:baseline;font-size:15px}
+.its .h{font-family:var(--mono);font-size:13px;color:var(--amber2)}
+.its .tg{display:inline-flex;gap:5px;margin-right:6px;vertical-align:2px}
+.todayFlag{display:inline-block;margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--c);padding:2px 7px;border-radius:6px;vertical-align:3px}
+
+/* postcards */
+.pcs{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.pc{position:relative;background:var(--paper);color:var(--pink-ink);border-radius:6px;padding:22px 20px 18px;box-shadow:0 18px 40px -22px rgba(0,0,0,.8);transform:rotate(var(--r,0deg));transition:transform .3s var(--ease)}
+@media(hover:hover){.pc:hover{transform:rotate(0) translateY(-3px)}}
+.pc:before{content:"";position:absolute;inset:8px;border:1px dashed rgba(26,22,34,.18);border-radius:3px;pointer-events:none}
+.pc .q{font-family:var(--hand);font-size:22px;line-height:1.05;color:#7A2E3A;margin:0 0 6px}
+.pc p{margin:0;font-size:15.5px;line-height:1.45}
+.pc .pst{position:absolute;top:12px;right:12px;width:42px;height:50px;border:2px dotted rgba(26,22,34,.35);border-radius:3px;display:grid;place-items:center;font-family:var(--mono);font-size:9px;color:rgba(26,22,34,.55);text-align:center;line-height:1.1}
+.pc .q{padding-right:50px}
+
+/* tips */
+.tips{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.tips li{display:grid;grid-template-columns:28px 1fr;gap:10px;background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:14px;font-size:15px}
+.tips svg{color:var(--c);margin-top:2px}
+
+/* phrases */
+.phr{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.ph{background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.ph .lo{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.ph .pr{font-family:var(--mono);font-size:12.5px;color:var(--c);margin-top:4px}
+.ph .pt{font-size:14px;color:var(--mu);margin-top:6px}
+.ph.en .lo{font-size:18px}
+
+/* hotel */
+.hotel{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+@media(max-width:760px){.hotel{grid-template-columns:1fr}}
+.hotel h4{margin:0 0 4px;font-size:22px;letter-spacing:-.015em}
+.hotel ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.hotel li{padding:9px 12px;border-radius:10px;background:var(--s2);font-size:15px}
+.warn{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,120,120,.07);border:1px solid rgba(255,140,140,.3);color:#FFD3D3;font-size:14.5px;margin-top:12px}
+
+/* boarding passes */
+.bps{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.bp{position:relative;display:grid;grid-template-columns:1fr 92px;background:var(--paper);color:var(--pink-ink);border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -28px rgba(0,0,0,.9)}
+.bp .main{padding:16px 18px}
+.bp .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6B6276}
+.bp .rt{display:flex;align-items:center;gap:10px;margin:10px 0 8px}
+.bp .iata{font-family:var(--mono);font-size:34px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.bp .rt svg{flex:1;color:#B04A2E}
+.bp .row{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px}
+.bp .row i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7C7386}
+.bp .row b{font-weight:700;font-size:14.5px}
+.bp .note{margin-top:10px;font-size:13px;color:#4A4253;border-top:1px dashed rgba(26,22,34,.25);padding-top:8px}
+.bp .stub{position:relative;border-left:2px dashed rgba(26,22,34,.3);background:var(--paper2);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:16px 8px}
+.bp .stub .fl{font-family:var(--mono);font-weight:700;font-size:15px;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.1em}
+.bp:before,.bp:after{content:"";position:absolute;right:83px;width:18px;height:18px;border-radius:50%;background:var(--ink)}
+.bp:before{top:-9px}.bp:after{bottom:-9px}
+.bar{width:44px;height:64px;background:repeating-linear-gradient(90deg,#1A1622 0 2px,transparent 2px 4px,#1A1622 4px 5px,transparent 5px 8px,#1A1622 8px 11px,transparent 11px 12px)}
+
+/* alerts */
+.alerts{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.al{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;position:relative}
+.al .lv{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:3px 8px;border-radius:6px;display:inline-block}
+.al.crit{border-color:rgba(255,107,107,.45)} .al.crit .lv{background:#FF6B6B;color:#1A0B0B}
+.al.att .lv{background:var(--amber);color:#1A1205}
+.al.inf .lv{background:var(--s2);color:var(--mu);border:1px solid var(--line2)}
+.al h4{margin:10px 0 4px;font-size:18px;letter-spacing:-.01em}
+.al p{margin:0;font-size:14.5px;color:var(--mu)}
+
+/* city cards in overview */
+.cityCards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.cc{text-align:left;border:1px solid var(--line);background:var(--s1);border-radius:20px;padding:0;overflow:hidden;transition:transform .2s var(--ease),border-color .2s}
+@media(hover:hover){.cc:hover{transform:translateY(-3px);border-color:var(--cc)}}
+.cc:active{transform:scale(.98)}
+.cc .art{height:110px;display:block;width:100%}
+.cc .tx{display:block;padding:12px 14px 14px}
+.cc .tx b{display:block;font-size:20px;letter-spacing:-.015em}
+.cc .tx span{font-family:var(--mono);font-size:12px;color:var(--mu)}
+
+/* legs list */
+.legs{display:flex;flex-direction:column;gap:8px}
+.leg{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:var(--s1);border:1px solid var(--line);border-radius:14px;font-size:15px}
+.leg .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--s2);color:var(--amber)}
+.leg .st{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.leg .st.ok{color:var(--neg);border:1px solid rgba(95,240,180,.4)}
+.leg .st.buy{color:var(--amber);border:1px solid rgba(255,181,71,.45)}
+
+/* sectors */
+.sectors{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.sct{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:16px}
+.sct h4{margin:0 0 4px;font-size:17px}
+.sct p{margin:0;font-size:14px;color:var(--mu)}
+.sct .cert{margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--neg)}
+.teams{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-top:12px}
+.tm{border:1px dashed var(--line2);border-radius:18px;padding:14px 16px}
+.tm b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--neg)}
+.tm p{margin:4px 0 0;font-size:15px}
+.ask{margin-top:14px;padding:18px;border-radius:20px;background:linear-gradient(0deg,rgba(95,240,180,.06),rgba(95,240,180,.06)),var(--s1);border:1px solid rgba(95,240,180,.3)}
+.ask ol{margin:10px 0 0;padding-left:20px;display:grid;gap:4px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.ask li{font-size:15px}
+
+/* kit */
+.kit{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.kt{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:16px}
+.kt .ic{width:40px;height:40px;border-radius:12px;background:var(--s2);display:grid;place-items:center;color:var(--amber);margin-bottom:10px}
+.kt h4{margin:0 0 4px;font-size:17px}
+.kt p{margin:0;font-size:14.5px;color:var(--mu)}
+@media(max-width:600px){.kt{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;padding:14px}.kt .ic{grid-row:span 2;margin:0}.kt h4{margin:0}}
+
+/* checklist */
+.ckHead{display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between;padding:18px;border-radius:22px;background:var(--s1);border:1px solid var(--line)}
+.prog{display:flex;align-items:center;gap:14px}
+.prog svg{flex:none}
+.prog b{font-family:var(--mono);font-size:26px}
+.prog span{display:block;font-size:14px;color:var(--mu)}
+.ckActs{display:flex;gap:8px;flex-wrap:wrap}
+.btn{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--tx);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:transform .16s var(--ease),background-color .2s,border-color .2s}
+.btn:active{transform:scale(.97)}
+.btn.pri{background:var(--amber);border-color:var(--amber);color:#1A1205}
+@media(hover:hover){.btn:not(.pri):hover{border-color:var(--tx)}}
+.ckGroups{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));margin-top:14px}
+.ckg{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:16px}
+.ckg h4{margin:0;font-size:17px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ckg h4 span{font-family:var(--mono);font-size:12px;color:var(--mu);font-weight:400}
+.ckg ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.ck{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;padding:9px 8px;border-radius:12px;cursor:pointer;transition:background-color .15s}
+@media(hover:hover){.ck:hover{background:var(--s2)}}
+.ck input{appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:1px 0 0;border-radius:7px;border:2px solid var(--line2);display:grid;place-items:center;cursor:pointer;transition:background-color .15s,border-color .15s}
+.ck input:checked{background:var(--neg);border-color:var(--neg)}
+.ck input:checked:after{content:"";width:6px;height:11px;border:solid #0B1A12;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.ck .t{font-size:15px;line-height:1.35}
+.ck .w{display:block;font-family:var(--mono);font-size:11px;color:var(--amber);margin-top:2px}
+.ck input:checked + span .t{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--line2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:var(--tx);color:var(--ink);padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:opacity .25s,transform .35s var(--ease);z-index:50;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* passport strip */
+.passport{display:flex;gap:10px;flex-wrap:wrap}
+.stampSlot{width:92px;height:92px;border-radius:50%;border:2px dashed var(--line2);display:grid;place-items:center;font-family:var(--mono);font-size:10px;color:var(--dim);text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:14px;color:var(--mu)}
+.foot{margin-top:60px;padding:24px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px}
+.todayBanner{display:none;margin-top:18px}
+.todayBanner.on{display:block}
+
+/* ===== DIÁRIO ===== */
+.mAct{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line2)}
+.fui{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line2);background:transparent;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:background-color .2s,border-color .2s,color .2s}
+.fui[aria-pressed=true]{background:var(--c);border-color:var(--c);color:#120F1A}
+.stars{display:inline-flex;gap:0}
+.stars button{width:30px;height:36px;border:0;background:none;padding:0;color:var(--line2);display:grid;place-items:center;transition:color .15s,transform .15s var(--ease)}
+.stars button.on{color:var(--amber)}
+.stars button:active{transform:scale(.85)}
+.stars.big button{width:44px;height:48px}
+.say{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--c);display:grid;place-items:center;transition:transform .15s var(--ease),border-color .2s}
+.say:active{transform:scale(.92)}
+@media(hover:hover){.say:hover{border-color:var(--c)}}
+.ph{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:start}
+.ph > .say{grid-row:1/span 3;grid-column:2}
+.noteBox{margin-top:14px}
+.noteBox summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--c);min-height:36px}
+.noteBox summary::-webkit-details-marker{display:none}
+.noteBox .has{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:5px;background:var(--c);color:#120F1A}
+.dActs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.mini{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line2);background:transparent;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+@media(hover:hover){.mini:hover{border-color:var(--tx)}}
+textarea.in,input.in,select.in{width:100%;background:var(--ink);border:1px solid var(--line2);border-radius:14px;color:var(--tx);font:inherit;font-size:16px;padding:12px 14px;transition:border-color .2s}
+textarea.in{min-height:96px;resize:vertical;line-height:1.45}
+input.in,select.in{min-height:48px}
+.in:focus{outline:none;border-color:var(--c)}
+.in::placeholder{color:var(--dim)}
+label.fl{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--mu);font-weight:500}
+.fgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.fgrid .w2{grid-column:1/-1}
+.journal{background:var(--s1);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.segs{display:flex;gap:4px;overflow-x:auto;padding:8px;background:var(--s2);border-bottom:1px solid var(--line);scrollbar-width:none}
+.segs::-webkit-scrollbar{display:none}
+.seg{flex:none;min-height:42px;padding:0 14px;border-radius:12px;border:0;background:transparent;color:var(--mu);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:7px}
+.seg b{font-family:var(--mono);font-size:11px;padding:1px 6px;border-radius:6px;background:var(--line);color:var(--tx);font-weight:400}
+.seg[aria-selected=true]{background:var(--ink);color:var(--tx);box-shadow:inset 0 0 0 1px var(--c)}
+.jBody{padding:18px}
+.jHint{font-size:13px;color:var(--dim);margin:8px 0 0}
+.entries{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.entry{position:relative;background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:14px 46px 14px 16px;font-size:15px}
+.entry .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;font-family:var(--mono);font-size:11px;color:var(--mu)}
+.entry .meta span{padding:2px 7px;border-radius:6px;border:1px solid var(--line2)}
+.entry .meta .hi{color:#FF8B8B;border-color:rgba(255,139,139,.5)}
+.entry .del{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:10px;border:0;background:transparent;color:var(--dim);display:grid;place-items:center;font-size:12px;font-weight:700}
+.entry .del.arm{background:#FF6B6B;color:#1A0B0B;width:auto;padding:0 10px}
+.entry h5{margin:0;font-size:17px}
+.kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px 12px;margin-top:8px}
+.kv div{font-size:14px}.kv i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--ink);border:1px dashed var(--line2)}
+.tot b{font-family:var(--mono);font-size:22px;color:var(--c)}
+.media{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));margin-top:16px}
+.mi{position:relative;border-radius:14px;overflow:hidden;background:var(--s2);border:1px solid var(--line)}
+.mi img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.mi audio{width:100%;display:block;margin-top:6px}
+.mi .cap2{padding:8px 10px;font-size:12px;color:var(--mu)}
+.mi.au{grid-column:span 2;padding:10px}
+.mi .del{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:9px;border:0;background:rgba(11,10,18,.8);color:var(--tx);font-size:11px;font-weight:700}
+.mi .del.arm{background:#FF6B6B;color:#1A0B0B;width:auto;padding:0 8px}
+.upl{display:flex;gap:8px;flex-wrap:wrap}
+.upl label{cursor:pointer}
+.upl input{position:absolute;width:1px;height:1px;opacity:0}
+.ckBox{background:var(--s1);border:1px solid var(--line);border-radius:22px;padding:18px}
+.ckTop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:12px}
+.pbar i{display:block;height:100%;background:var(--c);border-radius:4px;transition:width .5s var(--ease)}
+.ckList{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.ck .x{margin-left:6px;border:0;background:none;color:var(--dim);font-size:12px;font-family:var(--mono)}
+.addRow{display:flex;gap:8px;margin-top:12px}
+.addRow .in{min-height:44px;padding:8px 14px}
+.emer{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-top:12px;padding:14px 16px;border-radius:16px;background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.3)}
+.emer b{font-family:var(--mono);font-size:22px;color:#FF8B8B}
+.emer p{margin:0;font-size:14px;color:var(--mu)}
+.emer strong{color:var(--tx);font-weight:600}
+/* player */
+.player{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);width:min(560px,calc(100% - 24px));z-index:60;display:grid;grid-template-columns:auto 1fr auto auto;gap:12px;align-items:center;padding:10px 10px 10px 16px;border-radius:20px;background:#F4EFE6;color:#120F1A;box-shadow:0 20px 60px -20px rgba(0,0,0,.9);transition:transform .45s var(--ease)}
+.player.on{transform:translate(-50%,0)}
+.player .t{min-width:0}
+.player .t b{display:block;font-size:13px}
+.player .t span{display:block;font-size:13px;color:#4A4253;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#120F1A;color:#F4EFE6;display:grid;place-items:center}
+.player button.ghost{background:transparent;color:#120F1A;border:1px solid rgba(18,15,26,.25)}
+.eq{display:flex;gap:3px;align-items:flex-end;height:22px}
+.eq i{width:4px;border-radius:2px;background:#E2562F;height:6px;animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.15s}.eq i:nth-child(3){animation-delay:.3s}.eq i:nth-child(4){animation-delay:.45s}
+.player.paused .eq i{animation-play-state:paused}
+@keyframes eq{50%{height:22px}}
+/* driver card */
+.driver{position:fixed;inset:0;z-index:70;background:#FBF7EF;color:#120F1A;display:none;flex-direction:column;justify-content:center;gap:18px;padding:28px}
+.driver.on{display:flex}
+.driver .ask2{font-size:clamp(26px,6vw,44px);font-weight:700;line-height:1.2}
+.driver .addr{font-size:clamp(30px,8vw,64px);font-weight:800;line-height:1.15;letter-spacing:-.01em;word-break:break-word}
+.driver .pt{font-size:16px;color:#4A4253}
+.driver .close{position:absolute;top:16px;right:16px;min-height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(18,15,26,.25);background:transparent;color:#120F1A;font-weight:700}
+/* resumo */
+.sumHero{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.sh{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:16px}
+.sh b{display:block;font-family:var(--mono);font-size:30px;line-height:1.1;color:var(--c)}
+.sh span{font-size:14px;color:var(--mu)}
+.listen{position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:22px;border-radius:26px;background:radial-gradient(120% 140% at 0% 0%,#3A2350 0%,#1C1928 55%);border:1px solid var(--line2)}
+.listen .big{width:76px;height:76px;border-radius:50%;border:0;background:var(--amber);color:#1A1205;display:grid;place-items:center;box-shadow:0 0 0 8px rgba(255,181,71,.15);transition:transform .2s var(--ease)}
+.listen .big:active{transform:scale(.94)}
+.listen h3{margin:0;font-size:24px;letter-spacing:-.02em}
+.listen p{margin:4px 0 0;color:var(--mu);font-size:15px}
+.sumCity{border-left:3px solid var(--sc);padding:4px 0 4px 18px;margin-top:30px}
+.sumCity h3{margin:0;font-size:28px;letter-spacing:-.02em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sumCity .sline{font-family:var(--mono);font-size:12px;color:var(--mu);margin-top:4px}
+.sumBlock{margin-top:16px}
+.sumBlock h4{margin:0 0 8px;font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--sc)}
+.sumBlock ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.sumBlock li{font-size:15px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tblWrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+.tbl th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-weight:400;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.empty{color:var(--dim);font-size:14px;font-style:italic}
+.thumbs{display:flex;gap:6px;flex-wrap:wrap}
+.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.rates{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.conv{display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:end}
+.convOut{font-family:var(--mono);font-size:28px;color:var(--neg);margin-top:12px}
+.meName{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
+.meName label{flex:1;min-width:220px}
+
+.due{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:6px;border:1px solid var(--line2);color:var(--mu)}
+.due.soon{color:var(--amber);border-color:rgba(255,181,71,.5)}
+.due.late{color:#FF8B8B;border-color:rgba(255,139,139,.5)}
+.due.ok{color:var(--neg);border-color:rgba(95,240,180,.45)}
+.syncRow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.syncRow .livePill{margin-top:0}
+.syncPills{display:flex;flex-wrap:wrap;gap:8px}
+.syncPills .pill{min-height:36px;font-size:12.5px}
+.gate{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(120% 90% at 80% 0%,#3B2350 0%,#0B0A12 60%)}
+.gate.on{display:flex}
+.gateBox{width:min(420px,100%);background:rgba(20,18,29,.86);border:1px solid var(--line2);border-radius:26px;padding:26px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.gateT{margin:8px 0 0;font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.gateBox form{display:flex;flex-direction:column;gap:12px}
+.gateBtn{width:100%;justify-content:center;min-height:52px;font-size:16px}
+.gateMsg{min-height:20px;margin:0;color:#FF8B8B;font-size:14px}
+.onotes{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.onotes .on{padding:10px 12px;border-radius:12px;background:var(--s2);font-size:14px;border-left:3px solid var(--c)}
+.onotes b{display:block;font-size:12px;color:var(--c);margin-bottom:2px}
+.pst2{border:1px solid var(--line2);background:transparent;color:var(--mu);font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:6px}
+.pst2.s1{color:var(--amber);border-color:rgba(255,181,71,.5)}.pst2.s2{color:var(--neg);border-color:rgba(95,240,180,.5)}
+.sugs{display:flex;flex-direction:column;gap:6px;margin-top:18px}
+.sug{display:flex;gap:8px;align-items:flex-start;text-align:left;padding:10px 12px;border-radius:12px;border:1px dashed var(--line2);background:transparent;color:var(--mu);font-size:14px}
+@media(hover:hover){.sug:hover{color:var(--tx);border-color:var(--amber)}}
+.convite{white-space:pre-wrap;font-family:var(--mono);font-size:13px;background:var(--ink);border-radius:12px;padding:12px;margin:10px 0 12px}
+/* ao vivo */
+.livePill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:8px 14px;border-radius:999px;background:rgba(95,240,180,.08);border:1px solid rgba(95,240,180,.35);color:var(--neg);font-size:13px;font-weight:600}
+.livePill .dot{width:8px;height:8px;border-radius:50%;background:var(--neg);box-shadow:0 0 10px var(--neg)}
+.wx{background:linear-gradient(160deg,rgba(255,255,255,.04),transparent 60%),var(--s1);border:1px solid var(--line);border-radius:24px;padding:18px}
+.wxNow{display:flex;align-items:center;gap:14px}
+.wxT{display:flex;align-items:baseline;gap:10px}
+.wxT b{font-family:var(--mono);font-size:44px;line-height:1}
+.wxT span{color:var(--mu)}
+.wxHead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px;font-size:14px;color:var(--mu)}
+.wxHead .mono{font-size:11px;color:var(--dim)}
+.wxDays{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:4px;scrollbar-width:none}
+.wxDays::-webkit-scrollbar{display:none}
+.wxd{flex:1 0 78px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 6px;border-radius:16px;background:var(--s2);border:1px solid var(--line);text-align:center}
+.wxd.hoje{border-color:var(--c)}
+.wxd .dd{font-family:var(--mono);font-size:11px;color:var(--mu)}
+.wxd b{font-family:var(--mono);font-size:18px}
+.wxd .mn{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.wxd .pp{font-size:10.5px;color:#6FB7FF}
+.dwx{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mu)}
+.alLive{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--s2);font-size:13.5px;color:var(--tx)}
+.alLive b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--neg);margin-bottom:2px}
+.radar{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.rCard{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:16px}
+.rRates{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-top:10px}
+.rRates i{display:block;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.rRates b{font-family:var(--mono);font-size:16px}
+.rWx{display:flex;flex-direction:column;gap:2px;margin-top:8px}
+.rWx button{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;min-height:40px;padding:0 8px;border:0;border-radius:10px;background:transparent;color:var(--tx);font-size:15px;text-align:left}
+@media(hover:hover){.rWx button:hover{background:var(--s2)}}
+.rWx b{font-family:var(--mono)}
+.rNews{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.rNews b{font-family:var(--mono);font-size:11px;color:var(--neg);margin-right:4px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .route-base{stroke-dashoffset:0}
+  .pop{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="sky" id="heroSky" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
+  <div class="wrap">
+    <div class="heroGrid">
+      <div>
+        <div class="kick">Grupo Vision · Missão de negócios e turismo</div>
+        <h1 class="h1">Ásia<span class="amp">&amp;</span>Emirados <span class="yr">2027</span></h1>
+        <p class="lede">Uma volta ao mundo em <b>21 dias</b> atrás de ideias, tecnologia e fornecedores: <b>Hong Kong, a Canton Fair em Guangzhou, Xangai, Tóquio e Dubai</b>.</p>
+      </div>
+      <div class="count" aria-live="off">
+        <div class="lbl" id="cdLabel">Embarque em Guarulhos · dom 11/04 · 21h35</div>
+        <div class="digits" id="digits">
+          <div class="dg big"><b id="cdD">--</b><span>dias</span></div>
+          <div class="dg"><b id="cdH">--</b><span>horas</span></div>
+          <div class="dg"><b id="cdM">--</b><span>min</span></div>
+          <div class="dg"><b id="cdS">--</b><span>seg</span></div>
+        </div>
+        <div class="clocks" id="clocks"></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>21</b><span>dias</span></div>
+      <div class="stat"><b>7</b><span>viajantes</span></div>
+      <div class="stat"><b>5</b><span>cidades-base</span></div>
+      <div class="stat"><b>5</b><span>dias de Canton Fair</span></div>
+      <div class="stat"><b>40+</b><span>pontos imperdíveis</span></div>
+    </div>
+    <div class="syncRow"><div id="livePill"></div><div id="syncPill" class="syncPills"></div></div>
+    <div class="todayBanner" id="todayBanner"></div>
+    <div class="mapBox">
+      <div class="mapHead">
+        <span class="pill" id="mapStatus"><span class="dot"></span><span id="mapStatusTx">Rota da missão</span></span>
+        <button class="pill" id="replay" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver a viagem</button>
+      </div>
+      <div class="mapScroll" id="mapScroll"><svg id="map" viewBox="0 0 1200 560" role="img" aria-label="Mapa da rota: São Paulo, Dubai, Hong Kong, Guangzhou, Xangai, Tóquio, Dubai e volta a São Paulo"></svg></div>
+      <div class="mapHint">arraste para o lado →</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabsBar" aria-label="Destinos">
+  <div class="tabs" role="tablist" id="tabs"></div>
+</nav>
+
+<main class="wrap" id="panels"></main>
+
+<div class="wrap foot">Informações do roteiro conferidas em 13/11/2026. Confirmar horários, ingressos e regras de visto perto da viagem. As marcações da checklist e os carimbos ficam salvos só neste aparelho.</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Entrar no roteiro"></div>
+<div class="player" id="player" aria-live="polite"><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="t"><b id="plLabel">Ouvindo</b><span id="plLine"></span></div><button type="button" class="ghost" id="plPause" aria-label="Pausar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button><button type="button" id="plStop" aria-label="Parar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/></svg></button></div>
+<div class="driver" id="driver" role="dialog" aria-modal="true" aria-label="Endereço para o motorista"><button type="button" class="close" id="drClose">Fechar</button><div class="ask2" id="drAsk"></div><div class="addr" id="drAddr"></div><div class="pt" id="drPt"></div></div>
+
+<script type="application/json" id="liveSeed">{"updated": "2026-11-18T23:05:00-03:00", "rates": {"asOf": "19/11/2026 01:47 UTC", "src": "x-rates.com", "BRL": 1, "CNY": 0.882779, "HKD": 0.750169, "JPY": 0.036929, "AED": 1.602442, "USD": 5.884969}, "weather": {"hong-kong": {"asOf": "19/11 09:00 (hora local)", "src": "meteoblue", "now": 21, "nowC": "Muito nublado", "days": [{"d": "2026-11-19", "max": 22, "min": 20, "c": "Muito nublado", "p": ""}, {"d": "2026-11-20", "max": 20, "min": 15, "c": "Nublado com chuva", "p": "5–10 mm"}, {"d": "2026-11-21", "max": 21, "min": 16, "c": "Muito nublado", "p": ""}, {"d": "2026-11-22", "max": 21, "min": 20, "c": "Nublado", "p": ""}, {"d": "2026-11-23", "max": 24, "min": 21, "c": "Muito nublado", "p": ""}, {"d": "2026-11-24", "max": 22, "min": 18, "c": "Muito nublado", "p": ""}, {"d": "2026-11-25", "max": 20, "min": 17, "c": "Nublado", "p": ""}]}, "guangzhou": {"asOf": "19/11 10:00 (hora local)", "src": "meteoblue", "now": 18, "nowC": "Parcialmente nublado", "days": [{"d": "2026-11-19", "max": 19, "min": 16, "c": "Parcialmente nublado", "p": ""}, {"d": "2026-11-20", "max": 16, "min": 12, "c": "Nublado com chuva", "p": "10–20 mm"}, {"d": "2026-11-21", "max": 19, "min": 12, "c": "Parcialmente nublado", "p": ""}, {"d": "2026-11-22", "max": 19, "min": 14, "c": "Muito nublado", "p": ""}, {"d": "2026-11-23", "max": 21, "min": 17, "c": "Nublado com chuva ocasional", "p": "0–2,5 mm"}, {"d": "2026-11-24", "max": 18, "min": 14, "c": "Nublado com chuva ocasional", "p": "10–20 mm"}, {"d": "2026-11-25", "max": 15, "min": 13, "c": "Nublado com chuva ocasional", "p": "2,5–5 mm"}]}, "xangai": {"asOf": "19/11 09:30 (hora local)", "src": "meteoblue", "now": 11, "nowC": "Limpo e algumas nuvens", "days": [{"d": "2026-11-19", "max": 13, "min": 6, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-20", "max": 11, "min": 3, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-21", "max": 14, "min": 3, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-22", "max": 16, "min": 5, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-23", "max": 19, "min": 11, "c": "Algumas nuvens, chuva à noite", "p": "0–2 mm"}, {"d": "2026-11-24", "max": 13, "min": 5, "c": "Muito nublado", "p": "0–2 mm"}, {"d": "2026-11-25", "max": 13, "min": 4, "c": "Limpo, sem nuvens", "p": ""}]}, "toquio": {"asOf": "19/11 10:10 (hora local)", "src": "meteoblue", "now": 18, "nowC": "Limpo e algumas nuvens", "days": [{"d": "2026-11-19", "max": 19, "min": 10, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-20", "max": 14, "min": 7, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-21", "max": 14, "min": 5, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-22", "max": 13, "min": 4, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-23", "max": 13, "min": 3, "c": "Muito nublado", "p": ""}, {"d": "2026-11-24", "max": 18, "min": 7, "c": "Muito nublado com chuva ocasional", "p": "5–10 mm"}, {"d": "2026-11-25", "max": 14, "min": 7, "c": "Limpo, sem nuvens", "p": ""}]}, "dubai": {"asOf": "19/11 04:45 (hora local)", "src": "meteoblue", "now": 24, "nowC": "Limpo e algumas nuvens", "days": [{"d": "2026-11-19", "max": 30, "min": 24, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-20", "max": 30, "min": 24, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-21", "max": 30, "min": 24, "c": "Parcialmente enevoado", "p": ""}, {"d": "2026-11-22", "max": 31, "min": 23, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-23", "max": 32, "min": 24, "c": "Limpo, sem nuvens", "p": ""}, {"d": "2026-11-24", "max": 31, "min": 24, "c": "Limpo e algumas nuvens", "p": ""}, {"d": "2026-11-25", "max": 30, "min": 23, "c": "Limpo, sem nuvens", "p": ""}]}}, "alerts": [{"id": "visto", "status": "pendente", "date": "18/11/2026", "text": "A China ainda não anunciou a prorrogação da isenção de visto para brasileiros em 2027. A regra atual vale até 31/12/2026."}, {"id": "canton", "status": "pendente", "date": "18/11/2026", "text": "As datas esperadas da Fase 1 continuam 15 a 19/04/2027, mas o calendário oficial da 141ª sessão ainda não foi confirmado pelo organizador."}, {"id": "dubai", "status": "pendente", "date": "18/11/2026", "text": "Museum of the Future: reabertura prevista para o 1º trimestre de 2027, ainda sem data. Burj Al Arab: reabertura prevista para outubro de 2027."}], "news": [{"date": "18/11/2026", "text": "Primeira atualização automática: câmbio do dia, tempo agora nas 5 cidades e situação dos alertas."}]}</script>
+<script>
+/* ============ DADOS ============ */
+const ICON = {
+  plane:'<path d="M2 16l20-6-20-6 3 6-3 6z" fill="currentColor"/>',
+  train:'<rect x="5" y="3" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 11h14M8 21l2-4M16 21l-2-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/>',
+  van:'<path d="M3 16V8a2 2 0 0 1 2-2h9l5 5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16.5" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/>',
+  check:'<path d="M5 12l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>',
+  wifi:'<path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/>',
+  card:'<rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/>',
+  phone:'<rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  plug:'<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+  bag:'<rect x="4" y="7" width="16" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/>',
+  copy:'<rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/>'
+};
+const svgI = (k,s=20)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
+
+const CITIES = [
+ { id:'hong-kong', nome:'Hong Kong', local:'香港 · Heung Gong', cor:'#FF5DA2', datas:'Ter 13 e qua 14/04', noites:'1 noite', ini:'2027-04-13', fim:'2027-04-14',
+   chips:[['Clima','21 a 26°C, úmido'],['Fuso','+11 h de Brasília'],['Visto','Sem visto (90 dias)'],['Moeda','Dólar de HK']],
+   intro:'Uma noite e uma manhã para ver o skyline mais famoso da Ásia e acertar o relógio do corpo antes da feira.',
+   must:[['Victoria Peak','Peak Tram e a vista da ilha inteira','TOP'],['Symphony of Lights','Show de luzes às 20h, na Avenue of Stars','TOP'],['Star Ferry','A travessia clássica do porto, em 9 minutos','TOP'],['Mong Kok','Ladies\' Market e o neon de Kowloon','TOP'],['Sky100','Mirante no 100º andar da ICC','FUTURO'],['M+ e West Kowloon','Museu de Herzog & de Meuron','FUTURO'],['K11 Musea','Shopping com conceito de museu','FUTURO'],['Dim sum','O almoço que define a cidade','TOP']],
+   dias:[
+    {iso:'2027-04-13',w:'TER',d:'13',t:'Chegada e skyline à noite',s:'Pouso às 14h40 no HKG T1',it:[['16h30',[],'Airport Express (22 min) até Kowloon e check-in'],['18h30',['FUTURO'],'Sky100 no pôr do sol'],['19h45',['TOP'],'Avenue of Stars e Symphony of Lights'],['20h30',['TOP'],'Star Ferry até Central e jantar cantonês. Para quem tiver energia: Ladies\' Market, em Mong Kok']]},
+    {iso:'2027-04-14',w:'QUA',d:'14',t:'Peak e trem-bala para a China',s:'Malas seguem com o grupo até a estação',it:[['07h30',['TOP'],'Peak Tram e Victoria Peak, antes das filas'],['09h30',[],'Central: IFC Mall e escada rolante Mid-Levels'],['10h30',['FUTURO'],'M+ no West Kowloon, a 10 min a pé do trem'],['12h00',[],'Almoço de dim sum (ou compras no K11 Musea)'],['14h30',[],'Trem-bala West Kowloon → Guangzhou South (menos de 1 h). A imigração é dentro da estação']]}
+   ],
+   curi:[
+    ['Funicular de 1888','O Peak Tram sobe o morro desde 1888. A inclinação é tão forte que, pela janela, os prédios parecem tortos.'],
+    ['A escada que muda de sentido','A escada rolante de Central a Mid-Levels tem cerca de 800 m. Até as 10h ela desce; depois, passa a subir.'],
+    ['Herança britânica','Aqui se dirige pela esquerda. Nas faixas está pintado "Look right": olhe para a direita antes de atravessar.'],
+    ['Yum cha','Dim sum é a refeição do "beber chá". Bater dois dedos na mesa é o jeito local de agradecer quando alguém serve o seu chá.']
+   ],
+   dicas:['Fazer o Peak às 7h30 evita a fila de mais de 1 hora que se forma no fim da manhã.','Pegar um cartão Octopus (ou a versão no celular): serve no metrô, no Star Ferry e nas lojas de conveniência.','Hong Kong tem tomada tipo G (britânica). O adaptador universal resolve.','O trem para Guangzhou exige chegar uns 45 min antes: a imigração da China fica dentro da estação de West Kowloon.'],
+   frases:[['唔該 · M̀h gōi','m-gôi','Obrigado (por um serviço) / com licença'],['多謝 · Dō jeh','dô-dzé','Obrigado (por um presente)'],['幾多錢? · Géi dō chín?','guêi dô tchín','Quanto custa?'],['你好 · Néih hóu','nêi rôu','Olá']],
+   hotel:{reg:'Kowloon Station / West Kowloon',pq:'O Airport Express chega direto ao bairro, e o trem-bala para a China sai a 10 min a pé.',op:['The Ritz-Carlton (ICC)','W Hong Kong','Rosewood ou Hyatt Regency (Tsim Sha Tsui)'],ev:'Evitar a Ilha de Hong Kong: obriga a cruzar o porto com as malas.'} },
+
+ { id:'guangzhou', nome:'Guangzhou', local:'广州 · Canton Fair', cor:'#3EE6A8', datas:'Qua 14 a ter 20/04', noites:'6 noites · Fase 1: qui 15 a seg 19', ini:'2027-04-14', fim:'2027-04-20',
+   chips:[['Clima','20 a 27°C, chuvas'],['Feira','9h30 às 18h'],['Metrô','Linhas 8 e 11'],['Crachá','Gratuito']],
+   intro:'A Fase 1 é a de eletrônicos, iluminação, novas energias, máquinas e veículos. De dia, cada dupla percorre os setores que lhe cabem. À noite, os passeios clássicos da cidade.',
+   must:[['Canton Tower','600 m, o cartão-postal da cidade','FUTURO'],['Cruzeiro no Rio das Pérolas','O skyline do CBD iluminado','TOP'],['Ilha de Shamian','Arquitetura colonial e cafés','TOP'],['Beijing Road','Rua de pedestres e comércio','TOP'],['Ópera de Guangzhou','Projeto de Zaha Hadid','FUTURO'],['Zumiao, em Foshan','Berço do kung fu e da dança do leão','TOP'],['Gastronomia de Shunde','Cidade reconhecida pela UNESCO','TOP'],['Shenzhen (opcional)','Huaqiangbei, a 30 min de trem','NEGÓCIOS']],
+   dias:[
+    {iso:'2027-04-14',w:'QUA',d:'14',t:'Chegada e briefing',s:'Van em Guangzhou South',it:[['17h',[],'Van em Guangzhou South, check-in e retirada dos crachás'],['20h',['NEGÓCIOS'],'Jantar de boas-vindas: metas por dupla e expositores prioritários']]},
+    {iso:'2027-04-15',w:'QUI',d:'15',t:'Feira, dia 1 · abertura',s:'Reconhecimento do pavilhão',it:[['Dia',['NEGÓCIOS'],'Primeira hora com o grupo junto para o reconhecimento do pavilhão; depois, cada dupla no seu setor'],['Noite',['TOP','FUTURO'],'Canton Tower, a 15 min de Pazhou']]},
+    {iso:'2027-04-16',w:'SEX',d:'16',t:'Feira, dia 2',s:'Cotações por escrito',it:[['Dia',['NEGÓCIOS'],'Cotações por escrito ainda no estande'],['Noite',['TOP'],'Cruzeiro com jantar no Rio das Pérolas, passando pela Ópera e pelo CBD']]},
+    {iso:'2027-04-17',w:'SÁB',d:'17',t:'Feira, dia 3 · Shenzhen opcional',s:'Retorno aos melhores fornecedores',it:[['Dia',['NEGÓCIOS'],'Retorno aos melhores fornecedores. Uma dupla pode ir a Shenzhen: Huaqiangbei e Ping An Finance Centre'],['Noite',[],'Foshan: Lingnan Tiandi, Templo Zumiao e jantar cantonês']]},
+    {iso:'2027-04-18',w:'DOM',d:'18',t:'Feira, dia 4',s:'Negociação final',it:[['Dia',['NEGÓCIOS'],'Negociação final, pedido de amostras, fotos e vídeos dos produtos'],['Noite',['TOP'],'Ilha de Shamian e Beijing Road']]},
+    {iso:'2027-04-19',w:'SEG',d:'19',t:'Feira, dia 5 · visitas a fábricas',s:'Os expositores desmontam cedo',it:[['Manhã',[],'Últimas pendências na feira'],['Tarde',['NEGÓCIOS'],'1 ou 2 fábricas pré-selecionadas em Foshan e Shunde. À noite, jantar de encerramento em Shunde']]},
+    {iso:'2027-04-20',w:'TER',d:'20',t:'Partida para Xangai',s:'Avião até Pudong (2h15) de manhã',it:[['Manhã',[],'Voo para Xangai. De trem-bala levaria de 7 a 8 h']]}
+   ],
+   curi:[
+    ['Desde 1957','A Canton Fair acontece duas vezes por ano, na primavera e no outono, desde 1957. É a maior feira de comércio da China.'],
+    ['A cidade dos carneiros','O apelido de Guangzhou é Yangcheng. Diz a lenda que cinco imortais chegaram montados em carneiros e trouxeram arroz para acabar com a fome.'],
+    ['O porto do mundo','"Canton" era como os europeus chamavam a cidade. Por quase um século, foi o único porto da China aberto ao comércio com o Ocidente.'],
+    ['Pedras no rio','A Ópera de Zaha Hadid foi pensada como duas pedras lisas trazidas pelo Rio das Pérolas.']
+   ],
+   dicas:['Todo fornecedor vai pedir o WeChat: deixe o QR code do seu perfil fácil de abrir.','Fotografe o cartão de visita junto com o produto e o número do estande: no terceiro dia tudo se mistura.','Peça a cotação por escrito no estande, com MOQ e prazo. Promessa falada não conta.','Desconfie de "fábrica" que não aceita visita: muitas são tradings.','Tênis confortável e carregador portátil: os pavilhões são enormes e o celular é a ferramenta do dia.'],
+   frases:[['你好 · Nǐ hǎo','ni rráo','Olá'],['谢谢 · Xièxie','xiê-xiê','Obrigado'],['多少钱? · Duōshao qián?','duô-xao tchién','Quanto custa?'],['太贵了 · Tài guì le','tái guêi lã','Está caro demais'],['便宜一点 · Piányi yìdiǎn','piên-i i-diên','Faz mais barato?'],['我要这个 · Wǒ yào zhège','uô iáo djê-gã','Quero este']],
+   en:[['What\'s your MOQ?','Qual o pedido mínimo?'],['Can you quote FOB price?','Me passa o preço FOB?'],['What\'s the lead time?','Qual o prazo de produção?'],['Do you have certification for Brazil?','Tem certificação para o Brasil (INMETRO, ANATEL)?'],['Can you do OEM with our brand?','Faz OEM com a nossa marca?'],['Can you send samples?','Pode mandar amostras?'],['Let\'s connect on WeChat.','Vamos trocar WeChat.']],
+   hotel:{reg:'Pazhou, ao lado da feira',pq:'Ir a pé ou a uma estação do pavilhão. Plano B: Zhujiang New Town (CBD, Canton Tower).',op:['Shangri-La Guangzhou (ligado à feira)','Langham Place · The Westin Pazhou','Four Seasons · Rosewood · Grand Hyatt (CBD)'],ev:'Evitar Foshan e o centro antigo: de 40 a 75 min por trecho.'} },
+
+ { id:'xangai', nome:'Xangai', local:'上海 · Shànghǎi', cor:'#9D8CFF', datas:'Ter 20 a sex 23/04', noites:'3 noites', ini:'2027-04-20', fim:'2027-04-23',
+   chips:[['Clima','12 a 21°C'],['Metrô','Linha 2'],['Maglev','300 km/h'],['Fuso','+11 h de Brasília']],
+   intro:'A China do futuro em três dias: os arranha-céus de Pudong, o maior mercado atacadista do mundo e a Xangai histórica.',
+   must:[['The Bund','Orla à noite, com vista de Pudong','TOP'],['Shanghai Tower','632 m, mirante no 118º andar','TOP'],['Jardim Yu','Jardim clássico e a cidade antiga','TOP'],['Nanjing Road','A rua de compras mais famosa da China','TOP'],['Cruzeiro no Huangpu','Os dois skylines iluminados','TOP'],['Xintiandi e Tianzifang','Vielas, lojas e restaurantes','TOP'],['Maglev','O trem que levita, em 8 min','FUTURO'],['teamLab Borderless','Arte digital imersiva','FUTURO']],
+   dias:[
+    {iso:'2027-04-20',w:'TER',d:'20',t:'Pudong futurista e Bund',s:'Chegada em Pudong',it:[['Manhã',['FUTURO'],'Pouso em PVG e Maglev até Longyang Road'],['14h',['TOP'],'Shanghai Tower, com SWFC e Jin Mao ao lado'],['16h',[],'Passarela circular de Lujiazui, Oriental Pearl e IFC Mall'],['18h30',['TOP'],'The Bund no anoitecer'],['20h',['TOP'],'Cruzeiro no Huangpu e rooftop no Bund']]},
+    {iso:'2027-04-21',w:'QUA',d:'21',t:'Bate-volta de negócios a Yiwu',s:'O maior mercado atacadista do mundo',it:[['06h45',[],'Trem-bala de Hongqiao (de 1h40 a 2h30)'],['09h30',['NEGÓCIOS'],'Yiwu International Trade City, com agente local: decoração de festas e formaturas, brindes, bijuteria, papelaria, utilidades'],['17h',[],'Volta e jantar em Xangai'],['Alt.',[],'Para quem não for: Hangzhou (Lago Oeste) ou Zhujiajiao, vila de canais a 1 h']]},
+    {iso:'2027-04-22',w:'QUI',d:'22',t:'Xangai histórica e varejo',s:'Do jardim antigo às lojas-conceito',it:[['08h30',['TOP'],'Jardim Yu, antes das excursões'],['10h30',['TOP'],'Nanjing East Road e as lojas-conceito de tecnologia'],['12h30',['TOP'],'Almoço em Xintiandi e caminhada em Tianzifang'],['15h',['FUTURO'],'teamLab Borderless Shanghai'],['17h30',['NEGÓCIOS'],'Shoppings da Nanjing West Road: Plaza 66 e Jing\'an Kerry'],['20h',[],'Shanghai Grand Opera House (inaugurada em 2026), com terraço 24 h']]},
+    {iso:'2027-04-23',w:'SEX',d:'23',t:'Voo para Tóquio',s:'Hongqiao (SHA) → Haneda (HND)',it:[['07h',[],'Saída do hotel para um voo de manhã (cerca de 3 h)'],['Dica',[],'Comprar com 2 malas incluídas: low cost cobra caro pelo excesso, e o grupo leva amostras da feira']]}
+   ],
+   curi:[
+    ['O trem que flutua','O Maglev já chegou a 431 km/h. Hoje roda a 300 km/h e mesmo assim cobre os 30 km até a cidade em cerca de 8 minutos.'],
+    ['Torre torcida','A Shanghai Tower gira cerca de 120° do chão ao topo. A torção ajuda o prédio a enfrentar o vento dos tufões.'],
+    ['Ponte em zigue-zague','No Jardim Yu, a ponte dos nove zigue-zagues tem um motivo: pela tradição, maus espíritos só andam em linha reta.'],
+    ['Um ano para ver tudo','Yiwu tem dezenas de milhares de lojas. A piada local diz que, parando 3 minutos em cada, você levaria mais de um ano.']
+   ],
+   dicas:['Na Nanjing Road, desconfie de simpáticos que convidam para uma "cerimônia do chá": é um golpe conhecido com turistas.','O bilhete do Maglev tem desconto mostrando o cartão de embarque do dia.','Em Yiwu, vá com a lista de categorias pronta e o agente local: sem foco, o mercado engole o dia.','A linha 2 do metrô liga Pudong, o centro e Hongqiao: é a espinha da estadia.'],
+   frases:[['你好 · Nǐ hǎo','ni rráo','Olá'],['不要, 谢谢 · Bú yào, xièxie','bu iáo, xiê-xiê','Não, obrigado (para vendedores)'],['厕所在哪儿? · Cèsuǒ zài nǎr?','tsê-suô dzai nar','Onde fica o banheiro?'],['买单 · Mǎidān','mai-dan','A conta, por favor']],
+   hotel:{reg:'The Bund ou Lujiazui (linha 2)',pq:'A linha 2 liga o aeroporto de Pudong, o centro e Hongqiao (trem para Yiwu e voo para Tóquio).',op:['Bund: Peninsula · Waldorf Astoria · Fairmont Peace · Hyatt on the Bund','Pudong: J Hotel (Shanghai Tower) · Park Hyatt · Grand Hyatt'],ev:'Evitar hotéis perto do aeroporto: ficam a 1 h do centro.'} },
+
+ { id:'toquio', nome:'Tóquio', local:'東京 · Tōkyō', cor:'#FF8A6B', datas:'Sex 23 a qui 29/04', noites:'6 noites', ini:'2027-04-23', fim:'2027-04-29',
+   chips:[['Clima','11 a 20°C'],['Visto','Sem visto até 2029'],['Fuso','+12 h de Brasília'],['Transporte','Suica no celular']],
+   intro:'O trecho mais longo de turismo, com um tema por dia. Inclui os pontos mais procurados por brasileiros e um circuito de varejo japonês para quem trabalha com franquias.',
+   must:[['Cruzamento de Shibuya','E o mirante Shibuya Sky no pôr do sol','TOP'],['Senso-ji, Asakusa','O templo mais antigo da cidade','TOP'],['Monte Fuji','Pagode Chureito e lago Kawaguchi','TOP'],['teamLab Planets','Arte imersiva com água e luz','FUTURO'],['Tokyo Skytree','634 m, a torre mais alta do Japão','FUTURO'],['Harajuku e Meiji Jingu','Santuário e moda de rua','TOP'],['Shinjuku à noite','Neon, Golden Gai e Omoide Yokocho','TOP'],['Akihabara','Eletrônicos e cultura pop','NEGÓCIOS'],['Tsukiji','Mercado externo, café da manhã','TOP'],['Ginza','Lojas-conceito e calçadão no fim de semana','NEGÓCIOS'],['Palácio Imperial','Jardins do Leste','TOP'],['Azabudai Hills','Bairro novo, com o teamLab Borderless','FUTURO']],
+   dias:[
+    {iso:'2027-04-23',w:'SEX',d:'23',t:'Chegada e Shinjuku',s:'Haneda → Shinjuku',it:[['Tarde',[],'Mirante gratuito no 45º andar do Tokyo Metropolitan Government Building'],['Noite',['TOP'],'Omoide Yokocho, Golden Gai, telão 3D da Cross Shinjuku e Kabukicho']]},
+    {iso:'2027-04-24',w:'SÁB',d:'24',t:'Harajuku, Omotesando e Shibuya',s:'Moda, arquitetura e o cruzamento',it:[['08h',['TOP'],'Meiji Jingu e a rua Takeshita'],['11h',['FUTURO'],'Omotesando, vitrine de arquitetura japonesa'],['14h',[],'Miyashita Park e Shibuya Parco'],['18h',['TOP'],'Shibuya Sky no pôr do sol e o cruzamento iluminado']]},
+    {iso:'2027-04-25',w:'DOM',d:'25',t:'Odaiba futurista e Ginza',s:'Do trem sem condutor ao calçadão',it:[['09h',['FUTURO'],'Trem sem condutor Yurikamome pela Rainbow Bridge'],['10h',['TOP'],'teamLab Planets, em Toyosu'],['13h',['NEGÓCIOS'],'Tokyo Big Sight, referência para eventos e venues'],['15h',['TOP'],'Ginza com o calçadão de domingo: Ginza Six, Sony Park, Muji e Uniqlo'],['Noite',[],'Jantar em Ginza e Tokyo Tower iluminada']]},
+    {iso:'2027-04-26',w:'SEG',d:'26',t:'Monte Fuji, bate-volta',s:'Dia útil, com menos lotação',it:[['07h30',[],'Van com motorista até Kawaguchiko (cerca de 2 h)'],['Dia',['TOP'],'Pagode Chureito, lago Kawaguchi e onsen'],['Alt.',[],'Hakone, com o trem Romancecar saindo de Shinjuku']]},
+    {iso:'2027-04-27',w:'TER',d:'27',t:'Asakusa, Skytree e Akihabara',s:'Do Japão antigo ao pop',it:[['07h30',['TOP'],'Senso-ji e a rua Nakamise'],['11h',['TOP','FUTURO'],'Tokyo Skytree'],['14h',['NEGÓCIOS'],'Akihabara: Yodobashi Akiba e lojas de gashapon, formato em alta nos quiosques do Brasil'],['Noite',[],'Roppongi Hills e o mirante Tokyo City View']]},
+    {iso:'2027-04-28',w:'QUA',d:'28',t:'Varejo japonês e Tóquio nova',s:'O dia de estudar lojas',it:[['08h',['TOP'],'Café no mercado de Tsukiji e Jardins do Leste do Palácio Imperial'],['11h',['NEGÓCIOS'],'Konbini, Daiso, Loft e o depachika da Isetan'],['15h',['FUTURO'],'Azabudai Hills, teamLab Borderless e Takanawa Gateway City'],['Noite',[],'Jantar de despedida: izakaya ou omakase reservado para 7']]},
+    {iso:'2027-04-29',w:'QUI',d:'29',t:'Feriado no Japão · voo para Dubai',s:'Início da Golden Week',it:[['Manhã',[],'Manhã livre e late check-out'],['17h30',[],'Narita Express saindo de Shinjuku (80 min)'],['22h30',[],'Voo EK 319 para Dubai'],['Dica',[],'O serviço takkyubin manda as malas para Narita na véspera']]}
+   ],
+   curi:[
+    ['O nome escondido na altura','A Skytree tem 634 m. Em japonês, 6-3-4 pode ser lido como "Mu-sa-shi", o nome antigo da região de Tóquio.'],
+    ['Maré de gente','No cruzamento de Shibuya, até 3 mil pessoas atravessam em um único sinal verde, vindas de todas as direções.'],
+    ['Templo de 1.400 anos','Pela tradição, o Senso-ji nasceu em 628, quando dois pescadores acharam uma estátua da deusa Kannon no rio.'],
+    ['Pontualidade em segundos','Os trens japoneses medem atraso em segundos. Uma linha já pediu desculpas por sair 20 segundos adiantada.']
+   ],
+   dicas:['Não se dá gorjeta no Japão. Deixar troco pode até causar constrangimento.','Lixeiras são raras na rua: leve um saquinho e descarte no hotel ou num konbini.','Na escada rolante de Tóquio, fique parado do lado esquerdo e deixe a direita livre.','Os caixas eletrônicos do 7-Eleven aceitam cartão estrangeiro para sacar ienes.','Pedir quartos com 25 m² ou mais: o padrão japonês não comporta duas malas abertas.','Leve o passaporte nas compras grandes: turista tem isenção de imposto (confira as regras na época).'],
+   frases:[['ありがとうございます · Arigatō gozaimasu','arigatô gozaimás','Muito obrigado'],['すみません · Sumimasen','sumimassên','Com licença / desculpe / chamar o garçom'],['これください · Kore kudasai','korê kudassái','Este, por favor'],['いくらですか? · Ikura desu ka?','ikurá dês ká','Quanto custa?'],['乾杯 · Kanpai!','kampái','Saúde! (brinde)'],['おいしい · Oishii!','oishíi','Delicioso!']],
+   hotel:{reg:'Shinjuku',pq:'Narita Express direto para o voo de volta, saída para o Fuji e a melhor vida noturna. Plano B: Ginza e Marunouchi.',op:['Keio Plaza · Hilton Tokyo · Hyatt Regency','Ginza: Shangri-La · Four Seasons Otemachi · Mitsui Garden Premier'],ev:'Pedir quartos com 25 m² ou mais.'} },
+
+ { id:'dubai', nome:'Dubai', local:'دبي · Dubai e Abu Dhabi', cor:'#FFC857', datas:'Sex 30/04 a dom 02/05', noites:'3 noites (a partir de 29/04)', ini:'2027-04-30', fim:'2027-05-02',
+   chips:[['Clima','24 a 36°C'],['Visto','Sem visto (90 dias)'],['Fuso','+7 h de Brasília'],['Fim de semana','Sábado e domingo']],
+   intro:'Dois dias intensos com os clássicos de todo brasileiro em Dubai: Burj Khalifa, fontes, safári no deserto, Miracle Garden e Abu Dhabi. Passeios ao ar livre só de manhã cedo e no fim da tarde.',
+   must:[['Burj Khalifa','At the Top no pôr do sol','TOP'],['Dubai Mall e fontes','Show a cada 30 min, à noite','TOP'],['Safári no deserto','Dunas de 4x4 e jantar no acampamento','TOP'],['Mesquita Sheikh Zayed','Abu Dhabi, a mais visitada do país','TOP'],['Miracle Garden','Temporada até 31/05/2027','TOP'],['Global Village','Pavilhões de vários países, abre às 16h','TOP'],['Palm e Atlantis','Mirante The View at The Palm','TOP'],['Museum of the Future','Se tiver reaberto em 2027','FUTURO']],
+   dias:[
+    {iso:'2027-04-30',w:'SEX',d:'30',t:'Ícones de Dubai',s:'Pouso às 04h50 · descanso até as 11h',it:[['11h30',['FUTURO'],'Museum of the Future, se reaberto (ou Dubai Frame)'],['13h',['NEGÓCIOS'],'Dubai Mall: almoço e as grandes operações de franquias do Golfo'],['15h30',['TOP'],'Miracle Garden (aberto das 9h às 21h)'],['18h',['TOP'],'At the Top, Burj Khalifa, no pôr do sol (comprar com semanas de antecedência)'],['20h',['TOP'],'Dubai Fountains e jantar em Downtown'],['21h30',[],'Opcional: Global Village (até meia-noite)']]},
+    {iso:'2027-05-01',w:'SÁB',d:'01',m:'MAI',t:'Abu Dhabi e safári no deserto',s:'Dia cheio: van com motorista o dia todo',it:[['07h30',[],'Saída para Abu Dhabi (1h30)'],['09h',['TOP'],'Mesquita Sheikh Zayed (braços e pernas cobertos)'],['10h30',['FUTURO'],'Louvre Abu Dhabi, sob a cúpula de Jean Nouvel'],['12h30',[],'Volta a Dubai, com parada para fotos na Palm e no Atlantis'],['15h30',['TOP'],'Safári no deserto: dunas, pôr do sol e jantar (volta por volta das 21h)'],['Alt.',['NEGÓCIOS'],'Trocar o Louvre pela Expo City Dubai, referência para centros de convenções']]},
+    {iso:'2027-05-02',w:'DOM',d:'02',m:'MAI',t:'Volta ao Brasil',s:'Fechar as malas no sábado, antes do safári',it:[['06h',[],'Saída do hotel (o DXB fica a 20 min)'],['09h05',[],'Voo EK 261'],['17h40',[],'Chegada em Guarulhos']]}
+   ],
+   curi:[
+    ['Dois pores do sol','O Burj Khalifa tem 828 m. Dá para ver o sol se pôr no chão, subir de elevador e vê-lo se pôr de novo lá de cima.'],
+    ['Chuva de luz','A cúpula do Louvre Abu Dhabi tem 7.850 "estrelas" de metal entrelaçadas. A luz que passa por elas imita sol entre folhas de palmeira.'],
+    ['Um tapete gigante','A Mesquita Sheikh Zayed tem um dos maiores tapetes feitos à mão do mundo, com mais de 5 mil m².'],
+    ['Fim de semana novo','Desde 2022, o fim de semana oficial nos Emirados é sábado e domingo, como no Brasil.']
+   ],
+   dicas:['O Burj Al Arab fica fechado até outubro de 2027: só foto por fora.','O Museum of the Future reabre no 1º trimestre de 2027, sem data definida. Conferir na época.','Na mesquita e em lugares públicos, ombros e joelhos cobertos.','Não fotografe pessoas locais sem pedir, principalmente mulheres: lá isso é levado a sério.','Álcool só em hotéis e bares licenciados. Beber na rua é proibido.','No metrô há um vagão só para mulheres e crianças: fique atento à sinalização no chão.'],
+   frases:[['مرحبا · Marhaba','már-raba','Olá'],['شكرا · Shukran','xúkran','Obrigado'],['يلا · Yalla','iála','Vamos!'],['السلام عليكم · As-salāmu ʿalaykum','assalámu aláikum','A paz esteja com você (cumprimento)']],
+   hotel:{reg:'Downtown (Burj Khalifa)',pq:'Fica a 20 min do aeroporto, essencial para a chegada às 04h50 e a saída às 9h05. Burj, Dubai Mall e fontes a pé.',op:['Address Downtown · Address Sky View','Palace Downtown · Vida Downtown','Executivo: Rove Downtown'],ev:'Evitar Marina e Palm: ficam a 45 min do aeroporto.'} }
+];
+
+const FLIGHTS = [
+ {fl:'EK 262',de:'GRU',dn:'Guarulhos T3',pa:'DXB',pn:'Dubai T3',sai:'Seg 12/04 · 01h35',che:'12/04 · 23h00',nota:'Estar em Guarulhos no domingo 11/04, às 21h35'},
+ {fl:'EK 382',de:'DXB',dn:'Dubai T3',pa:'HKG',pn:'Hong Kong T1',sai:'Ter 13/04 · 03h15',che:'13/04 · 14h40',nota:'Conexão de 4h15 em Dubai'},
+ {fl:'EK 319',de:'NRT',dn:'Narita T2',pa:'DXB',pn:'Dubai T3',sai:'Qui 29/04 · 22h30',che:'Sex 30/04 · 04h50',nota:'Sair de Shinjuku às 17h30 (feriado no Japão)'},
+ {fl:'EK 261',de:'DXB',dn:'Dubai T3',pa:'GRU',pn:'Guarulhos T3',sai:'Dom 02/05 · 09h05',che:'02/05 · 17h40',nota:'Sair do hotel às 6h'}
+];
+const ALERTS = [
+ ['crit','CRÍTICO','Visto da China','A isenção para brasileiros vale até 31/12/2026, e a prorrogação para 2027 ainda não foi anunciada. Plano B: trânsito sem visto de 240 h (o grupo entra vindo de Hong Kong e sai para o Japão) ou visto de negócios com convite da feira. Decidir até 15/01/2027.'],
+ ['crit','CRÍTICO','Hotel em Guangzhou','Os preços chegam a triplicar na semana da feira. Reservar já, com cancelamento gratuito. Pazhou economiza de 1 a 2 h por dia em relação a Foshan.'],
+ ['att','ATENÇÃO','Datas da Canton Fair','15 a 19/04 segue o padrão das edições recentes, mas o calendário oficial da 141ª sessão ainda não saiu. Conferir antes de pagar algo não reembolsável.'],
+ ['att','ATENÇÃO','Datas do bilhete','Tóquio vai até 29/04 (6 noites). O hotel de Dubai precisa ser reservado a partir da noite de 29/04, para o quarto estar pronto na chegada às 6h do dia 30.'],
+ ['inf','DUBAI','Fechados em 2027','O Museum of the Future reabre no 1º trimestre de 2027, sem data definida. O Burj Al Arab fica fechado até outubro de 2027: só foto por fora.'],
+ ['inf','JAPÃO','Golden Week','29/04 é feriado e marca o início da Golden Week. Narita e os trens para o aeroporto lotam: saída do hotel às 17h30, com folga.']
+];
+const LEGS = [
+ ['plane','São Paulo → Dubai → Hong Kong','EK 262 + EK 382','ok'],
+ ['train','Hong Kong → Guangzhou South','Trem-bala, menos de 1 h','buy'],
+ ['plane','Guangzhou → Xangai (Pudong)','Voo de manhã, 2h15','buy'],
+ ['train','Xangai ↔ Yiwu','Trem-bala, bate-volta','buy'],
+ ['plane','Xangai (Hongqiao) → Tóquio (Haneda)','Cerca de 3 h, com 2 malas','buy'],
+ ['plane','Tóquio (Narita) → Dubai','EK 319','ok'],
+ ['plane','Dubai → São Paulo','EK 261','ok']
+];
+const KIT = [
+ ['wifi','Internet na China','Google, WhatsApp e Instagram são bloqueados. Usar eSIM internacional com roaming ou VPN, testada ainda no Brasil.'],
+ ['card','Pagamentos','Na China, Alipay e WeChat Pay com cartão estrangeiro, configurados antes da viagem. No Japão, Suica e algum dinheiro em espécie. Em Dubai, cartão.'],
+ ['phone','Apps','China: Amap, DiDi, Trip.com, WeChat e tradutor offline. Japão: Google Maps e GO. Dubai: Careem ou Uber.'],
+ ['van','Transporte do grupo','Van fixa em Guangzhou, Yiwu, Fuji e Dubai. Em Tóquio, 2 táxis por trajeto (cada um leva 4 pessoas).'],
+ ['plug','Tomadas','China: 220 V, tipos A e I. Hong Kong e Dubai: tipo G. Japão: 100 V, tipo A. Levar adaptador universal.'],
+ ['bag','Para a feira','200 cartões de visita em inglês e chinês, apresentação do grupo no celular, carregador portátil e tênis confortável.']
+];
+const CK = {
+ pre1:{t:'1 · Documentos e decisões', due:'2027-01-15', items:[
+  ['p1','Passaporte com validade de pelo menos 6 meses depois da volta (02/05/2027)',''],
+  ['p2','Decidir o plano do visto da China (isenção 2027, trânsito de 240 h ou visto de negócios)','até 15/01/2027'],
+  ['p3','Seguro-viagem com cobertura de bagagem e eletrônicos',''],
+  ['p4','Conferir o calendário oficial da 141ª Canton Fair antes de pagar algo não reembolsável',''],
+  ['p5','Cópia digital do passaporte, do seguro e das reservas no celular e na nuvem','']]},
+ pre2:{t:'2 · Dinheiro e celular', due:'2027-02-28', items:[
+  ['p6','Cartão internacional liberado para China, Hong Kong, Japão e Emirados',''],
+  ['p7','Alipay e WeChat Pay configurados com cartão estrangeiro',''],
+  ['p8','eSIM internacional com roaming ou VPN, testada ainda no Brasil',''],
+  ['p9','Apps instalados: WeChat, Amap, DiDi, Trip.com, tradutor offline, Google Maps, GO e Careem ou Uber',''],
+  ['p10','Contatos dos consulados do Brasil das cidades salvos no celular','']]},
+ pre3:{t:'3 · Negócios e Canton Fair', due:'2027-03-15', items:[
+  ['p11','Definir o coordenador e as 3 duplas da feira',''],
+  ['p12','Lista do que cada empresa do grupo quer encontrar (foto, eventos, varejo, tecnologia)',''],
+  ['p13','Treinar as frases de negociação em inglês (aba Guangzhou)',''],
+  ['p14','Abrir o Diário de bordo e colocar seu nome na Visão geral','']]},
+ pre4:{t:'4 · Duas semanas antes', due:'2027-03-28', items:[
+  ['p15','Checklists das 5 cidades com reservas e ingressos confirmados',''],
+  ['p16','Conferir a previsão do tempo de cada cidade aqui no roteiro',''],
+  ['p17','Comprar um pouco de dinheiro em espécie (ienes para o Japão)',''],
+  ['p18','Preencher hotel e endereço local de cada cidade (botão "Mostrar ao motorista")','']]},
+ pre5:{t:'5 · Mala', due:'2027-04-09', items:[
+  ['p19','Adaptador universal de tomadas',''],
+  ['p20','Franquia: 2 malas de 23 kg + 1 de mão de 10 kg por pessoa',''],
+  ['p21','Roupas leves para Hong Kong, Guangzhou e Dubai, e um casaco para Xangai e Tóquio',''],
+  ['p22','Remédios de uso pessoal na mala de mão',''],
+  ['p23','Espaço na mala (ou uma mala dobrável) para as amostras da feira','']]},
+ pre6:{t:'6 · Véspera e embarque', due:'2027-04-11', items:[
+  ['p24','Check-in online da Emirates (abre 48 h antes do voo)','10/04'],
+  ['p25','Mapas offline das 5 cidades baixados',''],
+  ['p26','Celular e carregador portátil carregados, eSIM ativado',''],
+  ['p27','Estar em Guarulhos (T3) às 21h35','dom 11/04']]},
+ 'hong-kong':{t:'Checklist de Hong Kong', items:[
+  ['hk1','Hotel em Kowloon Station / West Kowloon, com cancelamento gratuito','13/04 · 1 noite'],
+  ['hk2','Trem-bala West Kowloon → Guangzhou South comprado','14/04 · 14h30'],
+  ['hk3','Cartão Octopus (ou a versão no celular)',''],
+  ['hk4','Peak Tram cedo, antes das filas','14/04 · 07h30'],
+  ['hk5','Chegar à estação de West Kowloon 45 min antes do trem, com as malas','14/04']]},
+ guangzhou:{t:'Checklist de Guangzhou', items:[
+  ['gz1','Hotel em Pazhou com cancelamento gratuito: reservar primeiro, os preços triplicam','14 a 20/04 · 6 noites'],
+  ['gz2','Pré-cadastro dos 7 na Canton Fair quando a sessão abrir',''],
+  ['gz3','Retirar os crachás no check-in','14/04'],
+  ['gz4','Van fixa em Guangzhou','14 a 20/04'],
+  ['gz5','Setores por dupla e lista de expositores-alvo',''],
+  ['gz6','Planilha única de fornecedores (o coordenador consolida toda noite)',''],
+  ['gz7','200 cartões de visita em inglês e chinês',''],
+  ['gz8','Apresentação do grupo no celular',''],
+  ['gz9','Carregador portátil e tênis confortável',''],
+  ['gz10','Cruzeiro com jantar no Rio das Pérolas','16/04'],
+  ['gz11','Pré-selecionar 1 ou 2 fábricas em Foshan e Shunde','19/04'],
+  ['gz12','Voo Guangzhou → Xangai (Pudong) de manhã','20/04']]},
+ xangai:{t:'Checklist de Xangai', items:[
+  ['sh1','Hotel no Bund ou em Lujiazui (linha 2)','20 a 23/04 · 3 noites'],
+  ['sh2','Ingresso da Shanghai Tower','20/04 · 14h'],
+  ['sh3','Trem-bala Hongqiao ↔ Yiwu','21/04 · 06h45'],
+  ['sh4','Agente de compras local em Yiwu','21/04'],
+  ['sh5','teamLab Borderless Shanghai','22/04 · 15h'],
+  ['sh6','Voo Hongqiao (SHA) → Haneda (HND) com 2 malas incluídas','23/04']]},
+ toquio:{t:'Checklist de Tóquio', items:[
+  ['tk1','Hotel em Shinjuku, quartos com 25 m² ou mais','23 a 29/04 · 6 noites'],
+  ['tk2','Suica no celular e algum dinheiro em espécie',''],
+  ['tk3','Shibuya Sky no pôr do sol','24/04 · 18h'],
+  ['tk4','teamLab Planets','25/04 · 10h'],
+  ['tk5','Van com motorista para o Monte Fuji','26/04 · 07h30'],
+  ['tk6','Jantar de despedida para 7 (izakaya ou omakase)','28/04'],
+  ['tk7','Takkyubin: mandar as malas para Narita na véspera','28/04'],
+  ['tk8','Sair de Shinjuku às 17h30 no Narita Express','29/04']]},
+ dubai:{t:'Checklist de Dubai', items:[
+  ['dx1','Hotel em Downtown a partir da noite de 29/04','29/04 a 02/05'],
+  ['dx2','Burj Khalifa, At the Top no pôr do sol (com semanas de antecedência)','30/04 · 18h'],
+  ['dx3','Miracle Garden','30/04 · 15h30'],
+  ['dx4','Van com motorista para Abu Dhabi','01/05 · 07h30'],
+  ['dx5','Safári no deserto','01/05 · 15h30'],
+  ['dx6','Roupa que cubra braços e pernas para a mesquita','01/05'],
+  ['dx7','Careem ou Uber instalado',''],
+  ['dx8','Conferir se o Museum of the Future já reabriu',''],
+  ['dx9','Fechar as malas antes do safári','sáb 01/05'],
+  ['dx10','Sair do hotel às 6h para o voo EK 261','02/05']]}
+};
+
+
+/* ============ UTIL ============ */
+const $ = s=>document.querySelector(s);
+const store = {
+  get(k,d){ try{ const v=localStorage.getItem('vision27:'+k); return v?JSON.parse(v):d; }catch(e){ return d; } },
+  set(k,v){ try{ localStorage.setItem('vision27:'+k,JSON.stringify(v)); }catch(e){} }
+};
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rng(seed){ return ()=>{ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('on'),2200); }
+const todayISO = (()=>{ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); })();
+let stamps = store.get('stamps',{});
+
+/* ============ HERO: céu + contagem ============ */
+(function sky(){
+  const r=rng(7); let s='<defs><radialGradient id="hg" cx=".78" cy=".1" r=".9"><stop offset="0" stop-color="#3B2350" stop-opacity=".85"/><stop offset=".45" stop-color="#1A1430" stop-opacity=".6"/><stop offset="1" stop-color="#0B0A12" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(#hg)"/>';
+  for(let i=0;i<140;i++){ const x=(r()*100).toFixed(2), y=(r()*100).toFixed(2), rr=(r()*1.1+.3).toFixed(2); s+=`<circle cx="${x}%" cy="${y}%" r="${rr}" fill="#fff" opacity="${(r()*.55+.15).toFixed(2)}"/>`; }
+  $('#heroSky').innerHTML=s;
+})();
+const DEP = new Date('2027-04-11T21:35:00-03:00'), BACK = new Date('2027-05-02T17:40:00-03:00');
+const ZONES = [['Brasília','America/Sao_Paulo'],['China · HK','Asia/Shanghai'],['Japão','Asia/Tokyo'],['Dubai','Asia/Dubai']];
+function tick(){
+  const now=new Date();
+  let ms = DEP-now;
+  if(ms<=0 && now<BACK){ $('#cdLabel').textContent='Missão em andamento · volta em Guarulhos 02/05 · 17h40'; ms = BACK-now; }
+  if(now>=BACK){ $('#cdLabel').textContent='Missão cumprida'; ms=0; }
+  const d=Math.floor(ms/864e5), h=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, s=Math.floor(ms/1e3)%60;
+  $('#cdD').textContent=d; $('#cdH').textContent=String(h).padStart(2,'0'); $('#cdM').textContent=String(m).padStart(2,'0'); $('#cdS').textContent=String(s).padStart(2,'0');
+  $('#clocks').innerHTML = ZONES.map(([n,z])=>{ let t='--:--'; try{ t=new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:z}).format(now);}catch(e){} return `<div class="clk"><b>${t}</b>${n}</div>`; }).join('');
+}
+tick(); setInterval(tick,1000);
+
+/* ============ MAPA ============ */
+const NODES = [
+ {k:'gru', n:'São Paulo', sub:'11/04', x:150, y:440, tab:'visao'},
+ {k:'dxb1', n:'Dubai', sub:'conexão', x:560, y:250, tab:'dubai', small:true},
+ {k:'hkg', n:'Hong Kong', sub:'13–14/04', x:900, y:372, tab:'hong-kong'},
+ {k:'can', n:'Guangzhou', sub:'14–20/04', x:842, y:300, tab:'guangzhou'},
+ {k:'sha', n:'Xangai', sub:'20–23/04', x:968, y:218, tab:'xangai'},
+ {k:'tyo', n:'Tóquio', sub:'23–29/04', x:1104, y:178, tab:'toquio'},
+ {k:'dxb', n:'Dubai', sub:'30/04–02/05', x:560, y:250, tab:'dubai'},
+ {k:'gru2', n:'São Paulo', sub:'02/05', x:150, y:440, tab:'visao'}
+];
+// curva de cada trecho: [lift] desloca o ponto de controle
+const LIFT = [-150, -70, 40, -40, -40, -170, 120];
+const MODE = ['plane','plane','train','plane','plane','plane','plane'];
+function seg(i){ const a=NODES[i], b=NODES[i+1]; const mx=(a.x+b.x)/2, my=(a.y+b.y)/2; const dx=b.x-a.x, dy=b.y-a.y, L=Math.hypot(dx,dy)||1; const nx=-dy/L, ny=dx/L; const cx=mx+nx*LIFT[i]*(dx<0?-1:1), cy=my+ny*LIFT[i]*(dx<0?-1:1); return {a,b,cx,cy,d:`Q${cx.toFixed(1)} ${cy.toFixed(1)} ${b.x} ${b.y}`}; }
+function routeD(n){ let d=`M${NODES[0].x} ${NODES[0].y}`; for(let i=0;i<n;i++) d+=' '+seg(i).d; return d; }
+const CITY_COLOR = {visao:'#F4EFE6','hong-kong':'#FF5DA2',guangzhou:'#3EE6A8',xangai:'#9D8CFF',toquio:'#FF8A6B',dubai:'#FFC857'};
+const PLANE = '<path d="M-16 -2.6 L9 -2.6 L18 0 L9 2.6 L-16 2.6 Z" fill="#F4EFE6"/><path d="M-1 -2.6 L-8 -15 L-3 -15 L7 -2.6 Z M-1 2.6 L-8 15 L-3 15 L7 2.6 Z M-16 -2.6 L-20 -9 L-16.5 -9 L-12 -2.6 Z M-16 2.6 L-20 9 L-16.5 9 L-12 2.6 Z" fill="#FFB547"/>';
+function buildMap(){
+  const W=1200,H=560; let s=`<defs>
+   <radialGradient id="glow" r=".5"><stop offset="0" stop-color="#FFB547" stop-opacity=".55"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></radialGradient>
+   <linearGradient id="mapbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151226"/><stop offset="1" stop-color="#0C0B15"/></linearGradient>
+   <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+   <mask id="prog"><path id="progPath" d="${routeD(7)}" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"/></mask>
+  </defs><rect width="${W}" height="${H}" fill="url(#mapbg)"/>`;
+  // graticule
+  for(let x=60;x<W;x+=90) s+=`<path d="M${x} 0 Q${x+ (x-600)*.06} ${H/2} ${x} ${H}" stroke="#221E36" stroke-width="1" fill="none"/>`;
+  for(let y=50;y<H;y+=70) s+=`<path d="M0 ${y} Q${W/2} ${y-14} ${W} ${y}" stroke="#221E36" stroke-width="1" fill="none"/>`;
+  const r=rng(11); for(let i=0;i<70;i++) s+=`<circle cx="${(r()*W).toFixed(0)}" cy="${(r()*H).toFixed(0)}" r="${(r()*1+.3).toFixed(1)}" fill="#fff" opacity="${(r()*.35+.08).toFixed(2)}"/>`;
+  s+=`<text x="300" y="530" font-family="Space Mono, ui-monospace, monospace" font-size="12" letter-spacing="6" fill="#4A4466">ATLÂNTICO</text><text x="700" y="470" font-family="Space Mono, ui-monospace, monospace" font-size="12" letter-spacing="6" fill="#4A4466">OCEANO ÍNDICO</text><text x="1050" y="330" font-family="Space Mono, ui-monospace, monospace" font-size="12" letter-spacing="6" fill="#4A4466">PACÍFICO</text><text x="40" y="40" font-family="Space Mono, ui-monospace, monospace" font-size="11" letter-spacing="3" fill="#4A4466">GRU 23°S</text>`;
+  const full=routeD(7);
+  s+=`<path class="route-base" pathLength="1" d="${full}" fill="none" stroke="#3E3858" stroke-width="2.5" stroke-linecap="round"/>`;
+  s+=`<g mask="url(#prog)"><path d="${full}" fill="none" stroke="#FFB547" stroke-width="7" opacity=".35" filter="url(#soft)"/><path d="${full}" fill="none" stroke="#FFB547" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round"/><path d="${full}" fill="none" stroke="#FFD08A" stroke-width="1.2"/></g>`;
+  // ícone de modo por trecho
+  for(let i=0;i<7;i++){ const g=seg(i); const t=i===1?.32:.5, x=(1-t)*(1-t)*g.a.x+2*(1-t)*t*g.cx+t*t*g.b.x, y=(1-t)*(1-t)*g.a.y+2*(1-t)*t*g.cy+t*t*g.b.y; if(i===2) continue; s+=`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><g class="pop" style="animation-delay:${(1.2+i*.15).toFixed(2)}s"><circle r="13" fill="#0E0C17" stroke="#3E3858"/><g transform="translate(-8 -8) scale(.667)" color="#BDB5CB">${ICON[MODE[i]]}</g></g></g>`; }
+  // nós
+  const lab = {gru:[0,34,'middle'],dxb1:[0,-44,'middle'],hkg:[18,38,'start'],can:[-18,-26,'end'],sha:[-14,-28,'end'],tyo:[0,40,'middle']};
+  NODES.forEach((n,i)=>{
+    if(n.k==='dxb'||n.k==='gru2') return;
+    const c = CITY_COLOR[n.tab]; const [lx,ly,an]=lab[n.k]; const name = n.k==='dxb1'?'Dubai':n.n; const sub = n.k==='dxb1'?'conexão · 30/04–02/05':(n.k==='gru'?'ida 11/04 · volta 02/05':n.sub);
+    s+=`<g class="node pop" data-tab="${n.tab}" data-i="${i}" tabindex="0" role="button" aria-label="Abrir ${name}" style="animation-delay:${(.5+i*.22).toFixed(2)}s">
+      <circle cx="${n.x}" cy="${n.y}" r="34" fill="url(#glow)"/>
+      <circle class="ring" cx="${n.x}" cy="${n.y}" r="11" fill="#0E0C17" stroke="${c}" stroke-width="2.5"/>
+      <circle cx="${n.x}" cy="${n.y}" r="4.5" fill="${c}"/>
+      <text x="${n.x+lx}" y="${n.y+ly}" text-anchor="${an}" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="700" font-size="21" fill="#F4EFE6">${name}</text>
+      <text x="${n.x+lx}" y="${n.y+ly+19}" text-anchor="${an}" font-family="Space Mono, ui-monospace, monospace" font-size="12.5" fill="${c}">${sub}</text>
+      <g class="stampG" data-for="${n.tab}"></g>
+    </g>`;
+  });
+  s+=`<g id="plane" transform="translate(${NODES[0].x} ${NODES[0].y})"><g id="planeR">${PLANE}</g></g>`;
+  const svg=$('#map'); svg.innerHTML=s;
+  // comprimentos até cada nó
+  const tmp=document.createElementNS('http://www.w3.org/2000/svg','path'); svg.appendChild(tmp);
+  window.NODE_LEN = NODES.map((_,i)=>{ if(i===0) return 0; tmp.setAttribute('d',routeD(i)); return tmp.getTotalLength(); });
+  tmp.remove();
+  window.ROUTE = document.createElementNS('http://www.w3.org/2000/svg','path'); ROUTE.setAttribute('d',full);
+  window.TOTAL = NODE_LEN[NODE_LEN.length-1];
+  svg.querySelectorAll('.node').forEach(g=>{ const go=()=>selectTab(g.dataset.tab,true); g.addEventListener('click',go); g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} }); });
+  renderMapStamps();
+}
+let planeLen=0, flying=null;
+function setPlane(len){
+  len=Math.max(0,Math.min(TOTAL,len));
+  const p=ROUTE.getPointAtLength(len), q=ROUTE.getPointAtLength(Math.min(TOTAL,len+1)), q0=ROUTE.getPointAtLength(Math.max(0,len-1));
+  const a = len>=TOTAL? Math.atan2(p.y-q0.y,p.x-q0.x) : Math.atan2(q.y-p.y,q.x-p.x);
+  $('#plane').setAttribute('transform',`translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})`);
+  $('#planeR').setAttribute('transform',`rotate(${(a*180/Math.PI + (flying&&flying.back?180:0)).toFixed(1)})`);
+  $('#progPath').setAttribute('stroke-dasharray',`${len} ${TOTAL+20}`);
+  planeLen=len;
+}
+function flyTo(len,dur){
+  if(flying) cancelAnimationFrame(flying.raf);
+  const from=planeLen, dist=Math.abs(len-from);
+  if(RM||dist<1){ flying=null; setPlane(len); return; }
+  dur = dur || Math.min(2600, Math.max(900, dist*1.1));
+  const t0=performance.now(); flying={back:len<from};
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const step=now=>{ const t=Math.min(1,(now-t0)/dur); setPlane(from+(len-from)*ease(t)); if(t<1) flying.raf=requestAnimationFrame(step); else { flying=null; setPlane(len); } };
+  flying.raf=requestAnimationFrame(step);
+}
+function nodeForTab(tab){
+  // usa a ordem da viagem: Dubai = 6 (estadia), visão geral = posição pela data
+  const map={'hong-kong':2,guangzhou:3,xangai:4,toquio:5,dubai:6};
+  return map[tab] ?? dateNode();
+}
+function dateNode(){
+  if(todayISO<'2027-04-12') return 0;
+  if(todayISO<'2027-04-13') return 1;
+  if(todayISO<'2027-04-15') return todayISO==='2027-04-14'?3:2;
+  if(todayISO<'2027-04-20') return 3;
+  if(todayISO<'2027-04-23') return 4;
+  if(todayISO<'2027-04-30') return 5;
+  if(todayISO<'2027-05-02') return 6;
+  return todayISO>'2027-05-02'?7:6;
+}
+function stampSvg(nome,cor,giro){
+  return `<g transform="rotate(${giro})"><circle r="30" fill="#0E0C17" fill-opacity=".75" stroke="${cor}" stroke-width="2.5"/><circle r="24" fill="none" stroke="${cor}" stroke-width="1" stroke-dasharray="2 3"/><text y="-1" text-anchor="middle" font-family="Space Mono, ui-monospace, monospace" font-weight="700" font-size="9" fill="${cor}">${nome}</text><text y="11" text-anchor="middle" font-family="Space Mono, ui-monospace, monospace" font-size="6.5" letter-spacing="1" fill="${cor}">VISITADO</text></g>`;
+}
+function renderMapStamps(){
+  document.querySelectorAll('#map .stampG').forEach(g=>{
+    const t=g.dataset.for, c=CITIES.find(x=>x.id===t); if(!c){ g.innerHTML=''; return; }
+    const nd = NODES[nodeForTab(t)===6?1:nodeForTab(t)];
+    g.innerHTML = stamps[t] ? `<g transform="translate(${nd.x+30} ${nd.y-40})">${stampSvg(c.nome.toUpperCase().slice(0,9),c.cor,-12)}</g>` : '';
+  });
+}
+
+/* ============ CENAS (ilustrações) ============ */
+function skyline(r, x0, x1, base, minH, maxH, fill, win, prob){
+  let s='', x=x0;
+  while(x<x1){ const w=24+r()*46, h=minH+r()*(maxH-minH); s+=`<rect x="${x.toFixed(1)}" y="${(base-h).toFixed(1)}" width="${w.toFixed(1)}" height="${(h+2).toFixed(1)}" fill="${fill}"/>`;
+    if(r()<.18) s+=`<rect x="${(x+w/2-1).toFixed(1)}" y="${(base-h-18).toFixed(1)}" width="2" height="18" fill="${fill}"/>`;
+    if(win){ for(let yy=base-h+8; yy<base-6; yy+=11) for(let xx=x+5; xx<x+w-6; xx+=9) if(r()<prob) s+=`<rect class="${r()<.06?'tw':''}" x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="4" height="5" fill="${win}" opacity="${(.5+r()*.5).toFixed(2)}"/>`; }
+    x+=w+2+r()*6; }
+  return s;
+}
+const STK='stroke="#0A0812" stroke-width="2.5" stroke-linejoin="round"';
+function water(y,c1,c2,lines){ let s=`<rect x="0" y="${y}" width="1200" height="${460-y}" fill="url(#wat)"/><defs><linearGradient id="wat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs>`; const r=rng(5); for(let i=0;i<lines;i++){ const yy=y+8+r()*(440-y), x=r()*1150, w=20+r()*120; s+=`<rect x="${x.toFixed(0)}" y="${yy.toFixed(0)}" width="${w.toFixed(0)}" height="2" rx="1" fill="#fff" opacity="${(.06+r()*.14).toFixed(2)}"/>`; } return s; }
+function skyGrad(id,stops){ return `<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">${stops.map(([o,c])=>`<stop offset="${o}" stop-color="${c}"/>`).join('')}</linearGradient>`; }
+function stars(n,seed,maxY){ const r=rng(seed); let s=''; for(let i=0;i<n;i++) s+=`<circle cx="${(r()*1200).toFixed(0)}" cy="${(r()*maxY).toFixed(0)}" r="${(r()*1.2+.3).toFixed(1)}" fill="#fff" opacity="${(r()*.6+.2).toFixed(2)}"/>`; return s; }
+
+const SCENES = {
+ 'hong-kong'(){ const r=rng(21); const hor=318; return `<defs>${skyGrad('sk',[[0,'#120A24'],[.55,'#4A1650'],[1,'#C8357A']])}</defs>
+  <rect width="1200" height="460" fill="url(#sk)"/>${stars(60,3,180)}
+  <circle cx="980" cy="96" r="30" fill="#FFE3F0" opacity=".9"/><circle cx="992" cy="88" r="28" fill="#2A1040"/>
+  <path d="M0 250 Q140 150 300 196 Q420 120 560 186 Q700 110 860 190 Q1000 140 1200 220 L1200 ${hor} L0 ${hor}Z" fill="#2B1238"/>
+  <g class="rise">${skyline(r,0,1200,hor,40,120,'#3A1648','#FF9AD0',.18)}</g>
+  <g class="rise" style="animation-delay:.12s">
+   <path d="M520 ${hor} L520 120 L532 104 L560 104 L572 120 L572 ${hor}Z" fill="#53205F" ${STK}/><path d="M532 104 L546 70 L560 104Z" fill="#6D2A7A" ${STK}/>
+   ${[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(i=>`<rect x="528" y="${128+i*11}" width="36" height="3" fill="#FF7AC0" opacity=".55"/>`).join('')}
+   <path d="M690 ${hor} L690 150 L740 90 L740 ${hor}Z" fill="#46205A" ${STK}/><path d="M690 150 L740 210 M690 210 L740 150 M690 210 L740 270 M690 270 L740 210" stroke="#FF5DA2" stroke-width="1.6" opacity=".7"/>
+   <path d="M880 ${hor} L884 96 L912 86 L916 ${hor}Z" fill="#53205F" ${STK}/>
+   ${skyline(rng(9),300,500,hor,70,150,'#43184F','#FFC2E2',.25)}${skyline(rng(4),940,1180,hor,60,140,'#43184F','#FFC2E2',.25)}
+  </g>
+  ${water(hor,'#3A1046','#12081C',40)}
+  <g opacity=".22" transform="translate(0 ${hor*2}) scale(1 -1)">${skyline(rng(21),0,1200,hor,40,120,'#FF5DA2','',0)}</g>
+  <g class="rise" style="animation-delay:.25s" transform="translate(400 352)">
+   <path d="M-70 30 L90 30 L74 54 L-56 54Z" fill="#6B3A2A" ${STK}/>
+   <path d="M-14 28 L-14 -110 Q30 -90 40 -50 Q34 -10 -14 28Z" fill="#E8454F" ${STK}/>
+   <path d="M44 28 L44 -64 Q74 -46 78 -16 Q70 10 44 28Z" fill="#E8454F" ${STK}/>
+   <path d="M-14 -80 Q14 -70 30 -60 M-14 -50 Q16 -40 36 -30 M-14 -20 Q10 -12 30 0 M44 -36 Q60 -28 70 -20" stroke="#8E1E2E" stroke-width="2" fill="none"/>
+  </g>`; },
+
+ 'guangzhou'(){ const r=rng(31); const hor=322; const x=820; return `<defs>${skyGrad('sk',[[0,'#071A1F'],[.6,'#0E3A3A'],[1,'#1E7A66']])}
+   <linearGradient id="ct" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1FB889"/><stop offset=".5" stop-color="#7DFFD0"/><stop offset="1" stop-color="#1FB889"/></linearGradient>
+   <clipPath id="ctc"><path d="M${x-44} ${hor} C${x-12} 230 ${x-12} 160 ${x-30} 70 L${x+30} 70 C${x+12} 160 ${x+12} 230 ${x+44} ${hor}Z"/></clipPath></defs>
+  <rect width="1200" height="460" fill="url(#sk)"/>${stars(50,8,160)}
+  <circle cx="${x}" cy="200" r="190" fill="#5FF0B4" opacity=".08"/>
+  <g class="rise">${skyline(r,0,1200,hor,40,150,'#0F2E30','#9CFFE0',.16)}</g>
+  <g class="rise" style="animation-delay:.12s">
+   <path d="M300 ${hor} L300 110 L330 96 L360 110 L360 ${hor}Z" fill="#14403F" ${STK}/>
+   <path d="M420 ${hor} L424 140 L470 140 L474 ${hor}Z" fill="#123A3A" ${STK}/>
+   <path d="M${x-44} ${hor} C${x-12} 230 ${x-12} 160 ${x-30} 70 L${x+30} 70 C${x+12} 160 ${x+12} 230 ${x+44} ${hor}Z" fill="url(#ct)" ${STK}/>
+   <g clip-path="url(#ctc)" stroke="#0B5C48" stroke-width="2">${Array.from({length:16},(_,i)=>`<path d="M${x-80+i*12} ${hor} L${x+60+i*4} 60"/><path d="M${x+80-i*12} ${hor} L${x-60-i*4} 60"/>`).join('')}</g>
+   <path d="M${x} 70 L${x} 18" stroke="#7DFFD0" stroke-width="4"/><circle cx="${x}" cy="16" r="4" fill="#FF6B6B"/>
+   <path d="M600 ${hor} Q630 280 680 ${hor}Z M660 ${hor} Q700 270 760 ${hor}Z" fill="#2A5A54" ${STK}/>
+  </g>
+  ${water(hor,'#0D4A44','#061C1C',36)}
+  <g opacity=".25" transform="translate(0 ${hor*2}) scale(1 -1)"><path d="M${x-44} ${hor} C${x-12} 230 ${x-12} 160 ${x-30} 70 L${x+30} 70 C${x+12} 160 ${x+12} 230 ${x+44} ${hor}Z" fill="#7DFFD0"/></g>
+  <g class="rise" style="animation-delay:.3s" transform="translate(560 380)"><path d="M-90 0 L120 0 L104 22 L-74 22Z" fill="#F3EADB" ${STK}/><rect x="-60" y="-26" width="150" height="26" rx="4" fill="#1C4D47" ${STK}/>${[0,1,2,3,4,5,6].map(i=>`<rect x="${-50+i*20}" y="-19" width="12" height="9" rx="2" fill="#FFE59A"/>`).join('')}</g>`; },
+
+ 'xangai'(){ const r=rng(41); const hor=326; return `<defs>${skyGrad('sk',[[0,'#110D2E'],[.55,'#3B2A7A'],[1,'#E07AA8']])}</defs>
+  <rect width="1200" height="460" fill="url(#sk)"/>${stars(40,12,150)}
+  <circle cx="200" cy="270" r="70" fill="#FFB1C8" opacity=".55"/>
+  <g class="rise">${skyline(r,0,1200,hor,40,130,'#2A2160','#D9CCFF',.15)}</g>
+  <g class="rise" style="animation-delay:.12s">
+   <path d="M600 ${hor} L606 150 L616 150 L616 120 L628 120 L628 96 L636 70 L644 96 L644 120 L656 120 L656 150 L666 150 L672 ${hor}Z" fill="#3A2C80" ${STK}/>
+   <path d="M780 ${hor} L790 74 L834 74 L844 ${hor}Z" fill="#3D3088" ${STK}/><rect x="801" y="82" width="22" height="16" rx="3" fill="#7A5AA8"/>
+   <path d="M690 ${hor} L694 110 Q706 54 732 30 L744 106 L750 ${hor}Z" fill="#4A3BA0" ${STK}/><path d="M700 ${hor} Q706 200 716 120 Q724 70 734 36" stroke="#9D8CFF" stroke-width="2" fill="none"/>
+   <g transform="translate(400 0)"><path d="M0 ${hor} L-30 236 M0 ${hor} L30 236 M-40 ${hor} L-10 236" stroke="#B0A2FF" stroke-width="7" stroke-linecap="round"/>
+    <rect x="-7" y="96" width="14" height="140" fill="#B0A2FF" ${STK}/><circle cx="0" cy="226" r="36" fill="#FF6FB5" ${STK}/><circle cx="0" cy="118" r="21" fill="#FF6FB5" ${STK}/><circle cx="0" cy="70" r="9" fill="#FF6FB5" ${STK}/><path d="M0 60 L0 18" stroke="#B0A2FF" stroke-width="4"/>
+    <path d="M-30 214 Q0 200 30 214" stroke="#fff" stroke-width="3" opacity=".5" fill="none"/></g>
+  </g>
+  ${water(hor,'#3A2A6E','#0E0A22',44)}
+  <g opacity=".22" transform="translate(0 ${hor*2}) scale(1 -1)"><circle cx="400" cy="226" r="36" fill="#FF6FB5"/><circle cx="400" cy="118" r="21" fill="#FF6FB5"/><path d="M694 ${hor} L694 110 Q706 54 732 30 L750 ${hor}Z" fill="#9D8CFF"/><path d="M780 ${hor} L790 74 L834 74 L844 ${hor}Z" fill="#9D8CFF"/></g>
+  <g class="rise" style="animation-delay:.3s" transform="translate(980 384)"><path d="M-80 0 L80 0 L66 18 L-66 18Z" fill="#F3EADB" ${STK}/><rect x="-54" y="-18" width="100" height="18" rx="3" fill="#2D2370" ${STK}/>${[0,1,2,3,4].map(i=>`<circle cx="${-40+i*20}" cy="-9" r="3" fill="#FFE59A"/>`).join('')}</g>`; },
+
+ 'toquio'(){ const r=rng(51); const g=344; return `<defs>${skyGrad('sk',[[0,'#2A2350'],[.5,'#C46A8A'],[1,'#FFC59A']])}</defs>
+  <rect width="1200" height="460" fill="url(#sk)"/>
+  <circle cx="470" cy="150" r="80" fill="#FF5A3C" opacity=".95"/>
+  <path d="M360 ${g} L560 140 Q600 108 640 140 L860 ${g}Z" fill="#5A4F8A" ${STK}/>
+  <path d="M560 140 Q600 108 640 140 L668 172 L646 162 L626 180 L604 160 L582 182 L566 164 L544 176Z" fill="#F7F1F6" ${STK}/>
+  <g class="rise">${skyline(r,0,1200,g,30,110,'#3A2E5E','#FFE0B8',.12)}</g>
+  <g class="rise" style="animation-delay:.14s">
+   <g transform="translate(820 0)"><path d="M-14 ${g} L-5 30 L5 30 L14 ${g}Z" fill="#D9D4EA" ${STK}/><rect x="-16" y="150" width="32" height="14" rx="5" fill="#B9B2D8" ${STK}/><rect x="-11" y="104" width="22" height="9" rx="4" fill="#B9B2D8" ${STK}/><path d="M0 30 L0 0" stroke="#D9D4EA" stroke-width="3"/></g>
+   <g transform="translate(360 0)"><path d="M-46 ${g} L-8 120 L8 120 L46 ${g}Z" fill="#FF5A3C" ${STK}/><path d="M-30 280 L30 280 M-22 236 L22 236 M-15 190 L15 190" stroke="#F7F1F6" stroke-width="6"/><path d="M-8 120 L0 60 L8 120Z" fill="#FF5A3C" ${STK}/><path d="M0 60 L0 36" stroke="#FF5A3C" stroke-width="3"/><path d="M-46 ${g} Q0 290 46 ${g}" fill="#2A2350"/></g>
+  </g>
+  <rect x="0" y="${g}" width="1200" height="${460-g}" fill="#231D40"/>
+  ${(()=>{const rr=rng(77);let s='';for(let i=0;i<26;i++){const x=rr()*1200,y=20+rr()*300;s+=`<ellipse class="rise" style="animation-delay:${(rr()*.6).toFixed(2)}s" cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="5" ry="3" fill="#FFD3E0" opacity="${(.4+rr()*.5).toFixed(2)}" transform="rotate(${(rr()*90).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})"/>`;}return s;})()}
+  <g class="rise" style="animation-delay:.3s" transform="translate(520 404)"><rect x="-150" y="-14" width="300" height="30" rx="15" fill="#F7F1F6" ${STK}/><path d="M150 -14 Q190 -14 196 6 L150 16Z" fill="#F7F1F6" ${STK}/><rect x="-150" y="2" width="346" height="5" fill="#3A6EA5"/>${[0,1,2,3,4,5,6,7].map(i=>`<rect x="${-130+i*34}" y="-8" width="20" height="8" rx="2" fill="#2A2350"/>`).join('')}</g>`; },
+
+ 'dubai'(){ const r=rng(61); const g=330; return `<defs>${skyGrad('sk',[[0,'#3A1E3A'],[.45,'#C2563A'],[.8,'#FFB547'],[1,'#FFE0A0']])}</defs>
+  <rect width="1200" height="460" fill="url(#sk)"/>
+  <circle cx="800" cy="230" r="110" fill="#FFE7A8" opacity=".9"/>
+  <g class="rise">${skyline(r,40,1160,g,30,120,'#6A2E3A','#FFE7A8',.1)}</g>
+  <g class="rise" style="animation-delay:.12s">
+   <g transform="translate(640 0)"><path d="M-40 ${g} L-34 250 L-26 250 L-24 190 L-16 190 L-14 130 L-8 130 L-6 70 L-2 70 L0 6 L2 70 L6 70 L8 130 L14 130 L16 190 L24 190 L26 250 L34 250 L40 ${g}Z" fill="#B7B0C8" ${STK}/><path d="M0 70 L0 ${g}" stroke="#8D86A3" stroke-width="2"/><path d="M-6 ${g} L-6 90 M6 ${g} L6 90" stroke="#D9D4E6" stroke-width="1.5" opacity=".7"/></g>
+   <g transform="translate(410 0)"><path d="M-10 ${g} Q-10 150 30 110 Q70 160 60 ${g}Z" fill="#F3EADB" ${STK}/><path d="M-10 ${g} L-10 116" stroke="#F3EADB" stroke-width="5"/><path d="M0 ${g-20} Q20 200 50 150" stroke="#C9B9A8" stroke-width="2" fill="none"/></g>
+   <g transform="translate(860 ${g-60})"><ellipse rx="56" ry="40" fill="#C9C3D8" ${STK}/><ellipse rx="26" ry="16" fill="#E0763A"/></g>
+  </g>
+  <path d="M0 ${g+10} Q150 ${g-20} 320 ${g+16} Q500 ${g+44} 700 ${g+6} Q900 ${g-24} 1200 ${g+20} L1200 460 L0 460Z" fill="#E49A4E" ${STK}/>
+  <path d="M0 400 Q200 360 420 394 Q640 430 860 380 Q1040 346 1200 386 L1200 460 L0 460Z" fill="#C97A3A"/>
+  <g class="rise" style="animation-delay:.3s" transform="translate(470 404)"><path d="M-46 6 L-40 -14 L-6 -18 L14 -30 L46 -30 L60 -12 L68 6Z" fill="#F3EADB" ${STK}/><circle cx="-24" cy="8" r="10" fill="#2A1A22"/><circle cx="44" cy="8" r="10" fill="#2A1A22"/><path d="M18 -26 L42 -26 L52 -13 L18 -13Z" fill="#6AA6C9"/></g>`; }
+};
+const FOCUS={'hong-kong':560,guangzhou:720,xangai:560,toquio:590,dubai:630};
+function sceneSvg(id){ const vb = innerWidth<700 ? `${FOCUS[id]-215} 0 430 460` : '0 0 1200 460'; return `<svg viewBox="${vb}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de ${CITIES.find(c=>c.id===id).nome}">${SCENES[id]()}</svg>`; }
+
+/* ============ ESTADO DO DIÁRIO ============ */
+Object.assign(ICON,{
+  spk:'<path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7M18.5 6a7.5 7.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  star:'<path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8 6.8 19.5l1-5.8-4.2-4.1 5.8-.8z" fill="currentColor"/>',
+  pen:'<path d="M4 20h4L19 9l-4-4L4 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  cam:'<path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/>',
+  img:'<rect x="3" y="4" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" fill="currentColor"/><path d="M4 18l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  mic:'<rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  car:'<path d="M3 16v-4l2-5h14l2 5v4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="16.5" r="1.8" fill="currentColor"/><circle cx="16.5" cy="16.5" r="1.8" fill="currentColor"/>',
+  play:'<path d="M8 5v14l11-7z" fill="currentColor"/>',
+  plus:'<path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>'
+});
+const DEF_RATES={BRL:1,HKD:0.750169,CNY:0.882779,JPY:0.036929,AED:1.602442,USD:5.884969};
+let D = Object.assign({me:'',rates:{},ck:{},cust:{},must:{},notes:{},ideas:[],sup:[],exp:[],hotel:{},nota:{},media:[],plans:[],onotes:{}}, store.get('data',{}));
+D.rman = D.rman||{}; delete D.rates;
+let LIVE={}; try{ LIVE=JSON.parse(document.getElementById('liveSeed').textContent); }catch(e){}
+const rate=k=>k==='BRL'?1:(D.rman[k]||(LIVE.rates&&LIVE.rates[k])||DEF_RATES[k]||0);
+let saveT; function save(){ clearTimeout(saveT); saveT=setTimeout(()=>store.set('data',D),200); if(typeof scheduleSync==='function') scheduleSync(); }
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CUR={'hong-kong':'HKD',guangzhou:'CNY',xangai:'CNY',toquio:'JPY',dubai:'AED'};
+const toBRL=(v,cur)=>(parseFloat(String(v).replace(/\./g,'').replace(',','.'))||0)*rate(cur);
+const expBRL=e=>num(e.val)*(e.r||rate(e.cur));
+const num=v=>parseFloat(String(v).replace(/\./g,'').replace(',','.'))||0;
+const fmtBRL=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const cityName=id=>(CITIES.find(c=>c.id===id)||{nome:'Geral'}).nome;
+const LANG={'hong-kong':'zh-HK',guangzhou:'zh-CN',xangai:'zh-CN',toquio:'ja-JP',dubai:'ar-SA'};
+const DRIVER={'hong-kong':'唔該帶我去呢個地址',guangzhou:'请带我去这个地址',xangai:'请带我去这个地址',toquio:'この住所までお願いします',dubai:'من فضلك خذني إلى هذا العنوان'};
+const EMER={'hong-kong':['999','Polícia, ambulância e bombeiros','Consulado-Geral do Brasil em Hong Kong'],guangzhou:['110 · 120','110 polícia · 120 ambulância · 119 bombeiros','Consulado-Geral do Brasil em Cantão (Guangzhou)'],xangai:['110 · 120','110 polícia · 120 ambulância · 119 bombeiros','Consulado-Geral do Brasil em Xangai'],toquio:['110 · 119','110 polícia · 119 ambulância e bombeiros','Consulado-Geral do Brasil em Tóquio'],dubai:['999 · 998','999 polícia · 998 ambulância · 997 bombeiros','Consulado-Geral do Brasil em Dubai']};
+const CATS=['Fotografia','Eventos, som e luz','Varejo e franquias','Tecnologia e IA','Gestão e processos','Outra'];
+const PRI=['Alta','Média','Baixa'];
+const ECATS=['Hospedagem','Transporte','Alimentação','Ingressos','Compras','Amostras','Outros'];
+const CURS=['BRL','HKD','CNY','JPY','AED','USD'];
+const SEGS=[['ideias','Ideias'],['forn','Fornecedores'],['gastos','Gastos'],['midia','Fotos e áudios'],['hotel','Hotel e nota']];
+const segOf={};
+
+/* ============ NUVEM (Supabase) · login, sincronização e arquivos ============ */
+const CLOUD={url:'https://sgqnopzwwbapirnoztwm.supabase.co',key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNncW5vcHp3d2JhcGlybm96dHdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM5NzIyNjQsImV4cCI6MjEwOTU0ODI2NH0.Qxh0bxIMqyCitV6IQkoafhAtfzNdek8bl8_bo2hAglE'};
+const SITE='https://formaturasstart-hue.github.io/missao-asia-2027/';
+const IS_CLOUD = /github\.io$/.test(location.hostname) || /[?&]nuvem=1/.test(location.search);
+let AUTH = store.get('auth', null);
+const ME = ()=>AUTH?AUTH.usuario:'eu';
+const sync={since:store.get('since',null), last:store.get('lastRows',{}), busy:false, timer:null, ok:null, at:null, err:''};
+const PLAN_SUG=['Cópia de segurança automática das fotos e áudios numa pasta do Google Drive','Relatório final da missão em PDF, com fornecedores, ideias e fotos, para apresentar ao Grupo Vision','Planilha de fornecedores sincronizada com o Google Planilhas','Instalar o roteiro como aplicativo no celular, funcionando sem internet','Botão "estou aqui" com o mapa da cidade e o caminho até o hotel','Votação das melhores ideias entre os 7 viajantes, com ranking','Lembrete no celular antes de cada compromisso do dia','Comparar preços FOB dos fornecedores do mesmo produto lado a lado'];
+
+async function rpc(fn,args){
+  const r=await fetch(`${CLOUD.url}/rest/v1/rpc/${fn}`,{method:'POST',headers:{apikey:CLOUD.key,Authorization:'Bearer '+CLOUD.key,'Content-Type':'application/json'},body:JSON.stringify(args||{})});
+  const txt=await r.text(); let j=null; try{ j=txt?JSON.parse(txt):null; }catch(e){}
+  if(!r.ok){ const m=(j&&(j.message||j.hint))||txt||('HTTP '+r.status); if(/sessao_invalida/.test(m)){ logout(true); } throw new Error(m); }
+  return j;
+}
+async function edge(body){
+  const r=await fetch(`${CLOUD.url}/functions/v1/viagem-arquivos`,{method:'POST',headers:{apikey:CLOUD.key,Authorization:'Bearer '+CLOUD.key,'Content-Type':'application/json'},body:JSON.stringify({...body,token:AUTH&&AUTH.token})});
+  const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error||('HTTP '+r.status)); return j;
+}
+
+/* ---- linhas sincronizadas ---- */
+const rk=(k,key)=>k+'\u0001'+key;
+const isPersonalCk=id=>/^p\d+$/.test(id);
+function toRows(){
+  const R={}; const add=(kind,key,data)=>{ R[rk(kind,key)]={kind,key,data}; };
+  D.ideas.forEach(x=>add('idea',x.id,x)); D.sup.forEach(x=>add('sup',x.id,x)); D.exp.forEach(x=>add('exp',x.id,x));
+  D.media.forEach(x=>add('media',x.id,x)); (D.plans||[]).forEach(x=>add('plan',x.id,x));
+  Object.entries(D.notes).forEach(([k,t])=>add('note',ME()+'|'+k,{k,t,by:D.me}));
+  Object.entries(D.ck).forEach(([id,v])=>add('ck',isPersonalCk(id)?ME()+'|'+id:id,{v:!!v}));
+  Object.entries(D.cust).forEach(([box,arr])=>(arr||[]).forEach(x=>add('cust',x.id,{box,t:x.t})));
+  Object.entries(D.must).forEach(([k,v])=>add('must',k,v));
+  Object.entries(D.hotel).forEach(([k,v])=>add('hotel',k,v));
+  Object.entries(D.nota).forEach(([k,v])=>add('nota',k,v));
+  Object.entries(stamps).forEach(([k,v])=>{ if(v) add('stamp',k,{v:true}); });
+  return R;
+}
+const ARR={idea:'ideas',sup:'sup',exp:'exp',media:'media',plan:'plans'};
+function applyRow(r){
+  const k=r.kind, key=r.key, d=r.data, del=r.deleted;
+  if(ARR[k]){ const a=D[ARR[k]]=D[ARR[k]]||[]; const i=a.findIndex(x=>x.id===key); if(del){ if(i>=0) a.splice(i,1); } else if(i>=0) a[i]=d; else { a.push(d); a.sort((x,y)=>(y.ts||0)-(x.ts||0)); } return true; }
+  if(k==='note'){ if(key.startsWith(ME()+'|')){ const nk=key.slice(ME().length+1); const el=document.activeElement; if(el&&el.dataset&&el.dataset.note===nk) return false; if(del) delete D.notes[nk]; else D.notes[nk]=d.t; } else { D.onotes=D.onotes||{}; if(del||!d||!String(d.t||'').trim()) delete D.onotes[key]; else D.onotes[key]={...d,autor:r.autor}; } return true; }
+  if(k==='ck'){ if(key.includes('|')){ if(!key.startsWith(ME()+'|')) return false; const id=key.split('|')[1]; if(del) delete D.ck[id]; else D.ck[id]=!!d.v; } else { if(del) delete D.ck[key]; else D.ck[key]=!!d.v; } return true; }
+  if(k==='cust'){ Object.values(D.cust).forEach(a=>{ const i=a.findIndex(x=>x.id===key); if(i>=0) a.splice(i,1); }); if(!del&&d){ (D.cust[d.box]=D.cust[d.box]||[]).push({id:key,t:d.t}); } return true; }
+  if(k==='must'||k==='hotel'||k==='nota'){ const o=D[k]; if(del) delete o[key]; else o[key]=d; return true; }
+  if(k==='stamp'){ if(del||!d||!d.v) delete stamps[key]; else stamps[key]=true; store.set('stamps',stamps); return true; }
+  return false;
+}
+function scheduleSync(ms){ if(!IS_CLOUD||!AUTH) return; clearTimeout(sync.timer); sync.timer=setTimeout(doSync,ms==null?1200:ms); }
+async function doSync(){
+  if(!IS_CLOUD||!AUTH||sync.busy) return; sync.busy=true; setSyncPill('sincronizando');
+  try{
+    // 1) enviar o que mudou aqui
+    const rows=toRows(), out=[];
+    Object.entries(rows).forEach(([k,r])=>{ const s=JSON.stringify(r.data); if(sync.last[k]!==s) out.push({kind:r.kind,key:r.key,data:r.data}); });
+    Object.keys(sync.last).forEach(k=>{ if(!rows[k]){ const [kind,key]=k.split('\u0001'); if(kind==='note'&&!key.startsWith(ME()+'|')) return; out.push({kind,key,data:null,deleted:true}); } });
+    for(let i=0;i<out.length;i+=200){ const part=out.slice(i,i+200); await rpc('viagem_push',{p_token:AUTH.token,p_rows:part});
+      part.forEach(r=>{ const k=rk(r.kind,r.key); if(r.deleted) delete sync.last[k]; else sync.last[k]=JSON.stringify(r.data); }); }
+    // 2) receber o que os outros mudaram
+    const res=await rpc('viagem_pull',{p_token:AUTH.token,p_since:sync.since});
+    let changed=false;
+    (res.rows||[]).forEach(r=>{ const k=rk(r.kind,r.key); const mine=(r.kind==='note'&&!r.key.startsWith(ME()+'|'))||(r.kind==='ck'&&r.key.includes('|')&&!r.key.startsWith(ME()+'|'));
+      const s=JSON.stringify(r.data); if(!mine&&!r.deleted&&sync.last[k]===s) return;
+      if(applyRow(r)) changed=true; if(!mine){ if(r.deleted) delete sync.last[k]; else sync.last[k]=s; } });
+    sync.since=res.now; store.set('since',sync.since); store.set('lastRows',sync.last); store.set('data',D);
+    sync.ok=true; sync.at=new Date(); sync.err='';
+    if(changed) refreshAfterSync();
+    uploadPending();
+  }catch(e){ sync.ok=false; sync.err=String(e.message||e); }
+  sync.busy=false; setSyncPill();
+}
+function refreshAfterSync(){
+  CITIES.forEach(c=>{ refreshJournal(c.id); const b=document.getElementById('ck-'+c.id); if(b) b.outerHTML=ckBoxHtml(c.id); });
+  document.querySelectorAll('[data-onotes]').forEach(el=>{ el.innerHTML=oNotesHtml(el.dataset.onotes); });
+  document.querySelectorAll('textarea[data-note]').forEach(t=>{ if(t!==document.activeElement){ const v=D.notes[t.dataset.note]||''; if(t.value!==v) t.value=v; } });
+  document.querySelectorAll('.must .fui').forEach(b=>{ const m=D.must[b.dataset.k]||{}; b.setAttribute('aria-pressed',!!m.v); b.innerHTML=svgI('check',14)+(m.v?'Fui':'Fui?'); const g=b.parentElement.querySelector('.stars'); if(g) g.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('on',i<(m.r||0))); });
+  document.querySelectorAll('[data-stamp]').forEach(b=>{ const id=b.dataset.stamp; b.textContent=stamps[id]?'Passaporte carimbado':'Carimbar passaporte'; b.setAttribute('aria-pressed',!!stamps[id]); });
+  renderMapStamps(); renderPassport(); renderPlans();
+  if(current==='kit') renderKit(); if(current==='pre') renderPre(); if(current==='resumo') renderSummary();
+  renderTabs(); markTab(current);
+}
+function setSyncPill(st){
+  const el=$('#syncPill'); if(!el) return;
+  if(!IS_CLOUD){ el.innerHTML=`<a class="pill" href="${SITE}" style="text-decoration:none;color:var(--amber)">Esta cópia não salva na nuvem. Abrir o link oficial</a>`; return; }
+  if(!AUTH){ el.innerHTML=''; return; }
+  const t=st==='sincronizando'?'Sincronizando…':sync.ok===false?(navigator.onLine?'Sem conexão com a nuvem, tentando de novo':'Sem internet: salvo neste celular'):sync.at?`Na nuvem · ${sync.at.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}`:'Conectando…';
+  el.innerHTML=`<span class="pill"><span class="dot" style="background:${sync.ok===false?'#FF8B8B':'var(--neg)'};box-shadow:0 0 10px ${sync.ok===false?'#FF8B8B':'var(--neg)'}"></span>${t}</span><span class="pill">${esc(AUTH.nome)}</span><button class="pill" type="button" data-act="chpass">Trocar senha</button><button class="pill" type="button" data-act="logout">Sair</button>`;
+}
+
+/* ---- arquivos (fotos e áudios) ---- */
+let upBusy=false;
+async function uploadPending(){
+  if(!IS_CLOUD||!AUTH||upBusy) return; upBusy=true;
+  try{ for(const m of D.media.filter(x=>!x.up&&x.byU===ME())){ const b=await IDB.get(m.id).catch(()=>null); if(!b) continue;
+      if(b.size>15*1024*1024){ m.up=false; m.big=true; continue; }
+      const {signedUrl}=await edge({action:'upload',id:m.id});
+      const r=await fetch(signedUrl,{method:'PUT',headers:{'Content-Type':b.type||(m.type==='image'?'image/jpeg':'audio/mpeg'),'x-upsert':'true'},body:b});
+      if(!r.ok) throw new Error('upload '+r.status);
+      m.up=true; save(); }
+  }catch(e){ sync.err='arquivos: '+(e.message||e); }
+  upBusy=false;
+}
+const cloudUrl={}; let urlReq=null;
+async function cloudMediaURL(id){
+  if(cloudUrl[id]) return cloudUrl[id]; if(!IS_CLOUD||!AUTH) return null;
+  if(!urlReq){ urlReq=new Promise(res=>setTimeout(async()=>{ const ids=D.media.filter(m=>m.up&&!cloudUrl[m.id]).map(m=>m.id); let urls={}; try{ if(ids.length) urls=(await edge({action:'urls',ids})).urls||{}; }catch(e){} Object.assign(cloudUrl,urls); urlReq=null; res(); },60)); }
+  await urlReq; return cloudUrl[id]||null;
+}
+
+/* ---- notas de outras pessoas ---- */
+function oNotesHtml(nk){ const L=Object.values(D.onotes||{}).filter(n=>n.k===nk&&String(n.t||'').trim()); return L.length?`<div class="onotes">${L.map(n=>`<div class="on"><b>${esc(n.by||n.autor||'Outra pessoa')}</b>${esc(n.t)}</div>`).join('')}</div>`:''; }
+
+/* ---- planos futuros ---- */
+const PST=['Ideia','Em andamento','Feito'];
+function plansHtml(){
+  const P=(D.plans||[]); const sug=PLAN_SUG.filter(s=>!P.some(p=>p.t===s));
+  return `<div class="secT"><h3 class="h2">Planos futuros <span class="hand">próximos passos do roteiro</span></h3><p class="sub">Ideias para melhorar o roteiro e a missão. Toque na etiqueta para mudar a situação.</p></div>
+   <div class="card"><div class="addRow" style="margin-top:0"><input class="in" id="planIn" placeholder="Escreva um plano ou melhoria"><button class="btn pri" type="button" data-act="addPlan">${svgI('plus',16)}Adicionar</button></div>
+    <div class="entries">${P.map(p=>`<div class="entry"><div class="meta"><button type="button" class="pst2 s${PST.indexOf(p.st)}" data-act="planSt" data-id="${p.id}">${esc(p.st||'Ideia')}</button>${p.by?`<span>${esc(p.by)}</span>`:''}</div>${esc(p.t)}<button type="button" class="del" data-act="del" data-kind="plans" data-id="${p.id}" aria-label="Apagar">✕</button></div>`).join('')||'<p class="empty">Nenhum plano ainda. Comece pelas sugestões abaixo.</p>'}</div>
+    ${sug.length?`<div class="sugs"><span class="kick" style="color:var(--mu)">Sugestões do Claude</span>${sug.map((s,i)=>`<button type="button" class="sug" data-act="sugPlan" data-i="${PLAN_SUG.indexOf(s)}">${svgI('plus',14)}${esc(s)}</button>`).join('')}</div>`:''}</div>`;
+}
+function renderPlans(){ const el=$('#plansBox'); if(el) el.innerHTML=plansHtml(); }
+
+/* ---- equipe (só administrador) ---- */
+function genPass(){ const a='abcdefghjkmnpqrstuvwxyz23456789'; let s=''; const r=crypto.getRandomValues(new Uint32Array(8)); r.forEach((v,i)=>{ s+=a[v%a.length]; if(i===3) s+='-'; }); return 'Vision-'+s; }
+function equipePanel(){ return `<section class="panel" role="tabpanel" id="p-equipe" aria-labelledby="t-equipe" style="--c:#B6A6FF"><div id="eqIn"></div></section>`; }
+async function renderEquipe(msg){
+  const el=$('#eqIn'); if(!el) return; el.innerHTML='<div class="sec" style="margin-top:30px"><p class="sub">Carregando a equipe…</p></div>';
+  let users=[]; try{ users=await rpc('viagem_usuarios',{p_token:AUTH.token})||[]; }catch(e){ el.innerHTML=`<div class="sec"><p class="sub">Não deu para carregar: ${esc(e.message)}</p></div>`; return; }
+  const sp=genPass();
+  el.innerHTML=`<div class="sec" style="margin-top:30px"><div class="secT"><h3 class="h2">Equipe <span class="hand">quem tem acesso</span></h3><p class="sub">Crie o acesso de cada viajante e mande pelo WhatsApp. Cada pessoa troca a senha no primeiro acesso.</p></div>
+   <div class="dActs" style="margin:0 0 14px"><button class="btn" type="button" data-act="exportAll">Baixar cópia de tudo (JSON)</button></div>
+   ${msg?`<div class="card" style="border-color:var(--neg);margin-bottom:14px"><span class="kick" style="color:var(--neg)">Acesso pronto para enviar</span><pre class="convite">${esc(msg)}</pre><button class="btn pri" type="button" data-act="eqCopy">${svgI('copy',16)}Copiar convite</button></div>`:''}
+   <div class="card"><div class="fgrid"><label class="fl">Nome<input class="in" id="eqNome" placeholder="Ex.: João Silva"></label><label class="fl">Usuário (sem espaço)<input class="in" id="eqUser" placeholder="joao" autocapitalize="none"></label><label class="fl">Senha inicial<input class="in" id="eqPass" value="${sp}"></label>
+    <label class="ck" style="align-self:end"><input type="checkbox" id="eqAdm"><span><span class="t">Também é administrador</span></span></label></div>
+    <div class="dActs"><button class="btn pri" type="button" data-act="eqAdd">${svgI('plus',16)}Criar acesso</button></div></div>
+   <div class="entries">${users.map(u=>`<div class="entry" style="padding-right:16px"><div class="meta"><span>${esc(u.usuario)}</span>${u.admin?'<span>admin</span>':''}${!u.ativo?'<span class="hi">desativado</span>':''}${u.trocar?'<span>ainda não trocou a senha</span>':''}</div><b>${esc(u.nome)}</b>
+     <div class="dActs"><button class="mini" type="button" data-act="eqPass" data-u="${esc(u.usuario)}" data-n="${esc(u.nome)}">Gerar nova senha</button>${u.usuario!==AUTH.usuario?`<button class="mini" type="button" data-act="eqToggle" data-u="${esc(u.usuario)}" data-on="${u.ativo?1:0}">${u.ativo?'Desativar':'Reativar'}</button>`:''}</div></div>`).join('')}</div></div>`;
+}
+let lastInvite='';
+function invite(user,nome,pass){ return lastInvite=`Olá, ${nome.split(' ')[0]}! Seu acesso ao roteiro da Missão Ásia & Emirados 2027:\n\nLink: ${SITE}\nUsuário: ${user}\nSenha: ${pass}\n\nNo primeiro acesso você vai criar a sua própria senha.`; }
+
+/* ---- telas de login e troca de senha ---- */
+function gateHtml(mode,msg){
+  const chg=mode==='trocar';
+  return `<div class="gateBox"><div class="kick">Grupo Vision · Missão 2027</div><h2 class="gateT">${chg?'Crie sua senha':'Ásia <span class="hand" style="color:var(--amber)">&amp;</span> Emirados'}</h2>
+   <p class="sub" style="margin:6px 0 18px">${chg?'Escolha uma senha só sua, com pelo menos 6 caracteres.':'Entre com o usuário e a senha que você recebeu.'}</p>
+   <form id="gateForm" autocomplete="on">${chg?`<label class="fl">Senha atual<input class="in" type="password" id="gA" autocomplete="current-password" required></label><label class="fl">Nova senha<input class="in" type="password" id="gN" autocomplete="new-password" minlength="6" required></label><label class="fl">Repita a nova senha<input class="in" type="password" id="gR" autocomplete="new-password" minlength="6" required></label>`
+   :`<label class="fl">Usuário<input class="in" id="gU" autocomplete="username" autocapitalize="none" required></label><label class="fl">Senha<input class="in" type="password" id="gP" autocomplete="current-password" required></label>`}
+   <p class="gateMsg" id="gMsg">${msg?esc(msg):''}</p><button class="btn pri gateBtn" type="submit">${chg?'Salvar senha':'Entrar'}</button>${chg&&!AUTH.trocar?'<button class="btn" type="button" data-act="gateClose" style="margin-top:8px;width:100%;justify-content:center">Cancelar</button>':''}</form></div>`;
+}
+function showGate(mode,msg){ const g=$('#gate'); g.innerHTML=gateHtml(mode,msg); g.classList.add('on'); document.body.style.overflow='hidden';
+  $('#gateForm').addEventListener('submit',async ev=>{ ev.preventDefault(); const btn=ev.target.querySelector('.gateBtn'); btn.disabled=true; const m=$('#gMsg'); m.textContent='';
+    try{
+      if(mode==='trocar'){ if($('#gN').value!==$('#gR').value){ m.textContent='As senhas novas não são iguais.'; btn.disabled=false; return; }
+        await rpc('viagem_trocar_senha',{p_token:AUTH.token,p_atual:$('#gA').value,p_nova:$('#gN').value}); AUTH.trocar=false; store.set('auth',AUTH); hideGate(); toast('Senha salva'); }
+      else { const r=await rpc('viagem_login',{p_usuario:$('#gU').value,p_senha:$('#gP').value});
+        if(r&&r.erro){ m.textContent=r.erro==='muitas_tentativas'?'Muitas tentativas. Espere 15 minutos.':'Usuário ou senha incorretos.'; btn.disabled=false; return; }
+        AUTH=r; store.set('auth',AUTH); D.me=AUTH.nome; save(); afterLogin(); if(AUTH.trocar) showGate('trocar','Primeiro acesso: troque a senha que você recebeu.'); else hideGate(); }
+    }catch(e){ m.textContent=/senha_atual_errada/.test(e.message)?'A senha atual está errada.':/senha_curta/.test(e.message)?'A senha precisa ter pelo menos 6 caracteres.':'Sem conexão. Confira a internet e tente de novo.'; btn.disabled=false; }
+  });
+  setTimeout(()=>{ const f=$('#gate input'); if(f) f.focus(); },50);
+}
+function hideGate(){ $('#gate').classList.remove('on'); document.body.style.overflow=''; }
+function logout(expired){ if(AUTH&&!expired){ rpc('viagem_sair',{p_token:AUTH.token}).catch(()=>{}); } AUTH=null; store.set('auth',null); store.set('since',null); store.set('lastRows',{}); sync.since=null; sync.last={}; setSyncPill(); if(IS_CLOUD) showGate('login',expired?'Sua sessão expirou. Entre de novo.':''); }
+function afterLogin(){
+  if(AUTH.admin&&!TABS.find(t=>t.id==='equipe')){ TABS.push({id:'equipe',nome:'Equipe',cor:'#B6A6FF'}); if(!$('#p-equipe')) $('#panels').insertAdjacentHTML('beforeend',equipePanel()); }
+  renderTabs(); markTab(current); setSyncPill(); doSync();
+}
+function initCloud(){
+  setSyncPill();
+  if(!IS_CLOUD) return;
+  if(!AUTH){ showGate('login'); return; }
+  afterLogin(); if(AUTH.trocar) showGate('trocar','Primeiro acesso: troque a senha que você recebeu.');
+  rpc('viagem_eu',{p_token:AUTH.token}).then(u=>{ if(u){ Object.assign(AUTH,u); store.set('auth',AUTH); setSyncPill(); } }).catch(()=>{});
+  setInterval(()=>{ if(document.visibilityState==='visible') doSync(); },25000);
+  window.addEventListener('online',()=>doSync()); document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') doSync(); });
+}
+
+/* ============ DADOS AO VIVO (atualizados todo dia) ============ */
+const ALERT_IDS=['visto','hotelgz','canton','bilhete','dubai','golden'];
+const WXI={
+  sol:'<circle cx="12" cy="12" r="4.5" fill="#FFC857"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="#FFC857" stroke-width="2" stroke-linecap="round"/>',
+  parcial:'<circle cx="9" cy="9" r="3.6" fill="#FFC857"/><path d="M9 2.5v1.8M2.5 9h1.8M4.4 4.4l1.3 1.3M13.6 4.4l-1.3 1.3" stroke="#FFC857" stroke-width="1.8" stroke-linecap="round"/><path d="M8 19h10a3.5 3.5 0 0 0 0-7 5 5 0 0 0-9.6 1.4A3 3 0 0 0 8 19z" fill="#D9D4EA"/>',
+  nuvem:'<path d="M6.5 19h11a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.6 1.6A3.3 3.3 0 0 0 6.5 19z" fill="#B9B2D8"/>',
+  chuva:'<path d="M6.5 15h11a4 4 0 0 0 0-8 5.5 5.5 0 0 0-10.6 1.6A3.3 3.3 0 0 0 6.5 15z" fill="#B9B2D8"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3" stroke="#6FB7FF" stroke-width="2" stroke-linecap="round"/>',
+  nevoa:'<path d="M4 9h16M6 13h12M4 17h16" stroke="#B9B2D8" stroke-width="2.2" stroke-linecap="round"/>'
+};
+function wxKind(c){ c=String(c||'').toLowerCase(); if(/chuv|trovo|tempest|garo/.test(c)) return 'chuva'; if(/enevo|névoa|nevoa|neblin|bruma/.test(c)) return 'nevoa'; if(/sem nuvens|ensolarado|^limpo$|céu limpo/.test(c)) return 'sol'; if(/algumas|parcial|poucas/.test(c)) return 'parcial'; if(/nublad|nuvens|encoberto/.test(c)) return 'nuvem'; return 'parcial'; }
+const wxIcon=(c,s=28)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" aria-hidden="true">${WXI[wxKind(c)]}</svg>`;
+const DOW=['dom','seg','ter','qua','qui','sex','sáb'];
+const fmtD=iso=>{ const [y,m,d]=iso.split('-').map(Number); const dt=new Date(Date.UTC(y,m-1,d)); return `${DOW[dt.getUTCDay()]} ${d}/${String(m).padStart(2,'0')}`; };
+function wxHtml(id){
+  const c=CITIES.find(x=>x.id===id), w=LIVE.weather&&LIVE.weather[id];
+  const typ=(c.chips.find(x=>x[0]==='Clima')||[])[1]||'';
+  if(!w) return `<div class="wx"><div class="wxNow"><div><span class="kick" style="color:var(--c)">Tempo em ${c.nome}</span><p class="sub">Clima típico em abril: ${typ}. A previsão aparece aqui na próxima atualização.</p></div></div></div>`;
+  const trip=(w.days||[]).filter(d=>d.d>=c.ini&&d.d<=c.fim);
+  const strip=(trip.length?trip:(w.days||[]).slice(0,7));
+  return `<div class="wx"><div class="wxNow">${wxIcon(w.nowC,52)}<div><span class="kick" style="color:var(--c)">Agora em ${c.nome}</span><div class="wxT"><b>${Math.round(w.now)}°</b><span>${esc(w.nowC||'')}</span></div></div></div>
+    <div class="wxHead">${trip.length?'<b style="color:var(--c)">Previsão para os dias da viagem</b>':'Próximos dias'}<span class="mono">${esc(w.src||'')} · ${esc(w.asOf||'')}</span></div>
+    <div class="wxDays">${strip.map(d=>`<div class="wxd${d.d===todayISO?' hoje':''}"><span class="dd">${d.d===todayISO?'hoje':fmtD(d.d)}</span>${wxIcon(d.c,30)}<b>${Math.round(d.max)}°</b><span class="mn">${Math.round(d.min)}°</span>${d.p?`<span class="pp">${esc(d.p)}</span>`:''}</div>`).join('')}</div>
+    ${trip.length?'':`<p class="jHint">Clima típico durante a viagem: ${typ}. A previsão de cada dia da viagem começa a aparecer cerca de 14 dias antes, e o tempo do dia também aparece no Dia a dia.</p>`}</div>`;
+}
+function dayWx(id,iso){ const w=LIVE.weather&&LIVE.weather[id]; const d=w&&(w.days||[]).find(x=>x.d===iso); return d?`${wxIcon(d.c,18)}<span>${Math.round(d.max)}° / ${Math.round(d.min)}° · ${esc(d.c)}</span>`:''; }
+function liveAlert(id){ return (LIVE.alerts||[]).find(a=>a.id===id); }
+function alertsHtml(){ return ALERTS.map((a,i)=>{ const L=liveAlert(ALERT_IDS[i]); const cls=L&&L.status==='ok'?'inf':a[0]; return `<article class="al ${cls}"><span class="lv">${L&&L.status==='ok'?'RESOLVIDO':a[1]}</span><h4>${a[2]}</h4><p>${a[3]}</p>${L?`<div class="alLive"><b>Atualizado em ${esc(L.date)}</b>${esc(L.text)}</div>`:''}</article>`; }).join(''); }
+function radarHtml(){
+  if(!LIVE.updated) return '';
+  const R=LIVE.rates||{}; const curs=['CNY','HKD','JPY','AED','USD'];
+  return `<div class="secT"><h3 class="h2">Radar da missão <span class="hand">atualizado todo dia</span></h3><p class="sub">Câmbio, tempo e a situação dos alertas, revisados automaticamente toda manhã.</p></div>
+   <div class="radar"><div class="rCard"><span class="kick">Câmbio de hoje</span><div class="rRates">${curs.map(k=>`<div><i>1 ${k}</i><b>${rate(k)<0.1?'R$ '+rate(k).toFixed(4).replace('.',','):fmtBRL(rate(k))}</b></div>`).join('')}</div><p class="jHint">${esc(R.src||'')} · ${esc(R.asOf||'')}</p></div>
+    <div class="rCard"><span class="kick">Tempo agora</span><div class="rWx">${CITIES.map(c=>{ const w=LIVE.weather&&LIVE.weather[c.id]; return w?`<button type="button" data-go="${c.id}">${wxIcon(w.nowC,22)}<span>${c.nome}</span><b>${Math.round(w.now)}°</b></button>`:''; }).join('')}</div></div>
+    <div class="rCard"><span class="kick">Novidades</span><ul class="rNews">${(LIVE.news||[]).slice(0,5).map(n=>`<li><b>${esc(n.date)}</b> ${esc(n.text)}</li>`).join('')||'<li>Sem novidades.</li>'}</ul></div></div>`;
+}
+function livePillHtml(){ if(!LIVE.updated) return ''; const d=new Date(LIVE.updated); let t=''; try{ t=d.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}); }catch(e){ t=LIVE.updated; } return `<div class="livePill"><span class="dot"></span>Atualizado em ${t} · câmbio, tempo e alertas</div>`; }
+function applyLive(){
+  const lp=$('#livePill'); if(lp) lp.innerHTML=livePillHtml();
+  const r=$('#radar'); if(r) r.innerHTML=radarHtml();
+  const ab=$('#alertsBox'); if(ab) ab.innerHTML=alertsHtml();
+  CITIES.forEach(c=>{ const w=document.getElementById('wx-'+c.id); if(w) w.innerHTML=wxHtml(c.id); });
+  document.querySelectorAll('[data-wx]').forEach(el=>{ const [c,iso]=el.dataset.wx.split('|'); el.innerHTML=dayWx(c,iso); });
+  if(typeof current!=='undefined'&&current==='kit') renderKit();
+}
+function loadLive(){ if(IS_CLOUD){ rpc('viagem_live',{}).then(j=>{ if(j&&j.updated&&(!LIVE.updated||new Date(j.updated)>=new Date(LIVE.updated))){ LIVE=j; applyLive(); } }).catch(()=>{}); return; } try{ fetch('live.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{ if(j&&j.updated&&(!LIVE.updated||new Date(j.updated)>=new Date(LIVE.updated))){ LIVE=j; applyLive(); } }).catch(()=>{}); }catch(e){} }
+
+
+/* ============ MÍDIA (fotos e áudios no aparelho) ============ */
+const IDB={p:null,
+  open(){ return this.p||(this.p=new Promise((res,rej)=>{ try{ const r=indexedDB.open('vision27',1); r.onupgradeneeded=()=>r.result.createObjectStore('media'); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }catch(e){ rej(e); } })); },
+  async put(id,b){ const db=await this.open(); return new Promise((res,rej)=>{ const tx=db.transaction('media','readwrite'); tx.objectStore('media').put(b,id); tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error); }); },
+  async get(id){ const db=await this.open(); return new Promise((res,rej)=>{ const r=db.transaction('media').objectStore('media').get(id); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); },
+  async del(id){ const db=await this.open(); return new Promise(res=>{ const tx=db.transaction('media','readwrite'); tx.objectStore('media').delete(id); tx.oncomplete=()=>res(); tx.onerror=()=>res(); }); }
+};
+const urlCache={};
+async function mediaURL(id){ if(urlCache[id]) return urlCache[id]; try{ const b=await IDB.get(id); if(b) return urlCache[id]=URL.createObjectURL(b); }catch(e){} return (typeof cloudMediaURL==='function')?cloudMediaURL(id):null; }
+function hydrateMedia(root){ (root||document).querySelectorAll('[data-mid]').forEach(async el=>{ const u=await mediaURL(el.dataset.mid); if(u) el.src=u; }); }
+async function shrink(file){ try{ const bmp=await createImageBitmap(file); const k=Math.min(1,1600/Math.max(bmp.width,bmp.height)); const cv=document.createElement('canvas'); cv.width=Math.round(bmp.width*k); cv.height=Math.round(bmp.height*k); cv.getContext('2d').drawImage(bmp,0,0,cv.width,cv.height); return await new Promise(r=>cv.toBlob(b=>r(b||file),'image/jpeg',.82)); }catch(e){ return file; } }
+
+/* ============ VOZ ============ */
+const MES=['','janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const WD={SEG:'Segunda-feira',TER:'Terça-feira',QUA:'Quarta-feira',QUI:'Quinta-feira',SEX:'Sexta-feira','SÁB':'Sábado',DOM:'Domingo'};
+function spoken(t){ return String(t)
+  .replace(/(\d{1,2})h(\d{2})/g,(m,a,b)=>`${+a} e ${b}`).replace(/\b(\d{1,2})h\b/g,(m,a)=>`${+a} horas`)
+  .replace(/\b(\d{1,2})\/(\d{2})(\/\d{4})?\b/g,(m,d,mo)=>`${+d} de ${MES[+mo]||mo}`)
+  .replace(/→/g,' para ').replace(/↔/g,' e ').replace(/\s·\s/g,', ').replace(/\bm²/g,' metros quadrados').replace(/\bMOQ\b/g,'pedido mínimo').replace(/\bFOB\b/g,'F O B'); }
+let voices=[]; function loadVoices(){ try{ voices=speechSynthesis.getVoices()||[]; }catch(e){} }
+if('speechSynthesis' in window){ loadVoices(); try{ speechSynthesis.onvoiceschanged=loadVoices; }catch(e){} }
+function voiceFor(lang){ const L=lang.toLowerCase(); let c=voices.filter(v=>v.lang.toLowerCase().replace('_','-')===L); if(!c.length) c=voices.filter(v=>v.lang.toLowerCase().startsWith(L.split('-')[0])); return c.find(v=>/natural|premium|enhanced|neural|google|luciana|felipe|siri/i.test(v.name))||c[0]||null; }
+function chunk(text){ const out=[]; String(text).split(/(?<=[.!?;:])\s+/).forEach(s=>{ while(s.length>220){ const i=s.lastIndexOf(',',220); const k=i>60?i+1:220; out.push(s.slice(0,k)); s=s.slice(k).trim(); } if(s.trim()) out.push(s.trim()); }); return out; }
+const pl={on:false,paused:false};
+function speak(parts,{lang='pt-BR',label='Ouvindo',rate}={}){
+  if(!('speechSynthesis' in window)){ toast('Este navegador não lê em voz alta'); return; }
+  try{ speechSynthesis.cancel(); }catch(e){}
+  loadVoices(); const v=voiceFor(lang);
+  if(!v && voices.length && lang!=='pt-BR') toast('Seu aparelho pode não ter voz instalada para este idioma');
+  const lines=[].concat(parts).flatMap(chunk); if(!lines.length) return;
+  $('#plLabel').textContent=label; $('#player').classList.add('on'); $('#player').classList.remove('paused'); pl.on=true; pl.paused=false; setPauseIcon();
+  lines.forEach((t,i)=>{ const u=new SpeechSynthesisUtterance(t); u.lang=lang; if(v) u.voice=v; u.rate=rate||(lang==='pt-BR'?1.03:.82);
+    u.onstart=()=>{ $('#plLine').textContent=t; };
+    if(i===lines.length-1){ u.onend=()=>stopSpeak(); u.onerror=()=>stopSpeak(); }
+    speechSynthesis.speak(u); });
+}
+function stopSpeak(){ try{ speechSynthesis.cancel(); }catch(e){} pl.on=false; $('#player').classList.remove('on'); }
+function setPauseIcon(){ $('#plPause').innerHTML = pl.paused? svgI('play',18) : '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>'; $('#plPause').setAttribute('aria-label',pl.paused?'Continuar':'Pausar'); }
+$('#plStop').addEventListener('click',stopSpeak);
+$('#plPause').addEventListener('click',()=>{ try{ if(pl.paused){ speechSynthesis.resume(); pl.paused=false; } else { speechSynthesis.pause(); pl.paused=true; } }catch(e){} $('#player').classList.toggle('paused',pl.paused); setPauseIcon(); });
+
+function dayBrief(c,d){
+  const mes=d.m==='MAI'?'maio':'abril';
+  const p=[`${WD[d.w]}, ${+d.d} de ${mes}, em ${c.nome}. ${d.t}. ${d.s}.`];
+  d.it.forEach(([h,tg,t])=>{ const pre=/^\d/.test(h)?`Às ${h}`:h==='Alt.'?'Alternativa':h; p.push(`${pre}: ${t}.`); });
+  const n=D.notes[c.id+'|'+d.iso]; if(n&&n.trim()) p.push(`Suas anotações deste dia: ${n.trim()}`);
+  return p.map(spoken);
+}
+
+/* ============ ESTATÍSTICAS E RESUMO ============ */
+function ckItems(key){ return CK[key].items.map(([id,t,w])=>({id,t,w,custom:false})).concat((D.cust[key]||[]).map(x=>({id:x.id,t:x.t,w:'',custom:true}))); }
+function ckCount(key){ const it=ckItems(key); return [it.filter(x=>D.ck[x.id]).length, it.length]; }
+function stats(){
+  let ckDone=0,ckTot=0; Object.keys(CK).forEach(k=>{ const [a,b]=ckCount(k); ckDone+=a; ckTot+=b; });
+  let mustTot=0,mustDone=0; CITIES.forEach(c=>c.must.forEach((m,i)=>{ mustTot++; if(D.must[c.id+'-'+i]&&D.must[c.id+'-'+i].v) mustDone++; }));
+  const gasto=D.exp.reduce((s,e)=>s+expBRL(e),0);
+  return {ckDone,ckTot,mustTot,mustDone,gasto,ideas:D.ideas.length,sup:D.sup.length,media:D.media.length,stamps:Object.keys(stamps).length};
+}
+function cityData(id){
+  const c=CITIES.find(x=>x.id===id);
+  return { c, ideas:D.ideas.filter(x=>x.city===id), sup:D.sup.filter(x=>x.city===id), exp:D.exp.filter(x=>x.city===id), media:D.media.filter(x=>x.city===id),
+    nota:D.nota[id]||{}, hotel:D.hotel[id]||{}, musts:c.must.map((m,i)=>({m,st:D.must[id+'-'+i]||{}})),
+    notes:c.dias.flatMap(d=>{ const nk=id+'|'+d.iso; const own=(D.notes[nk]||'').trim(); const L=own?[{d,t:own,by:D.me}]:[]; Object.values(D.onotes||{}).filter(n=>n.k===nk&&String(n.t||'').trim()).forEach(n=>L.push({d,t:String(n.t).trim(),by:n.by||n.autor})); return L; }) };
+}
+function summaryParts(only){
+  const P=[]; const st=stats();
+  if(!only){
+    P.push(`Resumo da missão Ásia e Emirados 2027, do Grupo Vision${D.me?`. Registros de ${D.me}`:''}.`);
+    P.push(`Até agora, ${st.ckDone} de ${st.ckTot} itens da checklist estão prontos. O grupo visitou ${st.mustDone} de ${st.mustTot} imperdíveis, registrou ${st.ideas} ${st.ideas===1?'ideia':'ideias'}, ${st.sup} ${st.sup===1?'fornecedor':'fornecedores'} e ${fmtBRL(st.gasto)} em gastos.`);
+    const hi=D.ideas.filter(i=>i.pri==='Alta'); if(hi.length) P.push(`Ideias de prioridade alta: ${hi.map(i=>i.t.replace(/\.$/,'')).join('; ')}.`);
+    const top=D.sup.filter(s=>(s.nota||0)>=4); if(top.length) P.push(`Fornecedores mais bem avaliados: ${top.map(s=>`${s.emp}, de ${cityName(s.city)}`).join('; ')}.`);
+  }
+  (only?CITIES.filter(c=>c.id===only):CITIES).forEach(c=>{
+    const x=cityData(c.id); const any=x.ideas.length||x.sup.length||x.exp.length||x.notes.length||x.nota.r||x.nota.best||x.musts.some(m=>m.st.v);
+    if(!any){ P.push(`${c.nome}: ainda sem registros.`); return; }
+    P.push(`${c.nome}.${x.nota.r?` Nota da cidade: ${x.nota.r} de 5.`:''}${x.nota.best?` Melhor momento: ${x.nota.best}.`:''}`);
+    const vis=x.musts.filter(m=>m.st.v); if(vis.length) P.push(`Visitados: ${vis.map(m=>m.m[0]+(m.st.r?`, nota ${m.st.r}`:'')).join('; ')}.`);
+    if(x.ideas.length) P.push(`Ideias: ${x.ideas.map(i=>`${i.t.replace(/\.$/,'')}, para ${i.cat}, prioridade ${i.pri}`).join('. ')}.`);
+    x.sup.forEach(s=>P.push(`Fornecedor ${s.emp}${s.prod?`, ${s.prod}`:''}.${s.moq?` Pedido mínimo: ${s.moq}.`:''}${s.fob?` Preço: ${s.fob}.`:''}${s.prazo?` Prazo: ${s.prazo}.`:''}${s.cert?` Certificação: ${s.cert}.`:''}${s.nota?` Nota ${s.nota} de 5.`:''}${s.obs?` ${s.obs}`:''}`));
+    if(x.exp.length) P.push(`Gastos em ${c.nome}: ${fmtBRL(x.exp.reduce((a,e)=>a+expBRL(e),0))}.`);
+    x.notes.forEach(n=>P.push(`Anotações de ${n.by?n.by+', ':''}${+n.d.d} de ${n.d.m==='MAI'?'maio':'abril'}: ${n.t}`));
+  });
+  return P.map(spoken);
+}
+
+/* ============ PEÇAS DE INTERFACE ============ */
+const PRE_KEYS=['pre1','pre2','pre3','pre4','pre5','pre6'];
+const TABS = [{id:'visao',nome:'Visão geral',cor:'#F4EFE6'}, {id:'pre',nome:'Pré-viagem',cor:'#7FD1FF'}, ...CITIES.map(c=>({id:c.id,nome:c.nome,cor:c.cor})), {id:'kit',nome:'Checklist & kit',cor:'#5FF0B4'}, {id:'resumo',nome:'Resumo',cor:'#FFB547'}];
+function tagHtml(t){ return `<span class="tag ${t}">${t}</span>`; }
+function starsHtml(k,val,big){ return `<div class="stars${big?' big':''}" role="group" aria-label="Nota de 1 a 5">${[1,2,3,4,5].map(n=>`<button type="button" class="${n<=(val||0)?'on':''}" data-act="star" data-k="${k}" data-n="${n}" aria-label="${n} de 5">${svgI('star',big?26:18)}</button>`).join('')}</div>`; }
+function opts(list,sel){ return list.map(o=>`<option${o===sel?' selected':''}>${o}</option>`).join(''); }
+function renderTabs(){
+  $('#tabs').innerHTML = TABS.map(t=>`<button class="tab" role="tab" id="t-${t.id}" aria-controls="p-${t.id}" aria-selected="false" data-tab="${t.id}" style="--tc:${t.cor}"><span class="sw"></span>${t.nome}${stamps[t.id]?'<span class="stampMini" style="color:'+t.cor+'">OK</span>':''}</button>`).join('');
+  $('#tabs').querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>selectTab(b.dataset.tab,true)));
+}
+function ckBoxHtml(key){
+  const it=ckItems(key), [a,b]=ckCount(key);
+  const due=CK[key].due; let dl='';
+  if(due){ const dd=Math.ceil((new Date(due+'T23:59:59-03:00')-new Date())/864e5); const [y,m,d]=due.split('-'); dl=`<span class="due${a===b?' ok':dd<0?' late':dd<=14?' soon':''}">${a===b?'concluído':dd<0?`atrasado · prazo ${d}/${m}`:dd===0?'prazo hoje':`até ${d}/${m} · faltam ${dd} dias`}</span>`; }
+  return `<div class="ckBox" id="ck-${key}"><div class="ckTop"><div><h3 class="h2" style="font-size:22px">${CK[key].t}</h3>${dl}</div><span class="mono" style="font-size:14px;color:var(--c)">${a}/${b}${a===b?' · tudo pronto':''}</span></div>
+   <div class="pbar" aria-hidden="true"><i style="width:${b?a/b*100:0}%"></i></div>
+   <ul class="ckList">${it.map(x=>`<li><label class="ck"><input type="checkbox" data-ck="${x.id}" data-box="${key}" ${D.ck[x.id]?'checked':''}><span><span class="t">${esc(x.t)}</span>${x.w?`<span class="w">${x.w}</span>`:''}${x.custom?`<button type="button" class="x" data-act="rmck" data-box="${key}" data-id="${x.id}">remover</button>`:''}</span></label></li>`).join('')}</ul>
+   <div class="addRow"><input class="in" id="add-${key}" placeholder="Adicionar item à lista" aria-label="Novo item da checklist"><button class="btn" type="button" data-act="addck" data-box="${key}">${svgI('plus',16)}Adicionar</button></div></div>`;
+}
+function refreshCk(key){ if(current==='pre'&&PRE_KEYS.includes(key)){ renderPre(); return; } const el=document.getElementById('ck-'+key); if(el) el.outerHTML=ckBoxHtml(key); if(current==='kit') renderKit(); }
+
+function cityPanel(c){
+  const pcR=[-1.4,1.1,-.6,1.6,-1,.8];
+  const isToday = d=>d.iso===todayISO;
+  const em=EMER[c.id];
+  return `<section class="panel" role="tabpanel" id="p-${c.id}" aria-labelledby="t-${c.id}" style="--c:${c.cor}">
+   <div class="scene"><div class="sceneArt" data-scene="${c.id}"></div>
+     <button class="pill stampBtn" type="button" data-stamp="${c.id}" aria-pressed="${!!stamps[c.id]}">${stamps[c.id]?'Passaporte carimbado':'Carimbar passaporte'}</button>
+     <div class="cap"><div class="local">${c.local}</div><h2>${c.nome}</h2><div class="when">${c.datas} · ${c.noites}</div></div></div>
+   <div class="chips">${c.chips.map(([k,v])=>`<span class="chip"><i>${k}</i>${v}</span>`).join('')}</div>
+   <p class="intro">${c.intro}</p>
+
+   <div class="sec" id="wx-${c.id}">${wxHtml(c.id)}</div>
+
+   <div class="sec">${ckBoxHtml(c.id)}</div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Imperdíveis <span class="hand">marque o que visitou</span></h3><div class="legend">${tagHtml('TOP')}${tagHtml('FUTURO')}${tagHtml('NEGÓCIOS')}</div></div>
+    <div class="rail">${c.must.map((m,i)=>{ const k=c.id+'-'+i, st=D.must[k]||{}; return `<article class="must"><div class="n">${String(i+1).padStart(2,'0')}</div><h4>${m[0]}</h4><p>${m[1]}</p><div style="margin-top:12px">${tagHtml(m[2])}</div>
+      <div class="mAct"><button type="button" class="fui" data-act="fui" data-k="${k}" aria-pressed="${!!st.v}">${svgI('check',14)}${st.v?'Fui':'Fui?'}</button>${starsHtml('m:'+k,st.r)}</div></article>`; }).join('')}</div></div>
+
+   ${c.id==='guangzhou'?fairBlock():''}
+
+   <div class="sec"><div class="secT"><h3 class="h2">Dia a dia</h3><p class="sub">Toque em "Ouvir o dia" para escutar o briefing e use as anotações como diário.</p></div>
+    <div class="days">${c.dias.map((d,di)=>{ const nk=c.id+'|'+d.iso, note=D.notes[nk]||''; return `<article class="day${isToday(d)?' today':''}"><div class="dstub"><span class="w">${d.w}</span><span class="d">${d.d}</span><span class="m">${d.m||'ABR'}</span></div>
+     <div class="dbody"><h4>${d.t}${isToday(d)?'<span class="todayFlag">HOJE</span>':''}</h4><p class="ds">${d.s}</p>
+     <ul class="its">${d.it.map(([h,tg,t])=>`<li><span class="h">${h}</span><span>${tg.length?`<span class="tg">${tg.map(tagHtml).join('')}</span>`:''}${t}</span></li>`).join('')}</ul>
+     <div class="dActs"><button type="button" class="mini" data-act="ouvirDia" data-city="${c.id}" data-i="${di}">${svgI('spk',16)}Ouvir o dia</button><span class="dwx" data-wx="${c.id}|${d.iso}">${dayWx(c.id,d.iso)}</span></div>
+     <details class="noteBox"${note?' open':''}><summary>${svgI('pen',16)}Anotações do dia <span class="has" ${note?'':'hidden'}>SALVO</span></summary><textarea class="in" data-note="${nk}" placeholder="O que vimos, ideias, contatos, lições do dia. Dá para ditar pelo microfone do teclado.">${esc(note)}</textarea></details>
+     <div data-onotes="${nk}">${oNotesHtml(nk)}</div>
+     </div></article>`; }).join('')}</div></div>
+
+   <div class="sec" id="jr-${c.id}"><div class="secT"><h3 class="h2">Diário de bordo <span class="hand">o que levar para o Grupo Vision</span></h3><p class="sub">Tudo o que for registrado aqui entra no Resumo, que dá para ouvir em áudio e mandar no WhatsApp.</p></div>
+    <div class="journal" id="jn-${c.id}">${journalHtml(c.id)}</div></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Você sabia?</h3></div>
+    <div class="pcs">${c.curi.map((q,i)=>`<article class="pc" style="--r:${pcR[i%6]}deg"><span class="pst">${c.nome.slice(0,3).toUpperCase()}<br>2027</span><p class="q">${q[0]}</p><p>${q[1]}</p></article>`).join('')}</div></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Dicas de quem vai</h3></div>
+    <ul class="tips">${c.dicas.map(t=>`<li>${svgI('check',20)}<span>${t}</span></li>`).join('')}</ul></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Fale como local</h3><p class="sub">Toque no alto-falante para ouvir a pronúncia (depende das vozes instaladas no celular).</p></div>
+    <div class="phr">${c.frases.map(f=>{ const nat=f[0].split(' · ')[0]; return `<div class="ph"><div class="lo">${f[0]}</div><button type="button" class="say" data-act="say" data-lang="${LANG[c.id]}" data-t="${esc(nat)}" aria-label="Ouvir: ${esc(f[2])}">${svgI('spk',18)}</button><div class="pr">${f[1]}</div><div class="pt">${f[2]}</div></div>`; }).join('')}</div>
+    ${c.en?`<div class="secT" style="margin-top:26px"><h3 class="h2" style="font-size:22px">Inglês para negociar no estande</h3></div><div class="phr">${c.en.map(f=>`<div class="ph en"><div class="lo">${f[0]}</div><button type="button" class="say" data-act="say" data-lang="en-US" data-t="${esc(f[0])}" aria-label="Ouvir em inglês">${svgI('spk',18)}</button><div class="pt">${f[1]}</div></div>`).join('')}</div>`:''}
+   </div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Onde ficar</h3></div>
+    <div class="card hotel"><div><span class="kick" style="color:var(--c)">Região recomendada</span><h4 style="margin-top:6px">${c.hotel.reg}</h4><p class="sub" style="margin-top:4px">${c.hotel.pq}</p><div class="warn">${svgI('spark',18)}<span>${c.hotel.ev}</span></div></div>
+     <div><span class="kick" style="color:var(--mu)">Referências para cotar</span><ul>${c.hotel.op.map(o=>`<li>${o}</li>`).join('')}</ul></div></div>
+    <div class="emer"><b>${em[0]}</b><p><strong>Emergência:</strong> ${em[1]}. Representação: ${em[2]}.</p></div></div>
+  </section>`;
+}
+
+function journalHtml(id){
+  const seg=segOf[id]||'ideias'; const x=cityData(id);
+  const cnt={ideias:x.ideas.length,forn:x.sup.length,gastos:x.exp.length,midia:x.media.length,hotel:(x.hotel.nome||x.hotel.end||x.nota.r)?'✓':0};
+  const tabs=`<div class="segs" role="tablist">${SEGS.map(([k,n])=>`<button type="button" role="tab" class="seg" aria-selected="${k===seg}" data-act="seg" data-city="${id}" data-seg="${k}">${n}${cnt[k]?`<b>${cnt[k]}</b>`:''}</button>`).join('')}</div>`;
+  const f=n=>`f-${id}-${n}`;
+  let body='';
+  if(seg==='ideias'){
+    body=`<div class="fgrid"><label class="fl w2">Ideia, tecnologia ou insight<textarea class="in" id="${f('t')}" placeholder="Ex.: totem de impressão instantânea com QR code para formaturas"></textarea></label>
+      <label class="fl">Para qual área<select class="in" id="${f('cat')}">${opts(CATS)}</select></label>
+      <label class="fl">Prioridade<select class="in" id="${f('pri')}">${opts(PRI,'Média')}</select></label></div>
+      <div class="dActs"><button class="btn pri" type="button" data-act="addIdea" data-city="${id}">${svgI('plus',16)}Salvar ideia</button></div>
+      <div class="entries">${x.ideas.map(i=>`<div class="entry"><div class="meta"><span class="${i.pri==='Alta'?'hi':''}">${i.pri}</span><span>${esc(i.cat)}</span>${i.by?`<span>${esc(i.by)}</span>`:''}</div>${esc(i.t)}<button type="button" class="del" data-act="del" data-kind="ideas" data-id="${i.id}" aria-label="Apagar">✕</button></div>`).join('')||'<p class="empty">Nenhuma ideia ainda.</p>'}</div>`;
+  } else if(seg==='forn'){
+    const F=[['emp','Empresa','Nome no cartão'],['prod','Produto','O que vende'],['local','Estande ou local','Ex.: 9.2 F31'],['moq','Pedido mínimo (MOQ)','Ex.: 500 un.'],['fob','Preço FOB','Ex.: US$ 12,50'],['prazo','Prazo de produção','Ex.: 30 dias'],['cert','Certificação para o Brasil','INMETRO, ANATEL…'],['contato','WeChat / contato','ID ou telefone']];
+    body=`<div class="fgrid">${F.map(([k,l,p])=>`<label class="fl">${l}<input class="in" id="${f(k)}" placeholder="${p}"></label>`).join('')}<label class="fl w2">Observações<textarea class="in" id="${f('obs')}" placeholder="OEM? amostras? forma de pagamento? impressão geral"></textarea></label></div>
+      <div class="dActs"><button class="btn pri" type="button" data-act="addSup" data-city="${id}">${svgI('plus',16)}Salvar fornecedor</button></div>
+      <div class="entries">${x.sup.map(s=>`<div class="entry"><div class="meta">${s.local?`<span>${esc(s.local)}</span>`:''}${s.by?`<span>${esc(s.by)}</span>`:''}</div><h5>${esc(s.emp)}${s.prod?` · <span style="font-weight:500;color:var(--mu)">${esc(s.prod)}</span>`:''}</h5>
+        <div class="kv">${[['MOQ',s.moq],['FOB',s.fob],['Prazo',s.prazo],['Certificação',s.cert],['Contato',s.contato]].filter(z=>z[1]).map(z=>`<div><i>${z[0]}</i>${esc(z[1])}</div>`).join('')}</div>${s.obs?`<p style="margin:8px 0 0;color:var(--mu);font-size:14px">${esc(s.obs)}</p>`:''}
+        <div style="margin-top:8px">${starsHtml('s:'+s.id,s.nota)}</div><button type="button" class="del" data-act="del" data-kind="sup" data-id="${s.id}" aria-label="Apagar">✕</button></div>`).join('')||'<p class="empty">Nenhum fornecedor ainda.</p>'}</div>`;
+  } else if(seg==='gastos'){
+    const tot=x.exp.reduce((a,e)=>a+expBRL(e),0);
+    body=`<div class="fgrid"><label class="fl w2">Descrição<input class="in" id="${f('desc')}" placeholder="Ex.: jantar no cruzeiro"></label>
+      <label class="fl">Valor<input class="in" id="${f('val')}" inputmode="decimal" placeholder="0,00"></label>
+      <label class="fl">Moeda<select class="in" id="${f('cur')}">${opts(CURS,CUR[id])}</select></label>
+      <label class="fl">Categoria<select class="in" id="${f('cat2')}">${opts(ECATS)}</select></label></div>
+      <div class="dActs"><button class="btn pri" type="button" data-act="addExp" data-city="${id}">${svgI('plus',16)}Lançar gasto</button></div>
+      <div class="entries">${x.exp.map(e=>`<div class="entry"><div class="meta"><span>${esc(e.cat)}</span>${e.by?`<span>${esc(e.by)}</span>`:''}</div><b>${esc(e.desc)||'Gasto'}</b> · ${esc(e.cur)} ${esc(e.val)} <span style="color:var(--mu)">≈ ${fmtBRL(expBRL(e))}</span><button type="button" class="del" data-act="del" data-kind="exp" data-id="${e.id}" aria-label="Apagar">✕</button></div>`).join('')||'<p class="empty">Nenhum gasto lançado.</p>'}</div>
+      <div class="tot"><span>Total em ${cityName(id)}</span><b>${fmtBRL(tot)}</b></div><p class="jHint">Cada gasto guarda a cotação do dia em que foi lançado (aba Checklist & kit).</p>`;
+  } else if(seg==='midia'){
+    body=`<div class="fgrid"><label class="fl w2">Legenda (opcional, vale para o próximo arquivo)<input class="in" id="${f('mcap')}" placeholder="Ex.: estande de painéis de LED"></label></div>
+      <div class="upl" style="margin-top:12px"><label class="btn pri">${svgI('cam',16)}Tirar foto<input type="file" accept="image/*" capture="environment" data-media="image" data-city="${id}"></label>
+      <label class="btn">${svgI('img',16)}Da galeria<input type="file" accept="image/*" multiple data-media="image" data-city="${id}"></label>
+      <label class="btn">${svgI('mic',16)}Áudio<input type="file" accept="audio/*" capture data-media="audio" data-city="${id}"></label></div>
+      <p class="jHint">Fotos e áudios ficam guardados neste celular. Para áudio, grave com o gravador do celular (ou pelo WhatsApp) e anexe aqui.</p>
+      <div class="media">${x.media.map(m=>m.type==='image'?`<div class="mi"><img alt="${esc(m.cap||'Foto')}" data-mid="${m.id}">${m.cap?`<div class="cap2">${esc(m.cap)}</div>`:''}<button type="button" class="del" data-act="del" data-kind="media" data-id="${m.id}" aria-label="Apagar">✕</button></div>`:`<div class="mi au"><div class="cap2" style="padding:0 34px 0 0">${svgI('mic',14)} ${esc(m.cap||m.name||'Áudio')}</div><audio controls preload="metadata" data-mid="${m.id}"></audio><button type="button" class="del" data-act="del" data-kind="media" data-id="${m.id}" aria-label="Apagar">✕</button></div>`).join('')||'<p class="empty">Nenhuma foto ou áudio ainda.</p>'}</div>`;
+  } else {
+    const h=x.hotel;
+    body=`<div class="fgrid"><label class="fl">Hotel reservado<input class="in" data-hotel="${id}|nome" value="${esc(h.nome)}" placeholder="Nome do hotel"></label>
+      <label class="fl">Telefone do hotel<input class="in" data-hotel="${id}|tel" value="${esc(h.tel)}" inputmode="tel" placeholder="+..."></label>
+      <label class="fl w2">Endereço no idioma local (copie do site ou do e-mail da reserva)<textarea class="in" data-hotel="${id}|end" placeholder="Ex.: endereço em chinês, japonês ou árabe">${esc(h.end)}</textarea></label>
+      <label class="fl">Código da reserva<input class="in" data-hotel="${id}|conf" value="${esc(h.conf)}" placeholder="Confirmação"></label></div>
+      <div class="dActs"><button class="btn pri" type="button" data-act="driver" data-city="${id}">${svgI('car',16)}Mostrar ao motorista</button></div>
+      <div style="margin-top:26px"><span class="kick" style="color:var(--c)">Sua nota para ${cityName(id)}</span><div style="margin-top:6px">${starsHtml('c:'+id,x.nota.r,true)}</div></div>
+      <label class="fl" style="margin-top:12px">Melhor momento em ${cityName(id)}<input class="in" data-best="${id}" value="${esc(x.nota.best)}" placeholder="O que ninguém pode esquecer"></label>
+      <div class="dActs" style="margin-top:16px"><button class="btn" type="button" data-act="ouvirCidade" data-city="${id}">${svgI('spk',16)}Ouvir o resumo de ${cityName(id)}</button></div>`;
+  }
+  return tabs+`<div class="jBody">${body}</div>`;
+}
+function refreshJournal(id){ const el=document.getElementById('jn-'+id); if(el){ el.innerHTML=journalHtml(id); hydrateMedia(el); } }
+
+function fairBlock(){
+  const S=[['Eletrônicos e eletrodomésticos','Mix para varejo, quiosques e franquias; gadgets e brindes','ANATEL · tomada NBR 14136 · 127/220 V'],['Iluminação','LED, painéis, moving heads e cênica para eventos, formaturas e venues','INMETRO · reposição de peças'],['Novas energias','Módulos solares, inversores e baterias para usinas fotovoltaicas','INMETRO · homologação na distribuidora'],['Máquinas e ferramentas','Montagem de eventos, manutenção de venues, obras de lojas','Tensão trifásica brasileira'],['Mobilidade elétrica','Patinetes e veículos de serviço para eventos e shoppings','Regras CONTRAN']];
+  return `<div class="sec"><div class="secT"><h3 class="h2">Plano da feira <span class="hand">Fase 1</span></h3><p class="sub">Cinco setores, três duplas e um coordenador. Registre cada fornecedor no Diário de bordo, logo abaixo.</p></div>
+   <div class="sectors">${S.map(s=>`<div class="sct"><h4>${s[0]}</h4><p>${s[1]}</p><div class="cert">${s[2]}</div></div>`).join('')}</div>
+   <div class="teams"><div class="tm"><b>Coordenador</b><p>Circula pelos setores, entra nas negociações mais promissoras e consolida a planilha única do grupo toda noite.</p></div><div class="tm"><b>Dupla 1</b><p>Eletrônicos e eletrodomésticos</p></div><div class="tm"><b>Dupla 2</b><p>Iluminação e mobilidade</p></div><div class="tm"><b>Dupla 3</b><p>Novas energias e máquinas</p></div></div>
+   <div class="ask"><b>Perguntar a todo fornecedor</b><ol><li>Pedido mínimo (MOQ)</li><li>Preço FOB</li><li>Prazo de produção</li><li>Certificações para o Brasil</li><li>OEM com marca própria</li><li>Pagamento (o comum é 30% de sinal e 70% antes do embarque)</li><li>Amostras</li><li>Contato no WeChat</li></ol></div></div>`;
+}
+function miniArt(c){ return `<svg class="art" viewBox="300 60 700 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${SCENES[c.id]().replace(/class="rise"/g,'').replace(/id="(\w+)"/g,'id="m'+c.id.replace('-','')+'$1"').replace(/url\(#(\w+)\)/g,'url(#m'+c.id.replace('-','')+'$1)')}</svg>`; }
+
+function overviewPanel(){
+  return `<section class="panel" role="tabpanel" id="p-visao" aria-labelledby="t-visao" style="--c:#FFB547">
+   ${IS_CLOUD?'':`<div class="sec" style="margin-top:30px"><div class="card"><div class="meName"><label class="fl">Quem está usando este roteiro?<input class="in" id="meName" value="${esc(D.me)}" placeholder="Seu nome (aparece nas suas anotações)"></label></div>
+    <p class="jHint" style="margin-top:10px">Esta cópia salva só neste celular. A versão oficial, com login e tudo salvo na nuvem, fica em <a href="${SITE}">${SITE}</a>.</p></div></div>`}
+
+   <div class="sec"><div class="secT"><h3 class="h2">Os destinos <span class="hand">toque para abrir</span></h3></div>
+    <div class="cityCards">${CITIES.map(c=>{ const [a,b]=ckCount(c.id); return `<button class="cc" type="button" data-go="${c.id}" style="--cc:${c.cor}">${miniArt(c)}<span class="tx"><b>${c.nome}</b><span>${c.datas} · checklist ${a}/${b}</span></span></button>`; }).join('')}</div></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Voos confirmados <span class="hand">Emirates</span></h3><p class="sub">Franquia: 2 malas de 23 kg e 1 de mão de 10 kg por pessoa.</p></div>
+    <div class="bps">${FLIGHTS.map(f=>`<article class="bp"><div class="main"><div class="top"><span>Cartão de embarque</span><span>${f.fl}</span></div>
+      <div class="rt"><span class="iata">${f.de}</span><svg height="24" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 H100" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 4"/><g transform="translate(106 12)"><path d="M-10 -1.6 L5 -1.6 L10 0 L5 1.6 L-10 1.6Z M-2 -1.6 L-6 -9 L-3 -9 L3 -1.6Z M-2 1.6 L-6 9 L-3 9 L3 1.6Z" fill="currentColor"/></g></svg><span class="iata">${f.pa}</span></div>
+      <div class="row"><div><i>De</i><b>${f.dn}</b></div><div><i>Para</i><b>${f.pn}</b></div><div><i>Partida (local)</i><b>${f.sai}</b></div><div><i>Chegada (local)</i><b>${f.che}</b></div></div>
+      <div class="note">${f.nota}</div></div><div class="stub"><span class="fl">${f.fl}</span><span class="bar" aria-hidden="true"></span></div></article>`).join('')}</div></div>
+
+   <div class="sec" id="radar">${radarHtml()}</div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Antes de reservar <span class="hand">6 alertas</span></h3></div>
+    <div class="alerts" id="alertsBox">${alertsHtml()}</div></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Todos os trechos</h3><p class="sub">O que já está confirmado e o que ainda falta comprar.</p></div>
+    <div class="legs">${LEGS.map(l=>`<div class="leg"><span class="ic">${svgI(l[0],18)}</span><span><b>${l[1]}</b><br><span style="color:var(--mu);font-size:14px">${l[2]}</span></span><span class="st ${l[3]}">${l[3]==='ok'?'CONFIRMADO':'A COMPRAR'}</span></div>`).join('')}</div></div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Passaporte do grupo</h3><p class="sub">Ao chegar em cada cidade, abra a aba e toque em "Carimbar passaporte".</p></div>
+    <div class="passport" id="passport"></div></div>
+
+   <div class="sec" id="plansBox">${plansHtml()}</div>
+
+   <div class="sec"><div class="secT"><h3 class="h2">Como ler o roteiro</h3></div>
+    <div class="card"><div class="legend" style="gap:14px 26px">${tagHtml('TOP')}<span>os pontos mais visitados por brasileiros</span>${tagHtml('FUTURO')}<span>arquitetura e experiências futuristas</span>${tagHtml('NEGÓCIOS')}<span>fornecedores e benchmarks</span></div></div></div>
+  </section>`;
+}
+
+function prePanel(){ return `<section class="panel" role="tabpanel" id="p-pre" aria-labelledby="t-pre" style="--c:#7FD1FF"><div id="preIn"></div></section>`; }
+function renderPre(){
+  const el=$('#preIn'); if(!el) return; let a=0,b=0; PRE_KEYS.forEach(k=>{ const [x,y]=ckCount(k); a+=x; b+=y; });
+  const nxt=PRE_KEYS.find(k=>{ const [x,y]=ckCount(k); return x<y; });
+  el.innerHTML=`<div class="sec" style="margin-top:30px"><div class="secT"><h3 class="h2">Pré-viagem <span class="hand">tudo pronto antes de embarcar</span></h3><p class="sub">Seis etapas com prazo, do visto até o embarque em Guarulhos. Cada viajante marca no próprio celular.</p></div>
+    <div class="ckHead"><div class="prog"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#2A2639" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#7FD1FF" stroke-width="7" stroke-linecap="round" transform="rotate(-90 32 32)" stroke-dasharray="${(a/b*163.4).toFixed(1)} 163.4" style="opacity:${a?1:0}"/></svg><div><b>${a}/${b}</b><span>${a===b?'Pronto para embarcar!':nxt?`Próxima etapa: ${CK[nxt].t.replace(/^\d · /,'')}`:''}</span></div></div>
+     <div class="ckActs"><button class="btn pri" type="button" data-act="copyPre">${svgI('copy',16)}Copiar pré-viagem</button></div></div></div>
+    ${PRE_KEYS.map(k=>`<div class="sec" style="margin-top:16px">${ckBoxHtml(k)}</div>`).join('')}`;
+}
+function kitPanel(){ return `<section class="panel" role="tabpanel" id="p-kit" aria-labelledby="t-kit" style="--c:#5FF0B4"><div id="kitIn"></div></section>`; }
+function renderKit(){
+  const el=$('#kitIn'); if(!el) return; const st=stats();
+  el.innerHTML=`<div class="sec" style="margin-top:30px"><div class="secT"><h3 class="h2">Checklist da missão <span class="hand">${st.ckDone} de ${st.ckTot}</span></h3><p class="sub">A preparação fica na aba Pré-viagem e os itens de cada cidade, dentro da aba da cidade. "Copiar checklist" leva tudo para o WhatsApp.</p></div>
+    <div class="ckHead"><div class="prog"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#2A2639" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#5FF0B4" stroke-width="7" stroke-linecap="round" transform="rotate(-90 32 32)" stroke-dasharray="${(st.ckDone/st.ckTot*163.4).toFixed(1)} 163.4" style="opacity:${st.ckDone?1:0}"/></svg><div><b>${Math.round(st.ckDone/st.ckTot*100)}%</b><span>${st.ckDone===st.ckTot?'Tudo pronto. Boa viagem!':'da missão pronta'}</span></div></div>
+     <div class="ckActs"><button class="btn pri" type="button" data-act="copyCk">${svgI('copy',16)}Copiar checklist</button></div></div>
+    <div class="cityCards" style="margin-top:14px">${(()=>{ let a=0,b=0; PRE_KEYS.forEach(k=>{ const [x,y]=ckCount(k); a+=x; b+=y; }); return `<button class="cc" type="button" data-go="pre" style="--cc:#7FD1FF"><span class="tx"><b>Pré-viagem</b><span>${a}/${b} itens</span><span class="pbar" style="display:block"><i style="width:${a/b*100}%;background:#7FD1FF"></i></span></span></button>`; })()}${CITIES.map(c=>{ const [a,b]=ckCount(c.id); return `<button class="cc" type="button" data-go="${c.id}" style="--cc:${c.cor}"><span class="tx"><b>${c.nome}</b><span>${a}/${b} itens</span><span class="pbar" style="display:block"><i style="width:${a/b*100}%;background:${c.cor}"></i></span></span></button>`; }).join('')}</div></div>
+   <div class="sec"><div class="secT"><h3 class="h2">Conversor de moedas</h3><p class="sub">${LIVE.rates?`Cotação atualizada automaticamente todo dia (${esc(LIVE.rates.src)}, ${esc(LIVE.rates.asOf)}).`:'Cotações de referência.'} Se mudar um valor à mão, ele vale até você tocar em "Usar a cotação do dia".</p></div>
+    <div class="card"><div class="conv"><label class="fl">Valor<input class="in" id="convVal" inputmode="decimal" placeholder="100"></label><label class="fl">Moeda<select class="in" id="convCur">${opts(CURS.slice(1),'CNY')}</select></label></div><div class="convOut" id="convOut">R$ 0,00</div>
+     <div class="rates" style="margin-top:18px">${CURS.slice(1).map(k=>`<label class="fl">1 ${k} em R$${D.rman[k]?' (manual)':''}<input class="in" data-rate="${k}" inputmode="decimal" value="${rate(k).toFixed(4).replace('.',',')}"></label>`).join('')}</div>
+     <div class="dActs"><button class="btn" type="button" data-act="resetRates">Usar a cotação do dia</button></div></div></div>
+   <div class="sec"><div class="secT"><h3 class="h2">Kit do viajante</h3></div>
+    <div class="kit">${KIT.map(k=>`<div class="kt"><div class="ic">${svgI(k[0],20)}</div><h4>${k[1]}</h4><p>${k[2]}</p></div>`).join('')}</div></div>`;
+  updConv();
+}
+function updConv(){ const v=$('#convVal'), c=$('#convCur'), o=$('#convOut'); if(!v||!o) return; o.textContent=fmtBRL(toBRL(v.value||0,c.value)); }
+
+function renderSummary(){
+  const el=$('#sumIn'); if(!el) return; const st=stats();
+  const hi=D.ideas.filter(i=>i.pri==='Alta'), top=D.sup.filter(s=>(s.nota||0)>=4);
+  el.innerHTML=`<div class="sec" style="margin-top:30px"><div class="listen"><button type="button" class="big" data-act="ouvirTudo" aria-label="Ouvir o resumo da missão">${svgI('play',34)}</button><div><h3>Ouvir o resumo da missão</h3><p>Leitura em voz alta de tudo o que foi registrado, cidade por cidade${D.me?`, nas anotações de ${esc(D.me)}`:''}.</p></div></div></div>
+   <div class="sec" style="margin-top:18px"><div class="sumHero">
+    <div class="sh"><b>${st.ckDone}/${st.ckTot}</b><span>itens da checklist</span></div><div class="sh"><b>${st.mustDone}/${st.mustTot}</b><span>imperdíveis visitados</span></div>
+    <div class="sh"><b>${st.ideas}</b><span>ideias para o grupo</span></div><div class="sh"><b>${st.sup}</b><span>fornecedores</span></div>
+    <div class="sh"><b style="font-size:22px">${fmtBRL(st.gasto)}</b><span>em gastos</span></div><div class="sh"><b>${st.media}</b><span>fotos e áudios</span></div><div class="sh"><b>${st.stamps}/5</b><span>carimbos</span></div></div>
+    <div class="dActs" style="margin-top:14px"><button class="btn pri" type="button" data-act="copyResumo">${svgI('copy',16)}Copiar resumo para o WhatsApp</button><button class="btn" type="button" data-act="copySup">${svgI('copy',16)}Copiar fornecedores (planilha)</button><button class="btn" type="button" data-act="copyExp">${svgI('copy',16)}Copiar gastos (planilha)</button></div>
+    <p class="jHint">As cópias de planilha colam direto no Excel ou no Google Planilhas, uma coluna por campo.</p></div>
+   <div class="sec"><div class="secT"><h3 class="h2">Destaques <span class="hand">o que levar para casa</span></h3></div>
+    <div class="grid" style="--m:300px"><div class="card"><span class="kick">Ideias de prioridade alta</span>${hi.length?`<ul style="margin:10px 0 0;padding-left:18px;display:grid;gap:6px">${hi.map(i=>`<li>${esc(i.t)} <span style="color:var(--mu);font-size:13px">· ${cityName(i.city)} · ${esc(i.cat)}</span></li>`).join('')}</ul>`:'<p class="empty" style="margin-top:10px">Marque ideias como prioridade alta no diário de cada cidade.</p>'}</div>
+     <div class="card"><span class="kick">Fornecedores nota 4 ou 5</span>${top.length?`<ul style="margin:10px 0 0;padding-left:18px;display:grid;gap:6px">${top.map(s=>`<li><b>${esc(s.emp)}</b>${s.prod?` · ${esc(s.prod)}`:''} <span style="color:var(--amber)">${'★'.repeat(s.nota)}</span> <span style="color:var(--mu);font-size:13px">· ${cityName(s.city)}</span></li>`).join('')}</ul>`:'<p class="empty" style="margin-top:10px">Dê estrelas aos fornecedores para eles aparecerem aqui.</p>'}</div></div></div>
+   ${CITIES.map(c=>{ const x=cityData(c.id), tot=x.exp.reduce((a,e)=>a+expBRL(e),0), vis=x.musts.filter(m=>m.st.v), [ca,cb]=ckCount(c.id);
+     return `<div class="sumCity" style="--sc:${c.cor}"><h3>${c.nome}${x.nota.r?` <span style="color:var(--amber);font-size:18px">${'★'.repeat(x.nota.r)}</span>`:''}${stamps[c.id]?`<span class="tag" style="color:${c.cor};border-color:${c.cor}">CARIMBADO</span>`:''}</h3>
+      <div class="sline">${c.datas} · checklist ${ca}/${cb} · ${vis.length}/${c.must.length} imperdíveis · ${fmtBRL(tot)}</div>
+      ${x.nota.best?`<p class="hand" style="font-size:26px;color:${c.cor};margin:10px 0 0;line-height:1.1">“${esc(x.nota.best)}”</p>`:''}
+      ${vis.length?`<div class="sumBlock"><h4>Visitados</h4><p style="margin:0">${vis.map(m=>esc(m.m[0])+(m.st.r?` <span style="color:var(--amber)">${'★'.repeat(m.st.r)}</span>`:'')).join(' · ')}</p></div>`:''}
+      ${x.ideas.length?`<div class="sumBlock"><h4>Ideias</h4><ul>${x.ideas.map(i=>`<li>${esc(i.t)} <span style="color:var(--mu);font-size:13px">· ${esc(i.cat)} · ${i.pri}</span></li>`).join('')}</ul></div>`:''}
+      ${x.sup.length?`<div class="sumBlock"><h4>Fornecedores</h4><div class="tblWrap"><table class="tbl"><thead><tr><th>Empresa</th><th>Produto</th><th>MOQ</th><th>FOB</th><th>Prazo</th><th>Nota</th></tr></thead><tbody>${x.sup.map(s=>`<tr><td><b>${esc(s.emp)}</b>${s.contato?`<br><span style="color:var(--mu);font-size:12px">${esc(s.contato)}</span>`:''}</td><td>${esc(s.prod)}</td><td>${esc(s.moq)}</td><td>${esc(s.fob)}</td><td>${esc(s.prazo)}</td><td style="color:var(--amber)">${'★'.repeat(s.nota||0)}</td></tr>`).join('')}</tbody></table></div></div>`:''}
+      ${x.exp.length?`<div class="sumBlock"><h4>Gastos · ${fmtBRL(tot)}</h4><ul>${ECATS.map(k=>{ const v=x.exp.filter(e=>e.cat===k).reduce((a,e)=>a+expBRL(e),0); return v?`<li>${k}: ${fmtBRL(v)}</li>`:''; }).join('')}</ul></div>`:''}
+      ${x.notes.length?`<div class="sumBlock"><h4>Anotações</h4><ul>${x.notes.map(n=>`<li><b class="mono" style="font-size:12px;color:var(--mu)">${n.d.d}/${n.d.m==='MAI'?'05':'04'}</b>${n.by?` <b>${esc(n.by)}:</b>`:''} ${esc(n.t)}</li>`).join('')}</ul></div>`:''}
+      ${x.media.filter(m=>m.type==='image').length?`<div class="sumBlock"><h4>Fotos</h4><div class="thumbs">${x.media.filter(m=>m.type==='image').map(m=>`<img alt="${esc(m.cap||'Foto')}" data-mid="${m.id}">`).join('')}</div></div>`:''}
+      ${!(vis.length||x.ideas.length||x.sup.length||x.exp.length||x.notes.length)?'<p class="empty" style="margin-top:10px">Ainda sem registros nesta cidade.</p>':''}
+      <div class="dActs"><button class="mini" type="button" data-act="ouvirCidade" data-city="${c.id}">${svgI('spk',14)}Ouvir ${c.nome}</button><button class="mini" type="button" data-go="${c.id}">Abrir a cidade</button></div></div>`; }).join('')}
+   ${IS_CLOUD?`<div class="sec"><div class="secT"><h3 class="h2">Tudo na nuvem</h3><p class="sub">Tudo o que o grupo registra sincroniza sozinho, inclusive fotos e áudios. Se a internet cair, fica guardado no celular e sobe quando voltar. ${sync.at?`Última sincronização: ${sync.at.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}.`:''}</p></div></div>`:''}
+   <div class="sec"${IS_CLOUD?' hidden':''}><div class="secT"><h3 class="h2">Juntar com o grupo</h3><p class="sub">Cada viajante toca em "Copiar meus dados" e manda no grupo. Quem consolida cola o texto aqui e toca em "Juntar". Ideias, fornecedores, gastos, anotações e checklist se somam sem duplicar. Fotos e áudios ficam no celular de quem registrou.</p></div>
+    <div class="card"><div class="dActs" style="margin-top:0"><button class="btn pri" type="button" data-act="copyData">${svgI('copy',16)}Copiar meus dados</button></div>
+     <label class="fl" style="margin-top:16px">Dados recebidos de outra pessoa<textarea class="in" id="mergeIn" placeholder="Cole aqui o texto que começa com VISION27"></textarea></label>
+     <div class="dActs"><button class="btn" type="button" data-act="merge">Juntar ao meu roteiro</button></div></div></div>`;
+  hydrateMedia(el);
+}
+function summaryPanel(){ return `<section class="panel" role="tabpanel" id="p-resumo" aria-labelledby="t-resumo" style="--c:#FFB547"><div id="sumIn"></div></section>`; }
+
+function renderPassport(){
+  const el=$('#passport'); if(!el) return;
+  el.innerHTML = CITIES.map((c,i)=> stamps[c.id] ? `<svg width="92" height="92" viewBox="-46 -46 92 92" role="img" aria-label="${c.nome}: carimbado">${stampSvg(c.nome.toUpperCase().slice(0,9),c.cor,[-10,8,-4,12,-14][i]).replace('r="30"','r="40"').replace('r="24"','r="33"')}</svg>` : `<div class="stampSlot">${c.nome}</div>`).join('');
+}
+function renderTodayBanner(){
+  for(const c of CITIES){ const di=c.dias.findIndex(x=>x.iso===todayISO); if(di>=0){ const d=c.dias[di]; const b=$('#todayBanner'); b.classList.add('on'); b.innerHTML=`<div class="card" style="border-color:${c.cor};margin-top:6px"><span class="kick" style="color:${c.cor}">Hoje · ${d.w} ${d.d} · ${c.nome}</span><h3 class="h2" style="margin-top:6px">${d.t}</h3><p class="sub">${d.it.map(x=>x[0]+' '+x[2]).slice(0,3).join(' · ')}</p><div class="dActs"><button class="btn pri" type="button" data-act="ouvirDia" data-city="${c.id}" data-i="${di}">${svgI('spk',16)}Ouvir o briefing</button><button class="btn" type="button" data-go="${c.id}">Ver o dia completo</button></div></div>`; return; } }
+}
+
+/* ============ TEXTOS PARA COPIAR ============ */
+async function copy(t,msg){ try{ await navigator.clipboard.writeText(t); toast(msg||'Copiado'); }catch(e){ toast('Não deu para copiar neste navegador'); } }
+function ckText(){ let t='*Checklist · Missão Ásia & Emirados 2027*\n'; Object.keys(CK).forEach(k=>{ const [a,b]=ckCount(k); t+=`\n*${CK[k].t}* (${a}/${b})\n`; ckItems(k).forEach(x=>{ t+=`${D.ck[x.id]?'✅':'⬜'} ${x.t}${x.w?` (${x.w})`:''}\n`; }); }); return t; }
+function resumoText(){
+  const st=stats(); let t=`*Missão Ásia & Emirados 2027 · Grupo Vision*\n${D.me?`Registros de ${D.me}\n`:''}\n✅ Checklist: ${st.ckDone}/${st.ckTot}\n📍 Imperdíveis: ${st.mustDone}/${st.mustTot}\n💡 Ideias: ${st.ideas}\n🏭 Fornecedores: ${st.sup}\n💰 Gastos: ${fmtBRL(st.gasto)}\n`;
+  const hi=D.ideas.filter(i=>i.pri==='Alta'); if(hi.length) t+=`\n*Ideias prioritárias*\n${hi.map(i=>`• ${i.t} (${cityName(i.city)})`).join('\n')}\n`;
+  CITIES.forEach(c=>{ const x=cityData(c.id); const vis=x.musts.filter(m=>m.st.v); if(!(vis.length||x.ideas.length||x.sup.length||x.exp.length||x.notes.length||x.nota.best)) return;
+    t+=`\n*${c.nome.toUpperCase()}*${x.nota.r?` ${'⭐'.repeat(x.nota.r)}`:''}\n`; if(x.nota.best) t+=`_${x.nota.best}_\n`;
+    if(vis.length) t+=`Visitados: ${vis.map(m=>m.m[0]).join(', ')}\n`;
+    x.ideas.forEach(i=>t+=`💡 ${i.t} · ${i.cat} · ${i.pri}\n`);
+    x.sup.forEach(s=>t+=`🏭 ${s.emp}${s.prod?` · ${s.prod}`:''}${s.moq?` · MOQ ${s.moq}`:''}${s.fob?` · FOB ${s.fob}`:''}${s.prazo?` · ${s.prazo}`:''}${s.contato?` · ${s.contato}`:''}${s.nota?` · ${'★'.repeat(s.nota)}`:''}\n`);
+    if(x.exp.length) t+=`💰 ${fmtBRL(x.exp.reduce((a,e)=>a+expBRL(e),0))}\n`;
+    x.notes.forEach(n=>t+=`📝 ${n.d.d}/${n.d.m==='MAI'?'05':'04'}${n.by?` (${n.by})`:''}: ${n.t}\n`); });
+  return t;
+}
+const tsv=v=>String(v??'').replace(/[\t\n]+/g,' ');
+function supTSV(){ return ['Cidade\tEmpresa\tProduto\tEstande/local\tMOQ\tPreço FOB\tPrazo\tCertificação\tContato\tNota\tObservações\tRegistrado por'].concat(D.sup.map(s=>[cityName(s.city),s.emp,s.prod,s.local,s.moq,s.fob,s.prazo,s.cert,s.contato,s.nota||'',s.obs,s.by].map(tsv).join('\t'))).join('\n'); }
+function expTSV(){ return ['Cidade\tDescrição\tCategoria\tMoeda\tValor\tValor em R$\tRegistrado por'].concat(D.exp.map(e=>[cityName(e.city),e.desc,e.cat,e.cur,e.val,expBRL(e).toFixed(2).replace('.',','),e.by].map(tsv).join('\t'))).join('\n'); }
+function dataText(){ const {media,rman,...rest}=D; return 'VISION27'+JSON.stringify({...rest,stamps}); }
+function mergeData(txt){
+  const s=String(txt).trim(); const j=JSON.parse(s.startsWith('VISION27')?s.slice(8):s); let n=0;
+  ['ideas','sup','exp'].forEach(k=>{ (j[k]||[]).forEach(e=>{ if(e&&e.id&&!D[k].some(x=>x.id===e.id)){ D[k].push(e); n++; } }); });
+  Object.entries(j.ck||{}).forEach(([k,v])=>{ if(v&&!D.ck[k]){ D.ck[k]=true; n++; } });
+  Object.entries(j.cust||{}).forEach(([k,arr])=>{ D.cust[k]=D.cust[k]||[]; (arr||[]).forEach(e=>{ if(!D.cust[k].some(x=>x.id===e.id)){ D.cust[k].push(e); n++; } }); });
+  Object.entries(j.must||{}).forEach(([k,v])=>{ const m=D.must[k]||{}; if(v.v&&!m.v){ m.v=true; n++; } if((v.r||0)>(m.r||0)) m.r=v.r; D.must[k]=m; });
+  Object.entries(j.notes||{}).forEach(([k,v])=>{ v=(v||'').trim(); if(!v) return; const mine=(D.notes[k]||'').trim(); if(!mine){ D.notes[k]=v; n++; } else if(!mine.includes(v)){ D.notes[k]=mine+`\n\n[${j.me||'outra pessoa'}] `+v; n++; } });
+  Object.entries(j.hotel||{}).forEach(([k,v])=>{ D.hotel[k]=D.hotel[k]||{}; Object.entries(v||{}).forEach(([f,val])=>{ if(val&&!D.hotel[k][f]) D.hotel[k][f]=val; }); });
+  Object.entries(j.stamps||{}).forEach(([k,v])=>{ if(v&&!stamps[k]){ stamps[k]=true; } }); store.set('stamps',stamps);
+  save(); return n;
+}
+
+/* ============ AÇÕES ============ */
+function fv(city,n){ const el=document.getElementById(`f-${city}-${n}`); return el?el.value.trim():''; }
+function rerenderCity(id){ refreshJournal(id); }
+document.addEventListener('click',async e=>{
+  const go=e.target.closest('[data-go]'); if(go){ selectTab(go.dataset.go,true); return; }
+  const stp=e.target.closest('[data-stamp]'); if(stp){ const id=stp.dataset.stamp; stamps[id]=!stamps[id]; if(!stamps[id]) delete stamps[id]; store.set('stamps',stamps); save();
+    stp.textContent=stamps[id]?'Passaporte carimbado':'Carimbar passaporte'; stp.setAttribute('aria-pressed',!!stamps[id]); renderMapStamps(); renderPassport(); renderTabs(); markTab(current);
+    toast(stamps[id]?`${cityName(id)} carimbada no passaporte`:'Carimbo removido'); return; }
+  const b=e.target.closest('[data-act]'); if(!b) return; const a=b.dataset.act, city=b.dataset.city;
+  if(a==='star'){ const [kind,k]=[b.dataset.k.slice(0,1),b.dataset.k.slice(2)]; const n=+b.dataset.n;
+    if(kind==='m'){ const m=D.must[k]||{}; m.r=m.r===n?0:n; if(m.r) m.v=true; D.must[k]=m; }
+    if(kind==='s'){ const s=D.sup.find(x=>x.id===k); if(s) s.nota=s.nota===n?0:n; }
+    if(kind==='c'){ const t=D.nota[k]||{}; t.r=t.r===n?0:n; D.nota[k]=t; }
+    save(); const grp=b.parentElement; const val=kind==='m'?D.must[k].r:kind==='s'?(D.sup.find(x=>x.id===k)||{}).nota:D.nota[k].r;
+    grp.querySelectorAll('button').forEach((x,i)=>x.classList.toggle('on',i<(val||0)));
+    if(kind==='m'){ const f=grp.parentElement.querySelector('.fui'); if(f){ f.setAttribute('aria-pressed',!!D.must[k].v); f.innerHTML=svgI('check',14)+(D.must[k].v?'Fui':'Fui?'); } } return; }
+  if(a==='fui'){ const k=b.dataset.k; const m=D.must[k]||{}; m.v=!m.v; D.must[k]=m; save(); b.setAttribute('aria-pressed',m.v); b.innerHTML=svgI('check',14)+(m.v?'Fui':'Fui?'); if(m.v) toast('Marcado como visitado'); return; }
+  if(a==='addck'){ const key=b.dataset.box, inp=document.getElementById('add-'+key), t=inp.value.trim(); if(!t){ inp.focus(); return; } (D.cust[key]=D.cust[key]||[]).push({id:'c'+uid(),t}); save(); refreshCk(key); toast('Item adicionado'); return; }
+  if(a==='rmck'){ e.preventDefault(); const key=b.dataset.box; D.cust[key]=(D.cust[key]||[]).filter(x=>x.id!==b.dataset.id); delete D.ck[b.dataset.id]; save(); refreshCk(key); return; }
+  if(a==='seg'){ segOf[city]=b.dataset.seg; refreshJournal(city); return; }
+  if(a==='addIdea'){ const t=fv(city,'t'); if(!t){ toast('Escreva a ideia primeiro'); return; } D.ideas.unshift({id:uid(),city,t,cat:fv(city,'cat'),pri:fv(city,'pri'),by:D.me,ts:Date.now()}); save(); rerenderCity(city); toast('Ideia salva'); return; }
+  if(a==='addSup'){ const emp=fv(city,'emp'); if(!emp){ toast('Preencha pelo menos o nome da empresa'); return; } const s={id:uid(),city,by:D.me,ts:Date.now(),nota:0}; ['emp','prod','local','moq','fob','prazo','cert','contato','obs'].forEach(k=>s[k]=fv(city,k)); D.sup.unshift(s); save(); rerenderCity(city); toast('Fornecedor salvo. Dê uma nota com as estrelas.'); return; }
+  if(a==='addExp'){ const val=fv(city,'val'); if(!num(val)){ toast('Informe o valor'); return; } const cur=fv(city,'cur'); D.exp.unshift({id:uid(),city,desc:fv(city,'desc'),val,cur,r:rate(cur),cat:fv(city,'cat2'),by:D.me,ts:Date.now()}); save(); rerenderCity(city); toast('Gasto lançado'); return; }
+  if(a==='del'){ if(!b.classList.contains('arm')){ b.classList.add('arm'); b.textContent='Apagar?'; setTimeout(()=>{ if(b.isConnected){ b.classList.remove('arm'); b.textContent='✕'; } },3000); return; }
+    const kind=b.dataset.kind, id=b.dataset.id; const it=(D[kind]||[]).find(x=>x.id===id); D[kind]=D[kind].filter(x=>x.id!==id); if(kind==='media'){ IDB.del(id); }
+    save(); if(it&&it.city) refreshJournal(it.city); if(kind==='plans') renderPlans(); if(current==='resumo') renderSummary(); toast('Apagado'); return; }
+  if(a==='driver'){ const h=D.hotel[city]||{}; const addr=h.end||h.nome; if(!addr){ toast('Preencha o hotel e o endereço primeiro'); return; }
+    $('#drAsk').textContent=DRIVER[city]; $('#drAddr').textContent=addr; $('#drPt').textContent=`${h.end&&h.nome?h.nome+' · ':''}${h.tel?h.tel+' · ':''}"Por favor, me leve a este endereço."`; $('#driver').classList.add('on'); $('#drClose').focus(); return; }
+  if(a==='say'){ speak(b.dataset.t,{lang:b.dataset.lang,label:'Pronúncia'}); return; }
+  if(a==='ouvirDia'){ const c=CITIES.find(x=>x.id===city); speak(dayBrief(c,c.dias[+b.dataset.i]),{label:`Briefing · ${c.nome}`}); return; }
+  if(a==='ouvirCidade'){ speak(summaryParts(city),{label:`Resumo · ${cityName(city)}`}); return; }
+  if(a==='ouvirTudo'){ speak(summaryParts(),{label:'Resumo da missão'}); return; }
+  if(a==='addPlan'){ const i=$('#planIn'), t=i.value.trim(); if(!t){ i.focus(); return; } (D.plans=D.plans||[]).unshift({id:uid(),t,st:'Ideia',by:D.me,ts:Date.now()}); save(); renderPlans(); toast('Plano adicionado'); return; }
+  if(a==='sugPlan'){ const t=PLAN_SUG[+b.dataset.i]; (D.plans=D.plans||[]).unshift({id:uid(),t,st:'Ideia',by:D.me,ts:Date.now()}); save(); renderPlans(); return; }
+  if(a==='planSt'){ const p=(D.plans||[]).find(x=>x.id===b.dataset.id); if(p){ p.st=PST[(PST.indexOf(p.st)+1)%PST.length]; save(); renderPlans(); } return; }
+  if(a==='logout'){ logout(false); return; }
+  if(a==='chpass'){ showGate('trocar'); return; }
+  if(a==='gateClose'){ hideGate(); return; }
+  if(a==='eqAdd'){ const u=$('#eqUser').value.trim().toLowerCase(), n=$('#eqNome').value.trim(), pw=$('#eqPass').value.trim(); if(!/^[a-z0-9._-]{3,30}$/.test(u)){ toast('Usuário: 3 a 30 letras minúsculas ou números, sem espaço'); return; } if(!n){ toast('Preencha o nome'); return; } if(pw.length<6){ toast('Senha com pelo menos 6 caracteres'); return; }
+    try{ await rpc('viagem_salvar_usuario',{p_token:AUTH.token,p_usuario:u,p_nome:n,p_senha:pw,p_admin:$('#eqAdm').checked,p_ativo:true}); renderEquipe(invite(u,n,pw)); toast('Acesso criado'); }catch(err){ toast('Não deu: '+err.message); } return; }
+  if(a==='eqPass'){ const u=b.dataset.u, n=b.dataset.n, pw=genPass(); try{ await rpc('viagem_salvar_usuario',{p_token:AUTH.token,p_usuario:u,p_nome:n,p_senha:pw,p_admin:null,p_ativo:null}); renderEquipe(invite(u,n,pw)); toast('Nova senha gerada'); }catch(err){ toast('Não deu: '+err.message); } return; }
+  if(a==='eqToggle'){ const on=b.dataset.on==='1'; try{ await rpc('viagem_salvar_usuario',{p_token:AUTH.token,p_usuario:b.dataset.u,p_nome:null,p_senha:null,p_admin:null,p_ativo:!on}); renderEquipe(); toast(on?'Acesso desativado':'Acesso reativado'); }catch(err){ toast('Não deu: '+err.message); } return; }
+  if(a==='eqCopy'){ copy(lastInvite,'Convite copiado. É só colar no WhatsApp.'); return; }
+  if(a==='exportAll'){ try{ const r=await rpc('viagem_pull',{p_token:AUTH.token,p_since:null}); const blob=new Blob([JSON.stringify({exportado:new Date().toISOString(),itens:r.rows},null,1)],{type:'application/json'}); const u=URL.createObjectURL(blob); const l=document.createElement('a'); l.href=u; l.download='missao-asia-2027-backup.json'; document.body.appendChild(l); l.click(); l.remove(); toast('Cópia baixada'); }catch(err){ toast('Não deu: '+err.message); } return; }
+  if(a==='resetRates'){ D.rman={}; save(); renderKit(); toast('Voltou para a cotação do dia'); return; }
+  if(a==='copyPre'){ let t='*Pré-viagem · Missão Ásia & Emirados 2027*\n'; PRE_KEYS.forEach(k=>{ const [x,y]=ckCount(k); t+=`\n*${CK[k].t}* (${x}/${y})\n`; ckItems(k).forEach(it=>{ t+=`${D.ck[it.id]?'✅':'⬜'} ${it.t}${it.w?` (${it.w})`:''}\n`; }); }); copy(t,'Pré-viagem copiado. É só colar no WhatsApp.'); return; }
+  if(a==='copyCk'){ copy(ckText(),'Checklist copiada. É só colar no WhatsApp.'); return; }
+  if(a==='copyResumo'){ copy(resumoText(),'Resumo copiado. É só colar no WhatsApp.'); return; }
+  if(a==='copySup'){ if(!D.sup.length){ toast('Nenhum fornecedor registrado ainda'); return; } copy(supTSV(),'Fornecedores copiados. Cole numa planilha.'); return; }
+  if(a==='copyExp'){ if(!D.exp.length){ toast('Nenhum gasto lançado ainda'); return; } copy(expTSV(),'Gastos copiados. Cole numa planilha.'); return; }
+  if(a==='copyData'){ copy(dataText(),'Dados copiados. Mande para quem consolida o grupo.'); return; }
+  if(a==='merge'){ const t=$('#mergeIn').value; if(!t.trim()){ toast('Cole os dados recebidos primeiro'); return; } try{ const n=mergeData(t); $('#mergeIn').value=''; renderAll(); selectTab('resumo',false); toast(n?`${n} registros juntados`:'Nada novo para juntar'); }catch(err){ toast('Esse texto não parece um backup do roteiro'); } return; }
+});
+$('#drClose').addEventListener('click',()=>$('#driver').classList.remove('on'));
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') $('#driver').classList.remove('on'); if(e.key==='Enter'&&e.target.id&&e.target.id.startsWith('add-')){ e.preventDefault(); const btn=e.target.parentElement.querySelector('[data-act="addck"]'); if(btn) btn.click(); } });
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset.note!==undefined){ D.notes[t.dataset.note]=t.value; save(); const h=t.parentElement.querySelector('.has'); if(h) h.hidden=!t.value.trim(); return; }
+  if(t.dataset.hotel){ const [c,f]=t.dataset.hotel.split('|'); D.hotel[c]=D.hotel[c]||{}; D.hotel[c][f]=t.value; save(); return; }
+  if(t.dataset.best){ const c=t.dataset.best; D.nota[c]=D.nota[c]||{}; D.nota[c].best=t.value; save(); return; }
+  if(t.dataset.rate){ const v=parseFloat(String(t.value).replace(',','.')); if(v>0){ D.rman[t.dataset.rate]=v; save(); updConv(); } return; }
+  if(t.id==='convVal'||t.id==='convCur'){ updConv(); return; }
+  if(t.id==='meName'){ D.me=t.value.trim(); save(); return; }
+});
+document.addEventListener('change',async e=>{
+  const t=e.target;
+  if(t.dataset.ck){ D.ck[t.dataset.ck]=t.checked; save(); const key=t.dataset.box; setTimeout(()=>refreshCk(key),180); if(t.checked) toast('Feito'); return; }
+  if(t.id==='convCur'){ updConv(); return; }
+  if(t.dataset.media){ const city=t.dataset.city, type=t.dataset.media, files=[...(t.files||[])]; if(!files.length) return; const cap=fv(city,'mcap'); let ok=0;
+    toast(files.length>1?`Salvando ${files.length} arquivos…`:'Salvando…');
+    for(const f of files){ try{ const blob=type==='image'?await shrink(f):f; const id='m'+uid(); await IDB.put(id,blob); D.media.unshift({id,city,type,cap,name:f.name,by:D.me,byU:ME(),up:false,ts:Date.now()}); ok++; }catch(err){} }
+    save(); refreshJournal(city); toast(ok?(type==='image'?'Foto salva':'Áudio salvo'):'Não deu para salvar neste aparelho'); return; }
+});
+
+function renderAll(){
+  renderTabs();
+  $('#panels').innerHTML = overviewPanel() + prePanel() + CITIES.map(cityPanel).join('') + kitPanel() + summaryPanel();
+  renderPassport(); renderTodayBanner(); hydrateMedia(); applyLive();
+}
+let current='visao';
+function markTab(id){ document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===id)); }
+function selectTab(id, user){
+  if(!TABS.find(t=>t.id===id)) id='visao';
+  current=id; markTab(id);
+  if(id==='kit') renderKit();
+  if(id==='pre') renderPre();
+  if(id==='equipe') renderEquipe();
+  if(id==='resumo') renderSummary();
+  if(id==='visao'){ const p=$('#p-visao'); if(p){ p.querySelectorAll('.cc').forEach((b,i)=>{ const [a,bb]=ckCount(CITIES[i].id); const s=b.querySelector('.tx span'); if(s) s.textContent=`${CITIES[i].datas} · checklist ${a}/${bb}`; }); } }
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));
+  document.querySelectorAll('.sceneArt').forEach(a=>{ a.innerHTML = a.dataset.scene===id ? sceneSvg(id) : ''; });
+  const t=document.getElementById('t-'+id); if(t){ const tb=$('#tabs'); tb.scrollTo({left:t.offsetLeft-tb.clientWidth/2+t.clientWidth/2,behavior:RM?'auto':'smooth'}); }
+  const c=CITIES.find(x=>x.id===id);
+  $('#mapStatusTx').textContent = c ? (innerWidth<600 ? c.nome : `${c.nome} · ${c.datas}`) : 'Rota da missão';
+  flyTo(NODE_LEN[nodeForTab(id)]);
+  centerMapOn(nodeForTab(id));
+  if(user){ try{ history.replaceState(null,'','#'+id); }catch(e){ location.hash=id; }
+    const bar=document.querySelector('.tabsBar'); if(bar.getBoundingClientRect().top>4) bar.scrollIntoView({behavior:RM?'auto':'smooth'}); }
+}
+function centerMapOn(i){ const sc=$('#mapScroll'); if(sc.scrollWidth<=sc.clientWidth) return; const svg=$('#map'); const k=svg.clientWidth/1200; sc.scrollTo({left:NODES[i].x*k-sc.clientWidth/2,behavior:RM?'auto':'smooth'}); }
+$('#replay').addEventListener('click',()=>{ setPlane(0); flyTo(TOTAL, RM?0:9000); });
+
+buildMap(); renderAll(); initCloud(); loadLive();
+const start=(location.hash||'').slice(1);
+setPlane(NODE_LEN[dateNode()]);
+selectTab(TABS.find(t=>t.id===start)?start:'visao', false);
+window.addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(h!==current) selectTab(h,false); });
+if(!RM && dateNode()===0 && !start){ setTimeout(()=>{ flyTo(TOTAL,9000); },1400); }
+</script>
+</body>
+</html>

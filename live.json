@@ -1,0 +1,54 @@
+{
+  "updated": "2026-11-18T23:05:00-03:00",
+  "rates": {"asOf": "19/11/2026 01:47 UTC", "src": "x-rates.com", "BRL": 1, "CNY": 0.882779, "HKD": 0.750169, "JPY": 0.036929, "AED": 1.602442, "USD": 5.884969},
+  "weather": {
+    "hong-kong": {"asOf": "19/11 09:00 (hora local)", "src": "meteoblue", "now": 21, "nowC": "Muito nublado", "days": [
+      {"d":"2026-11-19","max":22,"min":20,"c":"Muito nublado","p":""},
+      {"d":"2026-11-20","max":20,"min":15,"c":"Nublado com chuva","p":"5–10 mm"},
+      {"d":"2026-11-21","max":21,"min":16,"c":"Muito nublado","p":""},
+      {"d":"2026-11-22","max":21,"min":20,"c":"Nublado","p":""},
+      {"d":"2026-11-23","max":24,"min":21,"c":"Muito nublado","p":""},
+      {"d":"2026-11-24","max":22,"min":18,"c":"Muito nublado","p":""},
+      {"d":"2026-11-25","max":20,"min":17,"c":"Nublado","p":""}]},
+    "guangzhou": {"asOf": "19/11 10:00 (hora local)", "src": "meteoblue", "now": 18, "nowC": "Parcialmente nublado", "days": [
+      {"d":"2026-11-19","max":19,"min":16,"c":"Parcialmente nublado","p":""},
+      {"d":"2026-11-20","max":16,"min":12,"c":"Nublado com chuva","p":"10–20 mm"},
+      {"d":"2026-11-21","max":19,"min":12,"c":"Parcialmente nublado","p":""},
+      {"d":"2026-11-22","max":19,"min":14,"c":"Muito nublado","p":""},
+      {"d":"2026-11-23","max":21,"min":17,"c":"Nublado com chuva ocasional","p":"0–2,5 mm"},
+      {"d":"2026-11-24","max":18,"min":14,"c":"Nublado com chuva ocasional","p":"10–20 mm"},
+      {"d":"2026-11-25","max":15,"min":13,"c":"Nublado com chuva ocasional","p":"2,5–5 mm"}]},
+    "xangai": {"asOf": "19/11 09:30 (hora local)", "src": "meteoblue", "now": 11, "nowC": "Limpo e algumas nuvens", "days": [
+      {"d":"2026-11-19","max":13,"min":6,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-20","max":11,"min":3,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-21","max":14,"min":3,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-22","max":16,"min":5,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-23","max":19,"min":11,"c":"Algumas nuvens, chuva à noite","p":"0–2 mm"},
+      {"d":"2026-11-24","max":13,"min":5,"c":"Muito nublado","p":"0–2 mm"},
+      {"d":"2026-11-25","max":13,"min":4,"c":"Limpo, sem nuvens","p":""}]},
+    "toquio": {"asOf": "19/11 10:10 (hora local)", "src": "meteoblue", "now": 18, "nowC": "Limpo e algumas nuvens", "days": [
+      {"d":"2026-11-19","max":19,"min":10,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-20","max":14,"min":7,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-21","max":14,"min":5,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-22","max":13,"min":4,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-23","max":13,"min":3,"c":"Muito nublado","p":""},
+      {"d":"2026-11-24","max":18,"min":7,"c":"Muito nublado com chuva ocasional","p":"5–10 mm"},
+      {"d":"2026-11-25","max":14,"min":7,"c":"Limpo, sem nuvens","p":""}]},
+    "dubai": {"asOf": "19/11 04:45 (hora local)", "src": "meteoblue", "now": 24, "nowC": "Limpo e algumas nuvens", "days": [
+      {"d":"2026-11-19","max":30,"min":24,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-20","max":30,"min":24,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-21","max":30,"min":24,"c":"Parcialmente enevoado","p":""},
+      {"d":"2026-11-22","max":31,"min":23,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-23","max":32,"min":24,"c":"Limpo, sem nuvens","p":""},
+      {"d":"2026-11-24","max":31,"min":24,"c":"Limpo e algumas nuvens","p":""},
+      {"d":"2026-11-25","max":30,"min":23,"c":"Limpo, sem nuvens","p":""}]}
+  },
+  "alerts": [
+    {"id":"visto","status":"pendente","date":"18/11/2026","text":"A China ainda não anunciou a prorrogação da isenção de visto para brasileiros em 2027. A regra atual vale até 31/12/2026."},
+    {"id":"canton","status":"pendente","date":"18/11/2026","text":"As datas esperadas da Fase 1 continuam 15 a 19/04/2027, mas o calendário oficial da 141ª sessão ainda não foi confirmado pelo organizador."},
+    {"id":"dubai","status":"pendente","date":"18/11/2026","text":"Museum of the Future: reabertura prevista para o 1º trimestre de 2027, ainda sem data. Burj Al Arab: reabertura prevista para outubro de 2027."}
+  ],
+  "news": [
+    {"date":"18/11/2026","text":"Primeira atualização automática: câmbio do dia, tempo agora nas 5 cidades e situação dos alertas."}
+  ]
+}
